@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.25.0.dev0+6.gb948a7f661
+                0.25.0.dev0+20.gab3430afd2
               </div>
             
           
@@ -275,6 +275,10 @@ method.
 converted to a dictionary with fields <code class="docutils literal notranslate"><span class="pre">re</span></code> and <code class="docutils literal notranslate"><span class="pre">im</span></code> containing floating
 numbers for the real and imaginary parts respectively, and a field
 <code class="docutils literal notranslate"><span class="pre">__dtype__</span></code> containing value <code class="docutils literal notranslate"><span class="pre">complex</span></code>.
+* Numbers with uncertainties  (numbers that conforms to <code class="docutils literal notranslate"><span class="pre">uncertainties.UFloat</span></code>) get
+converted to a dictionary with fields <code class="docutils literal notranslate"><span class="pre">nominal_value</span></code> and <code class="docutils literal notranslate"><span class="pre">std_dev</span></code> containing floating
+numbers for the nominal and uncertainty parts respectively, and a field
+<code class="docutils literal notranslate"><span class="pre">__dtype__</span></code> containing value <code class="docutils literal notranslate"><span class="pre">UFloat</span></code>.
 * Object with a <code class="docutils literal notranslate"><span class="pre">_JSONEncoder</span></code> method get converted the return value of
 that method.
 * Objects which support the pickle protocol get converted using the

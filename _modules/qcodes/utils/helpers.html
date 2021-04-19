@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.25.0.dev0+6.gb948a7f661
+                0.25.0.dev0+20.gab3430afd2
               </div>
             
           
@@ -172,6 +172,7 @@
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">numbers</span>
+<span class="kn">import</span> <span class="nn">uncertainties</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">asyncio</span> <span class="kn">import</span> <span class="n">iscoroutinefunction</span>
@@ -219,6 +220,10 @@
 <span class="sd">        converted to a dictionary with fields ``re`` and ``im`` containing floating</span>
 <span class="sd">        numbers for the real and imaginary parts respectively, and a field</span>
 <span class="sd">        ``__dtype__`` containing value ``complex``.</span>
+<span class="sd">        * Numbers with uncertainties  (numbers that conforms to ``uncertainties.UFloat``) get</span>
+<span class="sd">        converted to a dictionary with fields ``nominal_value`` and ``std_dev`` containing floating</span>
+<span class="sd">        numbers for the nominal and uncertainty parts respectively, and a field</span>
+<span class="sd">        ``__dtype__`` containing value ``UFloat``.</span>
 <span class="sd">        * Object with a ``_JSONEncoder`` method get converted the return value of</span>
 <span class="sd">        that method.</span>
 <span class="sd">        * Objects which support the pickle protocol get converted using the</span>
@@ -239,6 +244,12 @@
                 <span class="s1">&#39;__dtype__&#39;</span><span class="p">:</span> <span class="s1">&#39;complex&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;re&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">real</span><span class="p">),</span>
                 <span class="s1">&#39;im&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">uncertainties</span><span class="o">.</span><span class="n">UFloat</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">&#39;__dtype__&#39;</span><span class="p">:</span> <span class="s1">&#39;UFloat&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;nominal_value&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">nominal_value</span><span class="p">),</span>
+                <span class="s1">&#39;std_dev&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">std_dev</span><span class="p">)</span>
             <span class="p">}</span>
         <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;_JSONEncoder&#39;</span><span class="p">):</span>
             <span class="c1"># Use object&#39;s custom JSON encoder</span>
