@@ -37,6 +37,14 @@ qcodes.instrument\_drivers.Keysight.Keysight\_34410A\_submodules module
    :undoc-members:
    :show-inheritance:
 
+qcodes.instrument\_drivers.Keysight.Keysight\_34411A\_submodules module
+-----------------------------------------------------------------------
+
+.. automodule:: qcodes.instrument_drivers.Keysight.Keysight_34411A_submodules
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 qcodes.instrument\_drivers.Keysight.Keysight\_34460A\_submodules module
 -----------------------------------------------------------------------
 
