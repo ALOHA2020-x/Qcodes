@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.25.0.dev0+44.gd7d0c63835
+                0.25.0.dev0+51.gae70642716
               </div>
             
           
@@ -256,6 +256,8 @@
 <li><p><cite>get_data_by_id</cite> no longer returns data for standalone parameters
 if there are no dependent parameters in the dataset. For the same reason
 <cite>plot_by_id</cite> and <cite>plot_dataset</cite> will no longer plot these standalone parameters.</p></li>
+<li><p><cite>xarray</cite> exported data no longer exports extra metadata columns under the <cite>extra_metadata</cite> tag
+since the extra dictionary level prevents exporting to <cite>netcdf</cite></p></li>
 </ul>
 </div>
 <div class="section" id="deprecation">
