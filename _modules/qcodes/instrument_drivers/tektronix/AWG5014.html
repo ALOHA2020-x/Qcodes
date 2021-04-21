@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.25.0.dev0+53.g5a2ea5786e
+                0.25.0.dev0+61.gf994d690a6
               </div>
             
           
@@ -1044,7 +1044,12 @@
                 <span class="n">record_data</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ASCII&#39;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">))</span>
-                <span class="n">record_data</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span> <span class="o">+</span> <span class="n">dtype</span><span class="p">,</span> <span class="o">*</span><span class="n">value</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">dtype</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;H&#39;</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+                    <span class="c1"># numpy conversion is fast</span>
+                    <span class="n">record_data</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;&lt;u2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># argument unpacking is slow</span>
+                    <span class="n">record_data</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span> <span class="o">+</span> <span class="n">dtype</span><span class="p">,</span> <span class="o">*</span><span class="n">value</span><span class="p">)</span>
 
         <span class="c1"># the zero byte at the end the record name is the &quot;(Include NULL.)&quot;</span>
         <span class="n">record_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ASCII&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span>
@@ -1851,11 +1856,11 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Marker 2 contains invalid values.&#39;</span> <span class="o">+</span>
                             <span class="s1">&#39; Only 0 and 1 are allowed&#39;</span><span class="p">)</span>
 
-        <span class="n">wflen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wf</span><span class="p">)</span>
-        <span class="n">packed_wf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">wflen</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
-        <span class="n">packed_wf</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">wf</span> <span class="o">*</span> <span class="mi">8191</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8191</span> <span class="o">+</span>
-                               <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">16384</span> <span class="o">*</span> <span class="n">m1</span><span class="p">)</span> <span class="o">+</span>
-                               <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">32768</span> <span class="o">*</span> <span class="n">m2</span><span class="p">))</span>
+        <span class="c1"># Note: we use np.trunc here rather than np.round</span>
+        <span class="c1"># as it is an order of magnitude faster</span>
+        <span class="n">packed_wf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="mi">16384</span> <span class="o">*</span> <span class="n">m1</span> <span class="o">+</span> <span class="mi">32768</span> <span class="o">*</span> <span class="n">m2</span>
+                             <span class="o">+</span> <span class="n">wf</span> <span class="o">*</span> <span class="mi">8191</span> <span class="o">+</span> <span class="mf">8191.5</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">packed_wf</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">packed_wf</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">packed_wf</span>
