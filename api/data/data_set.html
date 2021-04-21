@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.25.0.dev0+76.gbe6ed96349
+                0.25.0.dev0+86.g4ced04939a
               </div>
             
           
@@ -646,6 +646,18 @@ raw data inside a loop, a snapshot is not wanted.</p></li>
 <dd><p>Rich information about the DataSet and contained arrays.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt id="qcodes.data.data_set.DataSet.to_xarray">
+<code class="sig-name descname"><span class="pre">to_xarray</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">xarray.core.dataset.Dataset</span><a class="reference internal" href="../../_modules/qcodes/data/data_set.html#DataSet.to_xarray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.data_set.DataSet.to_xarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the dataset to an xarray Dataset</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="qcodes.data.data_set.DataSet.from_xarray">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_xarray</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xarray_dataset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">xarray.core.dataset.Dataset</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#qcodes.data.data_set.DataSet" title="qcodes.data.data_set.DataSet"><span class="pre">qcodes.data.data_set.DataSet</span></a><a class="reference internal" href="../../_modules/qcodes/data/data_set.html#DataSet.from_xarray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.data_set.DataSet.from_xarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the dataset to an xarray DataSet</p>
+</dd></dl>
+
 <dl class="py attribute">
 <dt id="qcodes.data.data_set.DataSet.delegate_attr_objects">
 <code class="sig-name descname"><span class="pre">delegate_attr_objects</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.data.data_set.DataSet.delegate_attr_objects" title="Permalink to this definition">¶</a></dt>
@@ -661,6 +673,50 @@ should be passed through to <code class="docutils literal notranslate"><span cla
 to <em>not</em> delegate to any other dictionary or object.</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="py function">
+<dt id="qcodes.data.data_set.dataset_to_xarray_dictionary">
+<code class="sig-prename descclassname"><span class="pre">qcodes.data.data_set.</span></code><code class="sig-name descname"><span class="pre">dataset_to_xarray_dictionary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#qcodes.data.data_set.DataSet" title="qcodes.data.data_set.DataSet"><span class="pre">qcodes.data.data_set.DataSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_metadata</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../../_modules/qcodes/data/data_set.html#dataset_to_xarray_dictionary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.data_set.dataset_to_xarray_dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert QcodesDataSet to dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_set</strong> – The data to convert.</p></li>
+<li><p><strong>include_data</strong> – If True then include the ndarray field.</p></li>
+<li><p><strong>include_metadata</strong> – If True then include the metadata.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary containing the serialized data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="qcodes.data.data_set.qcodes_dataset_to_xarray_dataset">
+<code class="sig-prename descclassname"><span class="pre">qcodes.data.data_set.</span></code><code class="sig-name descname"><span class="pre">qcodes_dataset_to_xarray_dataset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#qcodes.data.data_set.DataSet" title="qcodes.data.data_set.DataSet"><span class="pre">qcodes.data.data_set.DataSet</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">xarray.core.dataset.Dataset</span><a class="reference internal" href="../../_modules/qcodes/data/data_set.html#qcodes_dataset_to_xarray_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.data_set.qcodes_dataset_to_xarray_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert QCoDeS gridded dataset to xarray dataset</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="qcodes.data.data_set.xarray_dictionary_to_dataset">
+<code class="sig-prename descclassname"><span class="pre">qcodes.data.data_set.</span></code><code class="sig-name descname"><span class="pre">xarray_dictionary_to_dataset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xarray_dictionary</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#qcodes.data.data_set.DataSet" title="qcodes.data.data_set.DataSet"><span class="pre">qcodes.data.data_set.DataSet</span></a><a class="reference internal" href="../../_modules/qcodes/data/data_set.html#xarray_dictionary_to_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.data_set.xarray_dictionary_to_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert xarray dictionary to Qcodes DataSet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>xarray_dictionary</strong> – data to convert</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>QCoDeS dataSet with converted data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="qcodes.data.data_set.xarray_dataset_to_qcodes_dataset">
+<code class="sig-prename descclassname"><span class="pre">qcodes.data.data_set.</span></code><code class="sig-name descname"><span class="pre">xarray_dataset_to_qcodes_dataset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xarray_data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">xarray.core.dataset.Dataset</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#qcodes.data.data_set.DataSet" title="qcodes.data.data_set.DataSet"><span class="pre">qcodes.data.data_set.DataSet</span></a><a class="reference internal" href="../../_modules/qcodes/data/data_set.html#xarray_dataset_to_qcodes_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.data_set.xarray_dataset_to_qcodes_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert QCoDeS gridded dataset to xarray dataset</p>
 </dd></dl>
 
 </div>

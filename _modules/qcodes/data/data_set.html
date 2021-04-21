@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.25.0.dev0+76.gbe6ed96349
+                0.25.0.dev0+86.g4ced04939a
               </div>
             
           
@@ -168,17 +168,20 @@
   <h1>Source code for qcodes.data.data_set</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;DataSet class and factory functions.&quot;&quot;&quot;</span>
 
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">traceback</span> <span class="kn">import</span> <span class="n">format_exc</span>
 <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Any</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span>
 
 <span class="kn">from</span> <span class="nn">.gnuplot_format</span> <span class="kn">import</span> <span class="n">GNUPlotFormat</span>
 <span class="kn">from</span> <span class="nn">.io</span> <span class="kn">import</span> <span class="n">DiskIO</span>
 <span class="kn">from</span> <span class="nn">.location</span> <span class="kn">import</span> <span class="n">FormatLocation</span>
 <span class="kn">from</span> <span class="nn">qcodes.utils.helpers</span> <span class="kn">import</span> <span class="n">DelegateAttributes</span><span class="p">,</span> <span class="n">full_class</span><span class="p">,</span> <span class="n">deep_update</span>
+<span class="kn">from</span> <span class="nn">qcodes.data.data_array</span> <span class="kn">import</span> <span class="n">xarray_data_array_dictionary_to_data_array</span><span class="p">,</span> <span class="n">data_array_to_xarray_dictionary</span><span class="p">,</span> <span class="n">DataArray</span>
 
 <span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -846,7 +849,16 @@
         <span class="k">for</span> <span class="n">arr_info_i</span> <span class="ow">in</span> <span class="n">arr_info</span><span class="p">:</span>
             <span class="n">out</span> <span class="o">+=</span> <span class="n">out_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">info</span><span class="o">=</span><span class="n">arr_info_i</span><span class="p">,</span> <span class="n">lens</span><span class="o">=</span><span class="n">column_lengths</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">out</span></div></div>
+        <span class="k">return</span> <span class="n">out</span></div>
+
+<div class="viewcode-block" id="DataSet.to_xarray"><a class="viewcode-back" href="../../../api/data/data_set.html#qcodes.data.data_set.DataSet.to_xarray">[docs]</a>    <span class="k">def</span> <span class="nf">to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot; Convert the dataset to an xarray Dataset &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">qcodes_dataset_to_xarray_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DataSet.from_xarray"><a class="viewcode-back" href="../../../api/data/data_set.html#qcodes.data.data_set.DataSet.from_xarray">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_xarray</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">xarray_dataset</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;DataSet&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot; Convert the dataset to an xarray DataSet &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">xarray_dataset_to_qcodes_dataset</span><span class="p">(</span><span class="n">xarray_dataset</span><span class="p">)</span></div></div>
 
 
 <span class="k">class</span> <span class="nc">_PrettyPrintDict</span><span class="p">(</span><span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
@@ -863,6 +875,105 @@
     <span class="k">def</span> <span class="nf">_indent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
         <span class="n">lines</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">    &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="dataset_to_xarray_dictionary"><a class="viewcode-back" href="../../../api/data/data_set.html#qcodes.data.data_set.dataset_to_xarray_dictionary">[docs]</a><span class="k">def</span> <span class="nf">dataset_to_xarray_dictionary</span><span class="p">(</span>
+    <span class="n">data_set</span><span class="p">:</span> <span class="n">DataSet</span><span class="p">,</span> <span class="n">include_metadata</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Convert QcodesDataSet to dictionary.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data_set: The data to convert.</span>
+<span class="sd">        include_data: If True then include the ndarray field.</span>
+<span class="sd">        include_metadata: If True then include the metadata.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Dictionary containing the serialized data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data_dictionary</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;dims&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;attrs&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;coords&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;data_vars&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="p">}</span>
+
+    <span class="n">pa</span> <span class="o">=</span> <span class="n">data_set</span><span class="o">.</span><span class="n">default_parameter_array</span><span class="p">()</span>
+    <span class="n">dimensions</span> <span class="o">=</span> <span class="p">[(</span><span class="n">a</span><span class="o">.</span><span class="n">array_id</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">pa</span><span class="o">.</span><span class="n">set_arrays</span><span class="p">]</span>
+    <span class="n">data_dictionary</span><span class="p">[</span><span class="s2">&quot;dims&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">dimensions</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">array_id</span> <span class="ow">in</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">]:</span>
+        <span class="n">data_array</span> <span class="o">=</span> <span class="n">data_set</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="n">array_id</span><span class="p">]</span>
+        <span class="n">data_dictionary</span><span class="p">[</span><span class="s2">&quot;coords&quot;</span><span class="p">][</span><span class="n">array_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_array_to_xarray_dictionary</span><span class="p">(</span>
+            <span class="n">data_array</span>
+        <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">array_id</span><span class="p">,</span> <span class="n">data_array</span> <span class="ow">in</span> <span class="n">data_set</span><span class="o">.</span><span class="n">arrays</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">data_array</span><span class="o">.</span><span class="n">is_setpoint</span><span class="p">:</span>
+            <span class="n">data_dictionary</span><span class="p">[</span><span class="s2">&quot;data_vars&quot;</span><span class="p">][</span><span class="n">array_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_array_to_xarray_dictionary</span><span class="p">(</span>
+                <span class="n">data_array</span>
+            <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">include_metadata</span><span class="p">:</span>
+        <span class="n">data_dictionary</span><span class="p">[</span><span class="s2">&quot;attrs&quot;</span><span class="p">][</span><span class="s2">&quot;metadata&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_set</span><span class="o">.</span><span class="n">metadata</span>
+        <span class="n">data_dictionary</span><span class="p">[</span><span class="s2">&quot;attrs&quot;</span><span class="p">][</span><span class="s2">&quot;qcodes_location&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_set</span><span class="o">.</span><span class="n">location</span>
+
+    <span class="k">return</span> <span class="n">data_dictionary</span></div>
+
+
+<div class="viewcode-block" id="qcodes_dataset_to_xarray_dataset"><a class="viewcode-back" href="../../../api/data/data_set.html#qcodes.data.data_set.qcodes_dataset_to_xarray_dataset">[docs]</a><span class="k">def</span> <span class="nf">qcodes_dataset_to_xarray_dataset</span><span class="p">(</span>
+    <span class="n">data_set</span><span class="p">:</span> <span class="n">DataSet</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Convert QCoDeS gridded dataset to xarray dataset &quot;&quot;&quot;</span>
+    <span class="n">xarray_dictionary</span> <span class="o">=</span> <span class="n">dataset_to_xarray_dictionary</span><span class="p">(</span><span class="n">data_set</span><span class="p">)</span>
+    <span class="n">xarray_dataset</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">xarray_dictionary</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xarray_dataset</span></div>
+
+
+<div class="viewcode-block" id="xarray_dictionary_to_dataset"><a class="viewcode-back" href="../../../api/data/data_set.html#qcodes.data.data_set.xarray_dictionary_to_dataset">[docs]</a><span class="k">def</span> <span class="nf">xarray_dictionary_to_dataset</span><span class="p">(</span>
+    <span class="n">xarray_dictionary</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataSet</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Convert xarray dictionary to Qcodes DataSet.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        xarray_dictionary: data to convert</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        QCoDeS dataSet with converted data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">new_data</span><span class="p">()</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">xarray_dictionary</span><span class="p">[</span><span class="s2">&quot;attrs&quot;</span><span class="p">])</span>
+
+    <span class="n">grid_coords</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">set_array_names</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">array_key</span><span class="p">,</span> <span class="n">coord_dictionary</span> <span class="ow">in</span> <span class="n">xarray_dictionary</span><span class="p">[</span><span class="s2">&quot;coords&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">preset_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">coord_dictionary</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">])</span>
+
+        <span class="n">tiled_preset_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">preset_data</span><span class="p">,</span> <span class="p">[</span><span class="n">g</span><span class="o">.</span><span class="n">size</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">grid_coords</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">grid_coords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">preset_data</span><span class="p">)</span>
+
+        <span class="n">data_array</span> <span class="o">=</span> <span class="n">xarray_data_array_dictionary_to_data_array</span><span class="p">(</span>
+            <span class="n">array_key</span><span class="p">,</span> <span class="n">coord_dictionary</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">preset_data</span><span class="o">=</span><span class="n">tiled_preset_data</span>
+        <span class="p">)</span>
+        <span class="n">dataset</span><span class="o">.</span><span class="n">add_array</span><span class="p">(</span><span class="n">data_array</span><span class="p">)</span>
+        <span class="n">set_array_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">array_key</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">array_key</span><span class="p">,</span> <span class="n">datavar_dictionary</span> <span class="ow">in</span> <span class="n">xarray_dictionary</span><span class="p">[</span><span class="s2">&quot;data_vars&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">set_arrays</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">dataset</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">set_array_names</span><span class="p">])</span>
+
+        <span class="n">data_array</span> <span class="o">=</span> <span class="n">xarray_data_array_dictionary_to_data_array</span><span class="p">(</span>
+            <span class="n">array_key</span><span class="p">,</span> <span class="n">datavar_dictionary</span><span class="p">,</span> <span class="kc">False</span>
+        <span class="p">)</span>
+        <span class="n">data_array</span><span class="o">.</span><span class="n">set_arrays</span> <span class="o">=</span> <span class="n">set_arrays</span>
+        <span class="n">dataset</span><span class="o">.</span><span class="n">add_array</span><span class="p">(</span><span class="n">data_array</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">dataset</span></div>
+
+
+<div class="viewcode-block" id="xarray_dataset_to_qcodes_dataset"><a class="viewcode-back" href="../../../api/data/data_set.html#qcodes.data.data_set.xarray_dataset_to_qcodes_dataset">[docs]</a><span class="k">def</span> <span class="nf">xarray_dataset_to_qcodes_dataset</span><span class="p">(</span><span class="n">xarray_data_set</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataSet</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Convert QCoDeS gridded dataset to xarray dataset &quot;&quot;&quot;</span>
+    <span class="n">xarray_dictionary</span> <span class="o">=</span> <span class="n">xarray_data_set</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+    <span class="n">qcodes_dataset</span> <span class="o">=</span> <span class="n">xarray_dictionary_to_dataset</span><span class="p">(</span><span class="n">xarray_dictionary</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">qcodes_dataset</span></div>
 </pre></div>
 
            </div>

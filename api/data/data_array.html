@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.25.0.dev0+76.gbe6ed96349
+                0.25.0.dev0+86.g4ced04939a
               </div>
             
           
@@ -513,21 +513,6 @@ returned by <code class="docutils literal notranslate"><span class="pre">get_cha
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt id="qcodes.data.data_array.DataArray.delegate_attr_dicts">
-<code class="sig-name descname"><span class="pre">delegate_attr_dicts</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.data.data_array.DataArray.delegate_attr_dicts" title="Permalink to this definition">¶</a></dt>
-<dd><p>A list of names (strings) of dictionaries
-which are (or will be) attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code>, whose keys should
-be treated as attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="qcodes.data.data_array.DataArray.omit_delegate_attrs">
-<code class="sig-name descname"><span class="pre">omit_delegate_attrs</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.data.data_array.DataArray.omit_delegate_attrs" title="Permalink to this definition">¶</a></dt>
-<dd><p>A list of attribute names (strings)
-to <em>not</em> delegate to any other dictionary or object.</p>
-</dd></dl>
-
 <dl class="py method">
 <dt id="qcodes.data.data_array.DataArray.snapshot">
 <code class="sig-name descname"><span class="pre">snapshot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/data_array.html#DataArray.snapshot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.data_array.DataArray.snapshot" title="Permalink to this definition">¶</a></dt>
@@ -555,6 +540,82 @@ where we have touched it.</p>
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">units</span></code><a class="headerlink" href="#qcodes.data.data_array.DataArray.units" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt id="qcodes.data.data_array.DataArray.delegate_attr_dicts">
+<code class="sig-name descname"><span class="pre">delegate_attr_dicts</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.data.data_array.DataArray.delegate_attr_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of names (strings) of dictionaries
+which are (or will be) attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code>, whose keys should
+be treated as attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="qcodes.data.data_array.DataArray.omit_delegate_attrs">
+<code class="sig-name descname"><span class="pre">omit_delegate_attrs</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.data.data_array.DataArray.omit_delegate_attrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of attribute names (strings)
+to <em>not</em> delegate to any other dictionary or object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="qcodes.data.data_array.DataArray.to_xarray">
+<code class="sig-name descname"><span class="pre">to_xarray</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">xarray.core.dataarray.DataArray</span><a class="reference internal" href="../../_modules/qcodes/data/data_array.html#DataArray.to_xarray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.data_array.DataArray.to_xarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return this DataArray as an xarray dataarray</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>DataArray in xarray format</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="qcodes.data.data_array.DataArray.from_xarray">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_xarray</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xarray_dataarray</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">xarray.core.dataarray.DataArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#qcodes.data.data_array.DataArray" title="qcodes.data.data_array.DataArray"><span class="pre">qcodes.data.data_array.DataArray</span></a><a class="reference internal" href="../../_modules/qcodes/data/data_array.html#DataArray.from_xarray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.data_array.DataArray.from_xarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a DataArray from an xarray DataArray</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>array_id</strong> – Array id for the new DataArray. If None, then use the first data variable from the argument</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Created xarray DataArray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="qcodes.data.data_array.data_array_to_xarray_dictionary">
+<code class="sig-prename descclassname"><span class="pre">qcodes.data.data_array.</span></code><code class="sig-name descname"><span class="pre">data_array_to_xarray_dictionary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_array</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#qcodes.data.data_array.DataArray" title="qcodes.data.data_array.DataArray"><span class="pre">qcodes.data.data_array.DataArray</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../../_modules/qcodes/data/data_array.html#data_array_to_xarray_dictionary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.data_array.data_array_to_xarray_dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert DataArray to a dictionary in xarray format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data_array</strong> – The DataArray to convert.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the data in xarray format.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="qcodes.data.data_array.xarray_data_array_dictionary_to_data_array">
+<code class="sig-prename descclassname"><span class="pre">qcodes.data.data_array.</span></code><code class="sig-name descname"><span class="pre">xarray_data_array_dictionary_to_data_array</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_dictionary</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_setpoint</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preset_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/data_array.html#xarray_data_array_dictionary_to_data_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.data_array.xarray_data_array_dictionary_to_data_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert xarray dictionary to a DataArray</p>
+<p>This conversion is for bith the data array and the the internal xarray structure, e.g. the datavars and coords.
+:param array_id: Create the new DataArray with this id
+:param array_dictionary: Data to convert
+:param is_setpoint: Passed to the DataArray constructor
+:param preset_data: If None use the data from the dictionary, otherwise use the specified data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary containing the data in xarray format.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
