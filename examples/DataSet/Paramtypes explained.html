@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.25.0.dev0+97.gfb62181a67
+                0.25.0.dev0+100.g7aad90a09a
               </div>
             
           
@@ -547,7 +547,7 @@ Output logging : True
 Raw input log  : False
 Timestamping   : True
 State          : active
-Qcodes Logfile : /home/runner/.qcodes/logs/210422-5515-qcodes.log
+Qcodes Logfile : /home/runner/.qcodes/logs/210422-5695-qcodes.log
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -566,14 +566,14 @@ Qcodes Logfile : /home/runner/.qcodes/logs/210422-5515-qcodes.log
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Upgrading database; v0 -&gt; v1: : 0it [00:00, ?it/s]
-Upgrading database; v1 -&gt; v2: 100%|██████████| 1/1 [00:00&lt;00:00, 460.71it/s]
+Upgrading database; v1 -&gt; v2: 100%|██████████| 1/1 [00:00&lt;00:00, 385.93it/s]
 Upgrading database; v2 -&gt; v3: : 0it [00:00, ?it/s]
 Upgrading database; v3 -&gt; v4: : 0it [00:00, ?it/s]
-Upgrading database; v4 -&gt; v5: 100%|██████████| 1/1 [00:00&lt;00:00, 549.35it/s]
+Upgrading database; v4 -&gt; v5: 100%|██████████| 1/1 [00:00&lt;00:00, 392.69it/s]
 Upgrading database; v5 -&gt; v6: : 0it [00:00, ?it/s]
-Upgrading database; v6 -&gt; v7: 100%|██████████| 1/1 [00:00&lt;00:00, 379.85it/s]
-Upgrading database; v7 -&gt; v8: 100%|██████████| 1/1 [00:00&lt;00:00, 544.86it/s]
-Upgrading database; v8 -&gt; v9: 100%|██████████| 1/1 [00:00&lt;00:00, 615.54it/s]
+Upgrading database; v6 -&gt; v7: 100%|██████████| 1/1 [00:00&lt;00:00, 202.69it/s]
+Upgrading database; v7 -&gt; v8: 100%|██████████| 1/1 [00:00&lt;00:00, 453.49it/s]
+Upgrading database; v8 -&gt; v9: 100%|██████████| 1/1 [00:00&lt;00:00, 353.98it/s]
 </pre></div></div>
 </div>
 <p>Let us, now, create two dummy instruments to be used in our experiment.</p>
@@ -698,7 +698,7 @@ Upgrading database; v8 -&gt; v9: 100%|██████████| 1/1 [00:00
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Starting experimental run with id: 1.
-Finished run in 0.013 s
+Finished run in 0.020 s
 </pre></div></div>
 </div>
 <p>The data may be retrieved using the <code class="docutils literal notranslate"><span class="pre">get_parameter_data</span></code> method. This function will bring back the data in a way that reflects the datastructure as it is stored.</p>
@@ -717,21 +717,16 @@ Finished run in 0.013 s
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&#39;SA_spectrum&#39;: {&#39;SA_spectrum&#39;: array([[-1.63953810e+00,  2.13898834e+00, -3.08487964e-01,
-           2.43165254e+00, -4.75810195e-01,  1.31451166e+00,
-           2.12299948e+00],
-         [-1.21927164e-01,  9.32766874e-01,  4.70896077e-01,
-          -1.21141261e+00, -6.08341550e-01,  1.53667075e+00,
-           1.42465277e+00],
-         [-1.21184523e-03, -5.85066172e-01,  2.28609187e+00,
-           8.34556408e-02,  9.63140906e-01, -8.81539273e-02,
-          -2.13683111e-02],
-         [ 1.68084772e+00,  1.21068583e+00, -8.46303598e-01,
-           3.79271433e-01, -2.92588690e-01, -7.83533779e-01,
-           3.79478439e-01],
-         [ 1.62471956e+00, -1.23963286e+00, -1.07754070e+00,
-           5.69669432e-01,  1.29870138e+00, -5.97849184e-01,
-           5.28129834e-01]]),
+{&#39;SA_spectrum&#39;: {&#39;SA_spectrum&#39;: array([[-0.15589102,  1.31423683,  0.85200817,  0.11481079, -0.54675694,
+           0.83597675, -0.40006496],
+         [ 0.48292582, -0.93367191, -0.12777006,  0.45711638, -0.51250177,
+          -0.4808594 , -1.16051296],
+         [-0.64239126,  0.10279928,  0.71337869,  0.90416615,  0.69409887,
+          -1.21507199,  0.98889699],
+         [-0.28292816, -0.49319279,  0.82486879,  0.69661395, -0.3316382 ,
+           0.03723213,  1.73851442],
+         [-0.15213611,  0.94320694, -0.79808081,  2.4550724 ,  0.77790127,
+           0.0766218 , -0.09284469]]),
   &#39;dac_ch1&#39;: array([[0. , 0. , 0. , 0. , 0. , 0. , 0. ],
          [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
          [1. , 1. , 1. , 1. , 1. , 1. , 1. ],
@@ -787,7 +782,7 @@ Finished run in 0.013 s
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Starting experimental run with id: 2.
-Finished run in 0.013 s
+Finished run in 0.018 s
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -805,16 +800,16 @@ Finished run in 0.013 s
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&#39;SA_spectrum&#39;: {&#39;SA_spectrum&#39;: array([[ 0.66711313, -0.3070273 , -0.21263063, -1.37678262, -1.06166835,
-           0.2782506 , -0.90393049],
-         [ 2.01722049,  0.69663006, -1.08635156, -1.50620416,  0.31994324,
-           0.20387804,  0.67103868],
-         [-0.70694362,  0.11324432, -0.10112627, -0.23835565, -0.35023159,
-           1.50564938, -0.6872951 ],
-         [-0.75390323, -0.31921647, -0.15667054, -0.82623279, -0.38171594,
-           1.61500531,  0.94267814],
-         [ 0.19374765,  0.08488723,  0.26385536, -0.38956559, -1.7576901 ,
-          -0.57498171, -0.1971743 ]]),
+{&#39;SA_spectrum&#39;: {&#39;SA_spectrum&#39;: array([[ 0.12935766, -0.05341756,  0.54195615,  0.56219503, -0.30566779,
+           0.13566081, -2.38966499],
+         [-1.08940001,  1.16558764, -0.62196218, -0.20416235, -1.08802271,
+           0.00914621, -0.40087655],
+         [-0.37921494, -1.0430335 , -0.2677739 , -1.10158508, -0.34349226,
+           1.04721899, -1.18488297],
+         [-0.24654043, -1.50080255, -0.14040353,  1.64498017, -2.73883722,
+          -1.55587022, -0.53974937],
+         [-2.3753273 , -1.22046714,  0.67696823,  1.27852764,  2.5055702 ,
+          -0.30298303, -0.98942555]]),
   &#39;dac_ch1&#39;: array([[0. , 0. , 0. , 0. , 0. , 0. , 0. ],
          [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
          [1. , 1. , 1. , 1. , 1. , 1. , 1. ],
