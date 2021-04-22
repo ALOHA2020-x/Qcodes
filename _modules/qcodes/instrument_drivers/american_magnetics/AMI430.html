@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.25.0.dev0+89.g9fb42441bb
+                0.25.0.dev0+92.g16204c405b
               </div>
             
           
@@ -170,7 +170,8 @@
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">TypeVar</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> \
+    <span class="n">Sequence</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">cast</span>
 <span class="kn">import</span> <span class="nn">numbers</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 
@@ -630,9 +631,9 @@
 <div class="viewcode-block" id="AMI430_3D"><a class="viewcode-back" href="../../../../api/generated/qcodes.instrument_drivers.american_magnetics.html#qcodes.instrument_drivers.american_magnetics.AMI430.AMI430_3D">[docs]</a><span class="k">class</span> <span class="nc">AMI430_3D</span><span class="p">(</span><span class="n">Instrument</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-                 <span class="n">instrument_x</span><span class="p">:</span> <span class="n">AMI430</span><span class="p">,</span>
-                 <span class="n">instrument_y</span><span class="p">:</span> <span class="n">AMI430</span><span class="p">,</span>
-                 <span class="n">instrument_z</span><span class="p">:</span> <span class="n">AMI430</span><span class="p">,</span>
+                 <span class="n">instrument_x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">AMI430</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+                 <span class="n">instrument_y</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">AMI430</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+                 <span class="n">instrument_z</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">AMI430</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
                  <span class="n">field_limit</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">numbers</span><span class="o">.</span><span class="n">Real</span><span class="p">,</span>
                                     <span class="n">Iterable</span><span class="p">[</span><span class="n">CartesianFieldLimitFunction</span><span class="p">]],</span>
                  <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
@@ -641,16 +642,36 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Name should be a string&quot;</span><span class="p">)</span>
 
-        <span class="n">instruments</span> <span class="o">=</span> <span class="p">[</span><span class="n">instrument_x</span><span class="p">,</span> <span class="n">instrument_y</span><span class="p">,</span> <span class="n">instrument_z</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">instrument</span><span class="p">,</span> <span class="n">arg_name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">instrument_x</span><span class="p">,</span> <span class="n">instrument_y</span><span class="p">,</span> <span class="n">instrument_z</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">&quot;instrument_x&quot;</span><span class="p">,</span> <span class="s2">&quot;instrument_y&quot;</span><span class="p">,</span> <span class="s2">&quot;instrument_z&quot;</span><span class="p">),</span>
+        <span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">instrument</span><span class="p">,</span> <span class="p">(</span><span class="n">AMI430</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Instruments need to be instances of the class AMI430 &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;or be valid names of already instantiated instances &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;of AMI430 class; </span><span class="si">{</span><span class="n">arg_name</span><span class="si">}</span><span class="s2"> argument is &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;neither of those&quot;</span>
+                <span class="p">)</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">instrument</span><span class="p">,</span> <span class="n">AMI430</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">instrument</span> <span class="ow">in</span> <span class="n">instruments</span><span class="p">]):</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Instruments need to be instances &quot;</span>
-                             <span class="s2">&quot;of the class AMI430&quot;</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">find_ami430_with_name</span><span class="p">(</span><span class="n">ami430_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AMI430</span><span class="p">:</span>
+            <span class="n">found_ami430</span> <span class="o">=</span> <span class="n">AMI430</span><span class="o">.</span><span class="n">find_instrument</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">ami430_name</span><span class="p">,</span> <span class="n">instrument_class</span><span class="o">=</span><span class="n">AMI430</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">AMI430</span><span class="p">,</span> <span class="n">found_ami430</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_instrument_x</span> <span class="o">=</span> <span class="n">instrument_x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_instrument_y</span> <span class="o">=</span> <span class="n">instrument_y</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_instrument_z</span> <span class="o">=</span> <span class="n">instrument_z</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_instrument_x</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">instrument_x</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">instrument_x</span><span class="p">,</span> <span class="n">AMI430</span><span class="p">)</span>
+            <span class="k">else</span> <span class="n">find_ami430_with_name</span><span class="p">(</span><span class="n">instrument_x</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_instrument_y</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">instrument_y</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">instrument_y</span><span class="p">,</span> <span class="n">AMI430</span><span class="p">)</span>
+            <span class="k">else</span> <span class="n">find_ami430_with_name</span><span class="p">(</span><span class="n">instrument_y</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_instrument_z</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">instrument_z</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">instrument_z</span><span class="p">,</span> <span class="n">AMI430</span><span class="p">)</span>
+            <span class="k">else</span> <span class="n">find_ami430_with_name</span><span class="p">(</span><span class="n">instrument_z</span><span class="p">)</span>
+        <span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_field_limit</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">CartesianFieldLimitFunction</span><span class="p">]]</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">field_limit</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>

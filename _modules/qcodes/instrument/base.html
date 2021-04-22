@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.25.0.dev0+89.g9fb42441bb
+                0.25.0.dev0+92.g16204c405b
               </div>
             
           
@@ -793,6 +793,8 @@
 <span class="sd">            TypeError: If a specific class was requested but a different</span>
 <span class="sd">                type was found.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_all_instruments</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Instrument with name </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> does not exist&quot;</span><span class="p">)</span>
         <span class="n">ins</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_all_instruments</span><span class="p">[</span><span class="n">name</span><span class="p">]()</span>
 
         <span class="k">if</span> <span class="n">ins</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
