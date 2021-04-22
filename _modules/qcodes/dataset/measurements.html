@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.25.0.dev0+104.g4837f78157
+                0.25.0.dev0+108.g86ae54a667
               </div>
             
           
@@ -717,8 +717,11 @@
 
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Starting experimental run with id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">run_id</span><span class="si">}</span><span class="s1">.&#39;</span>
               <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_log_info</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Starting measurement with guid: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">guid</span><span class="si">}</span><span class="s1">.&#39;</span>
-                 <span class="sa">f</span><span class="s1">&#39; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_log_info</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Starting measurement with guid: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">guid</span><span class="si">}</span><span class="s1">, &#39;</span>
+                 <span class="sa">f</span><span class="s1">&#39;sample_name: &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">sample_name</span><span class="si">}</span><span class="s1">&quot;, &#39;</span>
+                 <span class="sa">f</span><span class="s1">&#39;exp_name: &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">exp_name</span><span class="si">}</span><span class="s1">&quot;, &#39;</span>
+                 <span class="sa">f</span><span class="s1">&#39;ds_name: &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&quot;. &#39;</span>
+                 <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_extra_log_info</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Using background writing: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_write_in_background</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">datasaver</span> <span class="o">=</span> <span class="n">DataSaver</span><span class="p">(</span>
