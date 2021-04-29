@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Changelog for QCoDeS 0.24.0 (Unreleased) &mdash; QCoDeS 0.25.0.dev0 documentation</title>
+  <title>Changelog for QCoDeS 0.25.0 &mdash; QCoDeS 0.25.0.dev0 documentation</title>
   
 
   
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.25.0.dev0+165.ge5926e849f
+                0.25.0.dev0+175.g216d847d30
               </div>
             
           
@@ -107,6 +107,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#new">New:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#improved">Improved:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#improved-drivers">Improved drivers:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#under-the-hood">Under the hood:</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="0.24.0.html">0.24.0</a></li>
@@ -204,7 +205,7 @@
         
           <li><a href="index.html">Changelogs</a> &raquo;</li>
         
-      <li>Changelog for QCoDeS 0.24.0 (Unreleased)</li>
+      <li>Changelog for QCoDeS 0.25.0</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -247,17 +248,19 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="changelog-for-qcodes-0-24-0-unreleased">
-<h1>Changelog for QCoDeS 0.24.0 (Unreleased)<a class="headerlink" href="#changelog-for-qcodes-0-24-0-unreleased" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="changelog-for-qcodes-0-25-0">
+<h1>Changelog for QCoDeS 0.25.0<a class="headerlink" href="#changelog-for-qcodes-0-25-0" title="Permalink to this headline">¶</a></h1>
 <p>The April 2021 release of QCoDeS.</p>
 <div class="section" id="breaking-changes">
 <h2>Breaking Changes:<a class="headerlink" href="#breaking-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><cite>get_data_by_id</cite> no longer returns data for standalone parameters
 if there are no dependent parameters in the dataset. For the same reason
-<cite>plot_by_id</cite> and <cite>plot_dataset</cite> will no longer plot these standalone parameters.</p></li>
-<li><p><cite>xarray</cite> exported data no longer exports extra metadata columns under the <cite>extra_metadata</cite> tag
-since the extra dictionary level prevents exporting to <cite>netcdf</cite></p></li>
+<cite>plot_by_id</cite> and <cite>plot_dataset</cite> will no longer plot these standalone
+parameters. (#2918)</p></li>
+<li><p><cite>xarray</cite> exported data no longer exports extra metadata columns under the
+<cite>extra_metadata</cite> tag since the extra dictionary level prevents exporting to
+<cite>netcdf</cite> (#2934)</p></li>
 </ul>
 </div>
 <div class="section" id="deprecation">
@@ -265,17 +268,58 @@ since the extra dictionary level prevents exporting to <cite>netcdf</cite></p></
 <ul class="simple">
 <li><p><cite>get_data_by_id</cite> and <cite>get_shaped_data_by_runid</cite> are now deprecated. These
 functions now all have better alternatives in the build in <cite>get_parameter_data</cite> as well as <cite>Xarray</cite>
-and <cite>Pandas</cite> exporters.</p></li>
+and <cite>Pandas</cite> exporters. (#2921, #2925)</p></li>
 </ul>
 </div>
 <div class="section" id="new">
 <h2>New:<a class="headerlink" href="#new" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>SP983c Basel IV amplifier remote control driver (#2707)</p></li>
+<li><p>Add support for Keysight 34411A (#2927)</p></li>
+<li><p>Added the functionality of getting guids from multiple run ids and directly
+from database (#2930)</p></li>
+<li><p>NumpyJSONEncoder: Add support for the uncertanties’ UFloat type (#2933)</p></li>
+<li><p>Add conversion between qcodes legacy DataSet and xarray format (#2938)</p></li>
+</ul>
 </div>
 <div class="section" id="improved">
 <h2>Improved:<a class="headerlink" href="#improved" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>plot_dataset: Improved performance by using in memory cache when possible
+to avoid reloading data from disk (#2918)</p></li>
+<li><p>contribution guidelines: remove no longer relevant sections and make the
+sections on naming somewhat less strict (#2937)</p></li>
+<li><p>remove double assignment of dataset variable in example notebook
+of Performing-measurements-using-qcodes-parameters-and-dataset (#2926)</p></li>
+<li><p>Update old driver notebooks (Agilent 34400A) docs (#2377)</p></li>
+<li><p>Update link from NI VISA to Keysight IO Libraries Suite on ‘Getting Started’
+Doc (#2948)</p></li>
+<li><p>Removed ZI UHFLI notebook (#2893)</p></li>
+</ul>
 </div>
 <div class="section" id="improved-drivers">
 <h2>Improved drivers:<a class="headerlink" href="#improved-drivers" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Significant performance improvement in Tektronix5014 driver (#2910)</p></li>
+<li><p>AMI430 3D driver: allow instantiating from names of existing AMI430
+instances, next to from AMI430 instances only  driver (#2949)</p></li>
+<li><p>AMI430 3D driver: add docstring, extra test for initializing from AMI430 by
+name  driver (#2951)</p></li>
+<li><p>Driver sr830 update: Add ChannelTrace class and related parameter
+ch{ch}_datatrace which makes buffered acquisition easier.(#2894)</p></li>
+</ul>
+</div>
+<div class="section" id="under-the-hood">
+<h2>Under the hood:<a class="headerlink" href="#under-the-hood" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Log sample_name, exp_name, dataset name when Measurement starts (#2952)</p></li>
+<li><p>Move private dataset export functions to their own module (#2904)</p></li>
+<li><p>Remove wait time test (#2935)</p></li>
+<li><p>fix(logger): Disable conditionally start logging for Sphinx documentation
+(#2909)</p></li>
+<li><p>Name legacy test datasets (#2950)</p></li>
+<li><p>use python -m pip to upgrade pip in github actions (#2955)</p></li>
+</ul>
 </div>
 </div>
 
