@@ -34,6 +34,8 @@
         <script src="../../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -67,7 +69,7 @@
             
             
               <div class="version">
-                0.25.0+8.g1362b25174
+                0.25.0+10.g1f053a097a
               </div>
             
           
@@ -576,7 +578,7 @@ Output logging : True
 Raw input log  : False
 Timestamping   : True
 State          : active
-Qcodes Logfile : /home/runner/.qcodes/logs/210503-4188-qcodes.log
+Qcodes Logfile : /home/runner/.qcodes/logs/210503-4187-qcodes.log
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -698,10 +700,10 @@ Starting experimental run with id: 2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-([&lt;AxesSubplot:title={&#39;center&#39;:&#39;Run #2, Experiment greco (draco)&#39;}, xlabel=&#39;Voltage (V)&#39;, ylabel=&#39;Time (ks)&#39;&gt;,
-  &lt;AxesSubplot:title={&#39;center&#39;:&#39;Run #2, Experiment greco (draco)&#39;}, xlabel=&#39;Voltage (V)&#39;, ylabel=&#39;Time (ks)&#39;&gt;],
- [&lt;matplotlib.colorbar.Colorbar at 0x7f2bd7def110&gt;,
-  &lt;matplotlib.colorbar.Colorbar at 0x7f2bd7d11910&gt;])
+([&lt;AxesSubplot:title={&#39;center&#39;:&#39;Run #2, Experiment greco (draco)&#39;}, xlabel=&#39;Time (ks)&#39;, ylabel=&#39;Voltage (V)&#39;&gt;,
+  &lt;AxesSubplot:title={&#39;center&#39;:&#39;Run #2, Experiment greco (draco)&#39;}, xlabel=&#39;Time (ks)&#39;, ylabel=&#39;Voltage (V)&#39;&gt;],
+ [&lt;matplotlib.colorbar.Colorbar at 0x7fecbdfb0cd0&gt;,
+  &lt;matplotlib.colorbar.Colorbar at 0x7fecbdf6c910&gt;])
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -745,7 +747,7 @@ Starting experimental run with id: 2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;aaaaaaaa-0000-0000-0000-01793111c5f2&#39;
+&#39;aaaaaaaa-0000-0000-0000-01793115e6c4&#39;
 </pre></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">guid</span></code> is generated when a dataset is created, and is globally unique.</p>
@@ -981,7 +983,7 @@ Starting experimental run with id: 2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1620025918.9732163
+1620026189.5223782
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -999,7 +1001,7 @@ Starting experimental run with id: 2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;2021-05-03 07:11:58&#39;
+&#39;2021-05-03 07:16:29&#39;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1017,7 +1019,7 @@ Starting experimental run with id: 2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1620025920.2732618
+1620026190.8436303
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1035,7 +1037,7 @@ Starting experimental run with id: 2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;2021-05-03 07:12:00&#39;
+&#39;2021-05-03 07:16:30&#39;
 </pre></div></div>
 </div>
 </div>
@@ -1062,12 +1064,12 @@ Starting experimental run with id: 2.
     &#39;full_name&#39;: &#39;force_side&#39;,
     &#39;value&#39;: &#39;dark&#39;,
     &#39;raw_value&#39;: &#39;dark&#39;,
-    &#39;ts&#39;: &#39;2021-05-03 07:11:58&#39;,
+    &#39;ts&#39;: &#39;2021-05-03 07:16:29&#39;,
     &#39;label&#39;: &#39;Side of the Force&#39;,
-    &#39;post_delay&#39;: 0,
     &#39;inter_delay&#39;: 0,
     &#39;name&#39;: &#39;force_side&#39;,
-    &#39;unit&#39;: &#39;&#39;}},
+    &#39;unit&#39;: &#39;&#39;,
+    &#39;post_delay&#39;: 0}},
   &#39;components&#39;: {},
   &#39;config&#39;: None}}
 </pre></div></div>
@@ -1088,7 +1090,7 @@ Starting experimental run with id: 2.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;{&#34;station&#34;: {&#34;instruments&#34;: {}, &#34;parameters&#34;: {&#34;force_side&#34;: {&#34;__class__&#34;: &#34;qcodes.instrument.parameter.Parameter&#34;, &#34;full_name&#34;: &#34;force_side&#34;, &#34;value&#34;: &#34;dark&#34;, &#34;raw_value&#34;: &#34;dark&#34;, &#34;ts&#34;: &#34;2021-05-03 07:11:58&#34;, &#34;label&#34;: &#34;Side of the Force&#34;, &#34;post_delay&#34;: 0, &#34;inter_delay&#34;: 0, &#34;name&#34;: &#34;force_side&#34;, &#34;unit&#34;: &#34;&#34;}}, &#34;components&#34;: {}, &#34;config&#34;: null}}&#39;
+&#39;{&#34;station&#34;: {&#34;instruments&#34;: {}, &#34;parameters&#34;: {&#34;force_side&#34;: {&#34;__class__&#34;: &#34;qcodes.instrument.parameter.Parameter&#34;, &#34;full_name&#34;: &#34;force_side&#34;, &#34;value&#34;: &#34;dark&#34;, &#34;raw_value&#34;: &#34;dark&#34;, &#34;ts&#34;: &#34;2021-05-03 07:16:29&#34;, &#34;label&#34;: &#34;Side of the Force&#34;, &#34;inter_delay&#34;: 0, &#34;name&#34;: &#34;force_side&#34;, &#34;unit&#34;: &#34;&#34;, &#34;post_delay&#34;: 0}}, &#34;components&#34;: {}, &#34;config&#34;: null}}&#39;
 </pre></div></div>
 </div>
 </div>
