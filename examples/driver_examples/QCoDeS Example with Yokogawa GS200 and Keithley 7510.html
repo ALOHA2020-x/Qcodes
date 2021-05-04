@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                0.25.0+14.g5bc4a45732
+                0.25.0+16.g92cfaf7e73
               </div>
             
           
@@ -594,7 +594,7 @@ Connected to: KEITHLEY INSTRUMENTS DMM7510 (serial:04450961, firmware:1.6.7d) in
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">gs</span><span class="o">.</span><span class="n">source_mode</span><span class="p">(</span><span class="s1">&#39;CURR&#39;</span><span class="p">)</span>
 <span class="n">gs</span><span class="o">.</span><span class="n">current</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">gs</span><span class="o">.</span><span class="n">current_range</span><span class="p">(</span><span class="o">.</span><span class="mi">01</span><span class="p">)</span>
+<span class="n">gs</span><span class="o">.</span><span class="n">current_range</span><span class="p">(</span><span class="mf">.01</span><span class="p">)</span>
 <span class="n">gs</span><span class="o">.</span><span class="n">voltage_limit</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -718,7 +718,7 @@ By default, the setting for BNC trigger out is &#34;TRIG&#34;.
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">gs</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+<span></span><span class="n">gs</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="mf">.1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The interval time is </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">gs</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">interval</span><span class="p">())</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -767,7 +767,7 @@ Text(0, 0.5, &#39;source current(A)&#39;)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">gs</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">slope</span><span class="p">(</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+<span></span><span class="n">gs</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">slope</span><span class="p">(</span><span class="mf">.1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The slope time is </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">gs</span><span class="o">.</span><span class="n">program</span><span class="o">.</span><span class="n">slope</span><span class="p">())</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
