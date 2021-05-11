@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -67,7 +70,7 @@
             
             
               <div class="version">
-                0.25.0+136.g14e99d45e7
+                0.25.0+140.ga0e665ec61
               </div>
             
           
@@ -267,8 +270,8 @@ as well as files, since we’re allowing “locations” to be directories
 or files.</p></li>
 </ul>
 <dl class="py class">
-<dt id="qcodes.data.io.DiskIO">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">qcodes.data.io.</span></code><code class="sig-name descname"><span class="pre">DiskIO</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_location</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.io.DiskIO">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcodes.data.io.</span></span><span class="sig-name descname"><span class="pre">DiskIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_location</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Simple IO object to wrap disk operations with a custom base location.</p>
 <p>Also accepts both forward and backward slashes at any point, and
@@ -282,8 +285,8 @@ affect data paths.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="qcodes.data.io.DiskIO.open">
-<code class="sig-name descname"><span class="pre">open</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.open" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.io.DiskIO.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mimic the interface of the built in open context manager.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -301,8 +304,8 @@ to force all IO managers to support others.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.io.DiskIO.to_path">
-<code class="sig-name descname"><span class="pre">to_path</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.to_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.to_path" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.io.DiskIO.to_path">
+<span class="sig-name descname"><span class="pre">to_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.to_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.to_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a location string into a path on the local file system.</p>
 <p>For DiskIO this just fixes slashes and prepends the base location,
 doing nothing active with the file. But for other io managers that
@@ -323,8 +326,8 @@ a file within it.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.io.DiskIO.to_location">
-<code class="sig-name descname"><span class="pre">to_location</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.to_location"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.to_location" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.io.DiskIO.to_location">
+<span class="sig-name descname"><span class="pre">to_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.to_location"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.to_location" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a local filesystem path into a location string.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -340,26 +343,26 @@ a file within it.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.io.DiskIO.__repr__">
-<code class="sig-name descname"><span class="pre">__repr__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.__repr__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.io.DiskIO.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.__repr__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show the base location in the repr.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.io.DiskIO.join">
-<code class="sig-name descname"><span class="pre">join</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.join"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.join" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.io.DiskIO.join">
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.join"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.join" title="Permalink to this definition">¶</a></dt>
 <dd><p>Context-dependent os.path.join for this io manager.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.io.DiskIO.isfile">
-<code class="sig-name descname"><span class="pre">isfile</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.isfile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.isfile" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.io.DiskIO.isfile">
+<span class="sig-name descname"><span class="pre">isfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.isfile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.isfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check whether this location matches a file.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.io.DiskIO.list">
-<code class="sig-name descname"><span class="pre">list</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxdepth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_dirs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.list" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.io.DiskIO.list">
+<span class="sig-name descname"><span class="pre">list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxdepth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_dirs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all files that match location.</p>
 <p>This is either files whose names match up to an arbitrary extension,
 or any files within an exactly matching directory name.</p>
@@ -382,14 +385,14 @@ relative to our base_location.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.io.DiskIO.remove">
-<code class="sig-name descname"><span class="pre">remove</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.remove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.remove" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.io.DiskIO.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.remove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.remove" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete a file or folder and prune the directory tree.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.io.DiskIO.remove_all">
-<code class="sig-name descname"><span class="pre">remove_all</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.remove_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.remove_all" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.io.DiskIO.remove_all">
+<span class="sig-name descname"><span class="pre">remove_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/io.html#DiskIO.remove_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.io.DiskIO.remove_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete all files/directories in the dataset at this location.</p>
 <p>Afterward prunes the directory tree.</p>
 </dd></dl>

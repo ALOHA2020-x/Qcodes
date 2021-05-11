@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,13 +31,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -69,7 +72,7 @@
             
             
               <div class="version">
-                0.25.0+136.g14e99d45e7
+                0.25.0+140.ga0e665ec61
               </div>
             
           
@@ -609,7 +612,7 @@ Output logging : True
 Raw input log  : False
 Timestamping   : True
 State          : active
-Qcodes Logfile : /home/runner/.qcodes/logs/210511-9244-qcodes.log
+Qcodes Logfile : /home/runner/.qcodes/logs/210511-9333-qcodes.log
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -673,7 +676,7 @@ Qcodes Logfile : /home/runner/.qcodes/logs/210511-9244-qcodes.log
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-8.524258931477865e-05
+0.0001734336217244466
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -691,7 +694,7 @@ Qcodes Logfile : /home/runner/.qcodes/logs/210511-9244-qcodes.log
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.00022482474644978842
+0.00038781166076660154
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -709,7 +712,7 @@ Qcodes Logfile : /home/runner/.qcodes/logs/210511-9244-qcodes.log
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.0003478328386942546
+0.0005949894587198893
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -727,7 +730,7 @@ Qcodes Logfile : /home/runner/.qcodes/logs/210511-9244-qcodes.log
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.00047016143798828125
+0.0008278369903564453
 </pre></div></div>
 </div>
 <p>As you can see, the field is now ramped in the background with the specified ramp rate. Now, let’s try to create a measurement that uses this ability, and ramps the field in the background while measuring:</p>
@@ -903,7 +906,7 @@ combined(field=0.0, ramp_rate=10.0)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-5.9941558837890625
+5.987546205520631
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -923,7 +926,7 @@ combined(field=0.0, ramp_rate=10.0)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-4.986180782318116
+4.972696304321289
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -943,7 +946,7 @@ combined(field=0.0, ramp_rate=10.0)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-3.9739806652069096
+3.9360792636871342
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

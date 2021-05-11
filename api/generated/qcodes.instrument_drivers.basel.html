@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -67,7 +70,7 @@
             
             
               <div class="version">
-                0.25.0+136.g14e99d45e7
+                0.25.0+140.ga0e665ec61
               </div>
             
           
@@ -243,8 +246,8 @@
 <div class="section" id="module-qcodes.instrument_drivers.basel.sp983c">
 <span id="qcodes-instrument-drivers-basel-sp983c-module"></span><h2>qcodes.instrument_drivers.basel.sp983c module<a class="headerlink" href="#module-qcodes.instrument_drivers.basel.sp983c" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">qcodes.instrument_drivers.basel.sp983c.</span></code><code class="sig-name descname"><span class="pre">SP983C</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_offset_voltage</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../parameters/parameter.html#qcodes.instrument.parameter.Parameter" title="qcodes.instrument.parameter.Parameter"><span class="pre">qcodes.instrument.parameter.Parameter</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/instrument_drivers/basel/sp983c.html#SP983C"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcodes.instrument_drivers.basel.sp983c.</span></span><span class="sig-name descname"><span class="pre">SP983C</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_offset_voltage</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../parameters/parameter.html#qcodes.instrument.parameter.Parameter" title="qcodes.instrument.parameter.Parameter"><span class="pre">qcodes.instrument.parameter.Parameter</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/instrument_drivers/basel/sp983c.html#SP983C"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">qcodes.instrument.base.Instrument</span></code></a></p>
 <p>A virtual driver for the Basel SP 983 and SP 983C current to voltage
 converter.</p>
@@ -272,8 +275,8 @@ connected to the “Offset Input Volgate” connector of the SP983C.</p></li>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.get_idn">
-<code class="sig-name descname"><span class="pre">get_idn</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../../_modules/qcodes/instrument_drivers/basel/sp983c.html#SP983C.get_idn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.get_idn" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.get_idn">
+<span class="sig-name descname"><span class="pre">get_idn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../../_modules/qcodes/instrument_drivers/basel/sp983c.html#SP983C.get_idn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.get_idn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse a standard VISA <code class="docutils literal notranslate"><span class="pre">*IDN?</span></code> response into an ID dict.</p>
 <p>Even though this is the VISA standard, it applies to various other
 types as well, such as IPInstruments, so it is included here in the
@@ -291,32 +294,32 @@ as well.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.__del__">
-<code class="sig-name descname"><span class="pre">__del__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.__del__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.__del__">
+<span class="sig-name descname"><span class="pre">__del__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.__del__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Close the instrument and remove its instance record.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.__getitem__">
-<code class="sig-name descname"><span class="pre">__getitem__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">…</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../parameters/parameter.html#qcodes.instrument.parameter.Parameter" title="qcodes.instrument.parameter.Parameter"><span class="pre">qcodes.instrument.parameter.Parameter</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../parameters/parameter.html#qcodes.instrument.parameter.Parameter" title="qcodes.instrument.parameter.Parameter"><span class="pre">qcodes.instrument.parameter.Parameter</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.__getitem__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delegate instrument[‘name’] to parameter or function ‘name’.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.__getstate__">
-<code class="sig-name descname"><span class="pre">__getstate__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.__getstate__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.__getstate__">
+<span class="sig-name descname"><span class="pre">__getstate__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.__getstate__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prevent pickling instruments, and give a nice error message.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.__repr__">
-<code class="sig-name descname"><span class="pre">__repr__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.__repr__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.__repr__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simplified repr giving just the class and name.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.add_function">
-<code class="sig-name descname"><span class="pre">add_function</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.add_function" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.add_function">
+<span class="sig-name descname"><span class="pre">add_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.add_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bind one <code class="docutils literal notranslate"><span class="pre">Function</span></code> to this instrument.</p>
 <p>Instrument subclasses can call this repeatedly in their <code class="docutils literal notranslate"><span class="pre">__init__</span></code>
 for every real function of the instrument.</p>
@@ -342,8 +345,8 @@ shortcut methods: <code class="docutils literal notranslate"><span class="pre">i
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.add_parameter">
-<code class="sig-name descname"><span class="pre">add_parameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name:</span> <span class="pre">str</span></em>, <em class="sig-param"><span class="pre">parameter_class:</span> <span class="pre">type</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'qcodes.instrument.parameter.Parameter'&gt;</span></em>, <em class="sig-param"><span class="pre">**kwargs:</span> <span class="pre">Any</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.add_parameter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.add_parameter">
+<span class="sig-name descname"><span class="pre">add_parameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name:</span> <span class="pre">str</span></em>, <em class="sig-param"><span class="pre">parameter_class:</span> <span class="pre">type</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'qcodes.instrument.parameter.Parameter'&gt;</span></em>, <em class="sig-param"><span class="pre">**kwargs:</span> <span class="pre">Any</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.add_parameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bind one Parameter to this instrument.</p>
 <p>Instrument subclasses can call this repeatedly in their <code class="docutils literal notranslate"><span class="pre">__init__</span></code>
 for every real parameter of the instrument.</p>
@@ -368,8 +371,8 @@ out of any class. Default <a class="reference internal" href="../parameters/para
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.add_submodule">
-<code class="sig-name descname"><span class="pre">add_submodule</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">submodule</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">InstrumentBase</span><span class="p"><span class="pre">,</span> </span><span class="pre">ChannelList</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.add_submodule" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.add_submodule">
+<span class="sig-name descname"><span class="pre">add_submodule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">submodule</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">InstrumentBase</span><span class="p"><span class="pre">,</span> </span><span class="pre">ChannelList</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.add_submodule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bind one submodule to this instrument.</p>
 <p>Instrument subclasses can call this repeatedly in their <code class="docutils literal notranslate"><span class="pre">__init__</span></code>
 method for every submodule of the instrument.</p>
@@ -398,17 +401,17 @@ addressed.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.ancestors">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ancestors</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.ancestors" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.ancestors">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ancestors</span></span><em class="property"><span class="pre">:</span> <span class="pre">List[qcodes.instrument.base.InstrumentBase]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.ancestors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of instruments, starting from the current instrument
 and following to the parent instrument and the parents parent
 instrument until the root instrument is reached.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.ask">
-<code class="sig-name descname"><span class="pre">ask</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.ask" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.ask">
+<span class="sig-name descname"><span class="pre">ask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.ask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a command string to the hardware and return a response.</p>
 <p>Subclasses that transform <code class="docutils literal notranslate"><span class="pre">cmd</span></code> should override this method, and in
 it call <code class="docutils literal notranslate"><span class="pre">super().ask(new_cmd)</span></code>. Subclasses that define a new
@@ -428,8 +431,8 @@ hardware communication should instead override <code class="docutils literal not
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.ask_raw">
-<code class="sig-name descname"><span class="pre">ask_raw</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.ask_raw" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.ask_raw">
+<span class="sig-name descname"><span class="pre">ask_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.ask_raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Low level method to write to the hardware and return a response.</p>
 <p>Subclasses that define a new hardware communication should override
 this method. Subclasses that transform <code class="docutils literal notranslate"><span class="pre">cmd</span></code> should instead
@@ -442,8 +445,8 @@ override <code class="docutils literal notranslate"><span class="pre">ask</span>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.call">
-<code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shortcut for calling a function from its name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -459,16 +462,16 @@ override <code class="docutils literal notranslate"><span class="pre">ask</span>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.close">
-<code class="sig-name descname"><span class="pre">close</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.close" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>Irreversibly stop this instrument and free its resources.</p>
 <p>Subclasses should override this if they have other specific
 resources to close.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.close_all">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">close_all</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.close_all" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.close_all">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">close_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.close_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to close all instruments registered in
 <code class="docutils literal notranslate"><span class="pre">_all_instruments</span></code> This is handy for use with atexit to
 ensure that all instruments are closed when a python session is
@@ -480,8 +483,8 @@ closed.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.connect_message">
-<code class="sig-name descname"><span class="pre">connect_message</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idn_param</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'IDN'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(in Python v3.7)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.connect_message" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.connect_message">
+<span class="sig-name descname"><span class="pre">connect_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idn_param</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'IDN'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(in Python v3.7)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.connect_message" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print a standard message on initial connection to an instrument.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -496,24 +499,24 @@ Default is <code class="docutils literal notranslate"><span class="pre">self._t0
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.delegate_attr_dicts">
-<code class="sig-name descname"><span class="pre">delegate_attr_dicts</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">['parameters',</span> <span class="pre">'functions',</span> <span class="pre">'submodules']</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.delegate_attr_dicts" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.delegate_attr_dicts">
+<span class="sig-name descname"><span class="pre">delegate_attr_dicts</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">['parameters',</span> <span class="pre">'functions',</span> <span class="pre">'submodules']</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.delegate_attr_dicts" title="Permalink to this definition">¶</a></dt>
 <dd><p>A list of names (strings) of dictionaries
 which are (or will be) attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code>, whose keys should
 be treated as attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.delegate_attr_objects">
-<code class="sig-name descname"><span class="pre">delegate_attr_objects</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.delegate_attr_objects" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.delegate_attr_objects">
+<span class="sig-name descname"><span class="pre">delegate_attr_objects</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.delegate_attr_objects" title="Permalink to this definition">¶</a></dt>
 <dd><p>A list of names (strings) of objects
 which are (or will be) attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code>, whose attributes
 should be passed through to <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.exist">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">exist</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument_class</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#type" title="(in Python v3.7)"><span class="pre">type</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.exist" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.exist">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">exist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument_class</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#type" title="(in Python v3.7)"><span class="pre">type</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.exist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if an instrument with a given names exists (i.e. is already
 instantiated).</p>
 <dl class="field-list simple">
@@ -527,8 +530,8 @@ instantiated).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.find_instrument">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">find_instrument</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument_class</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#type" title="(in Python v3.7)"><span class="pre">type</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.find_instrument" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.find_instrument">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">find_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument_class</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#type" title="(in Python v3.7)"><span class="pre">type</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.find_instrument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find an existing instrument by name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -551,14 +554,14 @@ instantiated).</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.full_name">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">full_name</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.full_name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.full_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">full_name</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.full_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.get">
-<code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.get" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shortcut for getting a parameter from its name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -571,8 +574,8 @@ instantiated).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.instances">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">instances</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.instances" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.instances">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">instances</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.instances" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all currently defined instances of this instrument class.</p>
 <p>You can use this to get the objects back if you lose track of them,
 and it’s also used by the test system to find objects to test against.</p>
@@ -584,8 +587,8 @@ and it’s also used by the test system to find objects to test against.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.is_valid">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">is_valid</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instr_instance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.is_valid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.is_valid">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instr_instance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.is_valid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if a given instance of an instrument is valid: if an instrument
 has been closed, its instance is not longer a “valid” instrument.</p>
 <dl class="field-list simple">
@@ -596,8 +599,8 @@ has been closed, its instance is not longer a “valid” instrument.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.load_metadata">
-<code class="sig-name descname"><span class="pre">load_metadata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.load_metadata" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.load_metadata">
+<span class="sig-name descname"><span class="pre">load_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.load_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load metadata into this classes metadata dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -606,34 +609,34 @@ has been closed, its instance is not longer a “valid” instrument.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.name">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of the instrument</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.name_parts">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name_parts</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.name_parts" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.name_parts">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name_parts</span></span><em class="property"><span class="pre">:</span> <span class="pre">List[str]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.name_parts" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.omit_delegate_attrs">
-<code class="sig-name descname"><span class="pre">omit_delegate_attrs</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.omit_delegate_attrs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.omit_delegate_attrs">
+<span class="sig-name descname"><span class="pre">omit_delegate_attrs</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.omit_delegate_attrs" title="Permalink to this definition">¶</a></dt>
 <dd><p>A list of attribute names (strings)
 to <em>not</em> delegate to any other dictionary or object.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.parent">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">parent</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.parent" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.parent">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">parent</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional[qcodes.instrument.base.InstrumentBase]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.parent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the parent instrument. By default this is <code class="docutils literal notranslate"><span class="pre">None</span></code>.
 Any SubInstrument should subclass this to return the parent instrument.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.print_readable_snapshot">
-<code class="sig-name descname"><span class="pre">print_readable_snapshot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_chars</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">80</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.print_readable_snapshot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.print_readable_snapshot">
+<span class="sig-name descname"><span class="pre">print_readable_snapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_chars</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">80</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.print_readable_snapshot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints a readable version of the snapshot.
 The readable snapshot includes the name, value and unit of each
 parameter.
@@ -654,8 +657,8 @@ Defaults to 80 to be consistent with default terminal width.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.record_instance">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">record_instance</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.record_instance" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.record_instance">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">record_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.record_instance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Record (a weak ref to) an instance in a class’s instance list.</p>
 <p>Also records the instance in list of <em>all</em> instruments, and verifies
 that there are no other instruments with the same name.</p>
@@ -670,8 +673,8 @@ that there are no other instruments with the same name.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.remove_instance">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">remove_instance</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.remove_instance" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.remove_instance">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">remove_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.remove_instance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a particular instance from the record.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -680,14 +683,14 @@ that there are no other instruments with the same name.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.root_instrument">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">root_instrument</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.root_instrument" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.root_instrument">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">root_instrument</span></span><em class="property"><span class="pre">:</span> <span class="pre">qcodes.instrument.base.InstrumentBase</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.root_instrument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.set">
-<code class="sig-name descname"><span class="pre">set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.set" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shortcut for setting a parameter from its name and new value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -700,19 +703,19 @@ that there are no other instruments with the same name.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.shared_kwargs">
-<code class="sig-name descname"><span class="pre">shared_kwargs</span></code><em class="property"> <span class="pre">=</span> <span class="pre">()</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.shared_kwargs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.shared_kwargs">
+<span class="sig-name descname"><span class="pre">shared_kwargs</span></span><em class="property"> <span class="pre">=</span> <span class="pre">()</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.shared_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.short_name">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">short_name</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.short_name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.short_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">short_name</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.short_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Short name of the instrument</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.snapshot">
-<code class="sig-name descname"><span class="pre">snapshot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.snapshot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.snapshot">
+<span class="sig-name descname"><span class="pre">snapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.snapshot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorate a snapshot dictionary with metadata.
 DO NOT override this method if you want metadata in the snapshot
 instead, override <a class="reference internal" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.snapshot_base" title="qcodes.instrument_drivers.basel.sp983c.SP983C.snapshot_base"><code class="xref py py-meth docutils literal notranslate"><span class="pre">snapshot_base()</span></code></a>.</p>
@@ -727,8 +730,8 @@ instead, override <a class="reference internal" href="#qcodes.instrument_drivers
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.snapshot_base">
-<code class="sig-name descname"><span class="pre">snapshot_base</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_to_skip_update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.snapshot_base" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.snapshot_base">
+<span class="sig-name descname"><span class="pre">snapshot_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_to_skip_update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.snapshot_base" title="Permalink to this definition">¶</a></dt>
 <dd><p>State of the instrument as a JSON-compatible dict (everything that
 the custom JSON encoder class
 <a class="reference internal" href="../utils/helpers.html#qcodes.utils.helpers.NumpyJSONEncoder" title="qcodes.utils.helpers.NumpyJSONEncoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">qcodes.utils.helpers.NumpyJSONEncoder</span></code></a>
@@ -758,8 +761,8 @@ update of certain parameters in all snapshots, use the
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.validate_status">
-<code class="sig-name descname"><span class="pre">validate_status</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.validate_status" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.validate_status">
+<span class="sig-name descname"><span class="pre">validate_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.validate_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validate the values of all gettable parameters</p>
 <p>The validation is done for all parameters that have both a get and
 set method.</p>
@@ -772,8 +775,8 @@ parameters that are being check is printed.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.write">
-<code class="sig-name descname"><span class="pre">write</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.write" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a command string with NO response to the hardware.</p>
 <p>Subclasses that transform <code class="docutils literal notranslate"><span class="pre">cmd</span></code> should override this method, and in
 it call <code class="docutils literal notranslate"><span class="pre">super().write(new_cmd)</span></code>. Subclasses that define a new
@@ -790,8 +793,8 @@ hardware communication should instead override <code class="docutils literal not
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.write_raw">
-<code class="sig-name descname"><span class="pre">write_raw</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.write_raw" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.write_raw">
+<span class="sig-name descname"><span class="pre">write_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.write_raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Low level method to write a command string to the hardware.</p>
 <p>Subclasses that define a new hardware communication should override
 this method. Subclasses that transform <code class="docutils literal notranslate"><span class="pre">cmd</span></code> should instead
@@ -804,30 +807,30 @@ override <code class="docutils literal notranslate"><span class="pre">write</spa
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.parameters">
-<code class="sig-name descname"><span class="pre">parameters</span></code><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">_BaseParameter</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.parameters" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">_BaseParameter</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>All the parameters supported by this instrument.
 Usually populated via <a class="reference internal" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.add_parameter" title="qcodes.instrument_drivers.basel.sp983c.SP983C.add_parameter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_parameter()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.functions">
-<code class="sig-name descname"><span class="pre">functions</span></code><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Function</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.functions" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.functions">
+<span class="sig-name descname"><span class="pre">functions</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Function</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.functions" title="Permalink to this definition">¶</a></dt>
 <dd><p>All the functions supported by this
 instrument. Usually populated via <a class="reference internal" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.add_function" title="qcodes.instrument_drivers.basel.sp983c.SP983C.add_function"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_function()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.submodules">
-<code class="sig-name descname"><span class="pre">submodules</span></code><em class="property"><span class="pre">:</span> <span class="pre">Dict[str,</span> <span class="pre">Union[‘InstrumentBase’,</span> <span class="pre">‘ChannelList’]]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.submodules" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.submodules">
+<span class="sig-name descname"><span class="pre">submodules</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict[str,</span> <span class="pre">Union[‘InstrumentBase’,</span> <span class="pre">‘ChannelList’]]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.submodules" title="Permalink to this definition">¶</a></dt>
 <dd><p>All the submodules of this instrument
 such as channel lists or logical groupings of parameters.
 Usually populated via <a class="reference internal" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.add_submodule" title="qcodes.instrument_drivers.basel.sp983c.SP983C.add_submodule"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_submodule()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c.SP983C.log">
-<code class="sig-name descname"><span class="pre">log</span></code><em class="property"><span class="pre">:</span> <span class="pre">InstrumentLoggerAdapter</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.log" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c.SP983C.log">
+<span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="pre">:</span> <span class="pre">InstrumentLoggerAdapter</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c.SP983C.log" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -836,8 +839,8 @@ Usually populated via <a class="reference internal" href="#qcodes.instrument_dri
 <div class="section" id="module-qcodes.instrument_drivers.basel.sp983c_remote">
 <span id="qcodes-instrument-drivers-basel-sp983c-remote-module"></span><h2>qcodes.instrument_drivers.basel.sp983c_remote module<a class="headerlink" href="#module-qcodes.instrument_drivers.basel.sp983c_remote" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">qcodes.instrument_drivers.basel.sp983c_remote.</span></code><code class="sig-name descname"><span class="pre">SP983A</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_offset_voltage</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../parameters/parameter.html#qcodes.instrument.parameter.Parameter" title="qcodes.instrument.parameter.Parameter"><span class="pre">qcodes.instrument.parameter.Parameter</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminator</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'\r\n'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/instrument_drivers/basel/sp983c_remote.html#SP983A"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcodes.instrument_drivers.basel.sp983c_remote.</span></span><span class="sig-name descname"><span class="pre">SP983A</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_offset_voltage</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../parameters/parameter.html#qcodes.instrument.parameter.Parameter" title="qcodes.instrument.parameter.Parameter"><span class="pre">qcodes.instrument.parameter.Parameter</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminator</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'\r\n'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/instrument_drivers/basel/sp983c_remote.html#SP983A"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../instrument/visa.html#qcodes.instrument.visa.VisaInstrument" title="qcodes.instrument.visa.VisaInstrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">qcodes.instrument.visa.VisaInstrument</span></code></a></p>
 <p>A driver for Basel Preamp’s (SP983C) Remote Instrument - Model SP983A.</p>
 <dl class="field-list simple">
@@ -855,8 +858,8 @@ connected to the “Offset Input Volgate” connector of the SP983C.</p></li>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.get_idn">
-<code class="sig-name descname"><span class="pre">get_idn</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../../_modules/qcodes/instrument_drivers/basel/sp983c_remote.html#SP983A.get_idn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.get_idn" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.get_idn">
+<span class="sig-name descname"><span class="pre">get_idn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../../_modules/qcodes/instrument_drivers/basel/sp983c_remote.html#SP983A.get_idn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.get_idn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse a standard VISA <code class="docutils literal notranslate"><span class="pre">*IDN?</span></code> response into an ID dict.</p>
 <p>Even though this is the VISA standard, it applies to various other
 types as well, such as IPInstruments, so it is included here in the
@@ -874,32 +877,32 @@ as well.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__del__">
-<code class="sig-name descname"><span class="pre">__del__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__del__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__del__">
+<span class="sig-name descname"><span class="pre">__del__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__del__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Close the instrument and remove its instance record.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__getitem__">
-<code class="sig-name descname"><span class="pre">__getitem__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">…</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../parameters/parameter.html#qcodes.instrument.parameter.Parameter" title="qcodes.instrument.parameter.Parameter"><span class="pre">qcodes.instrument.parameter.Parameter</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../parameters/parameter.html#qcodes.instrument.parameter.Parameter" title="qcodes.instrument.parameter.Parameter"><span class="pre">qcodes.instrument.parameter.Parameter</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__getitem__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delegate instrument[‘name’] to parameter or function ‘name’.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__getstate__">
-<code class="sig-name descname"><span class="pre">__getstate__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__getstate__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__getstate__">
+<span class="sig-name descname"><span class="pre">__getstate__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__getstate__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prevent pickling instruments, and give a nice error message.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__repr__">
-<code class="sig-name descname"><span class="pre">__repr__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__repr__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.__repr__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simplified repr giving just the class and name.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_function">
-<code class="sig-name descname"><span class="pre">add_function</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_function" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_function">
+<span class="sig-name descname"><span class="pre">add_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bind one <code class="docutils literal notranslate"><span class="pre">Function</span></code> to this instrument.</p>
 <p>Instrument subclasses can call this repeatedly in their <code class="docutils literal notranslate"><span class="pre">__init__</span></code>
 for every real function of the instrument.</p>
@@ -925,8 +928,8 @@ shortcut methods: <code class="docutils literal notranslate"><span class="pre">i
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_parameter">
-<code class="sig-name descname"><span class="pre">add_parameter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name:</span> <span class="pre">str</span></em>, <em class="sig-param"><span class="pre">parameter_class:</span> <span class="pre">type</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'qcodes.instrument.parameter.Parameter'&gt;</span></em>, <em class="sig-param"><span class="pre">**kwargs:</span> <span class="pre">Any</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_parameter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_parameter">
+<span class="sig-name descname"><span class="pre">add_parameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name:</span> <span class="pre">str</span></em>, <em class="sig-param"><span class="pre">parameter_class:</span> <span class="pre">type</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'qcodes.instrument.parameter.Parameter'&gt;</span></em>, <em class="sig-param"><span class="pre">**kwargs:</span> <span class="pre">Any</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_parameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bind one Parameter to this instrument.</p>
 <p>Instrument subclasses can call this repeatedly in their <code class="docutils literal notranslate"><span class="pre">__init__</span></code>
 for every real parameter of the instrument.</p>
@@ -951,8 +954,8 @@ out of any class. Default <a class="reference internal" href="../parameters/para
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_submodule">
-<code class="sig-name descname"><span class="pre">add_submodule</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">submodule</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">InstrumentBase</span><span class="p"><span class="pre">,</span> </span><span class="pre">ChannelList</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_submodule" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_submodule">
+<span class="sig-name descname"><span class="pre">add_submodule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">submodule</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">InstrumentBase</span><span class="p"><span class="pre">,</span> </span><span class="pre">ChannelList</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_submodule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bind one submodule to this instrument.</p>
 <p>Instrument subclasses can call this repeatedly in their <code class="docutils literal notranslate"><span class="pre">__init__</span></code>
 method for every submodule of the instrument.</p>
@@ -981,17 +984,17 @@ addressed.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.ancestors">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ancestors</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.ancestors" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.ancestors">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ancestors</span></span><em class="property"><span class="pre">:</span> <span class="pre">List[qcodes.instrument.base.InstrumentBase]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.ancestors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of instruments, starting from the current instrument
 and following to the parent instrument and the parents parent
 instrument until the root instrument is reached.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.ask">
-<code class="sig-name descname"><span class="pre">ask</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.ask" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.ask">
+<span class="sig-name descname"><span class="pre">ask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.ask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a command string to the hardware and return a response.</p>
 <p>Subclasses that transform <code class="docutils literal notranslate"><span class="pre">cmd</span></code> should override this method, and in
 it call <code class="docutils literal notranslate"><span class="pre">super().ask(new_cmd)</span></code>. Subclasses that define a new
@@ -1011,8 +1014,8 @@ hardware communication should instead override <code class="docutils literal not
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.ask_raw">
-<code class="sig-name descname"><span class="pre">ask_raw</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.ask_raw" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.ask_raw">
+<span class="sig-name descname"><span class="pre">ask_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.ask_raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Low-level interface to <code class="docutils literal notranslate"><span class="pre">visa_handle.ask</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1028,8 +1031,8 @@ hardware communication should instead override <code class="docutils literal not
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.call">
-<code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shortcut for calling a function from its name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1045,8 +1048,8 @@ hardware communication should instead override <code class="docutils literal not
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.check_error">
-<code class="sig-name descname"><span class="pre">check_error</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ret_code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.check_error" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.check_error">
+<span class="sig-name descname"><span class="pre">check_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ret_code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.check_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default error checking, raises an error if return code <code class="docutils literal notranslate"><span class="pre">!=0</span></code>.
 Does not differentiate between warnings or specific error messages.
 Override this function in your driver if you want to add specific
@@ -1064,14 +1067,14 @@ error messages.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.close">
-<code class="sig-name descname"><span class="pre">close</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.close" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>Disconnect and irreversibly tear down the instrument.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.close_all">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">close_all</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.close_all" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.close_all">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">close_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.close_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to close all instruments registered in
 <code class="docutils literal notranslate"><span class="pre">_all_instruments</span></code> This is handy for use with atexit to
 ensure that all instruments are closed when a python session is
@@ -1083,8 +1086,8 @@ closed.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.connect_message">
-<code class="sig-name descname"><span class="pre">connect_message</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idn_param</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'IDN'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(in Python v3.7)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.connect_message" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.connect_message">
+<span class="sig-name descname"><span class="pre">connect_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idn_param</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'IDN'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(in Python v3.7)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.connect_message" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print a standard message on initial connection to an instrument.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1099,30 +1102,30 @@ Default is <code class="docutils literal notranslate"><span class="pre">self._t0
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.delegate_attr_dicts">
-<code class="sig-name descname"><span class="pre">delegate_attr_dicts</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">['parameters',</span> <span class="pre">'functions',</span> <span class="pre">'submodules']</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.delegate_attr_dicts" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.delegate_attr_dicts">
+<span class="sig-name descname"><span class="pre">delegate_attr_dicts</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">['parameters',</span> <span class="pre">'functions',</span> <span class="pre">'submodules']</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.delegate_attr_dicts" title="Permalink to this definition">¶</a></dt>
 <dd><p>A list of names (strings) of dictionaries
 which are (or will be) attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code>, whose keys should
 be treated as attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.delegate_attr_objects">
-<code class="sig-name descname"><span class="pre">delegate_attr_objects</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.delegate_attr_objects" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.delegate_attr_objects">
+<span class="sig-name descname"><span class="pre">delegate_attr_objects</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.delegate_attr_objects" title="Permalink to this definition">¶</a></dt>
 <dd><p>A list of names (strings) of objects
 which are (or will be) attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code>, whose attributes
 should be passed through to <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.device_clear">
-<code class="sig-name descname"><span class="pre">device_clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.device_clear" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.device_clear">
+<span class="sig-name descname"><span class="pre">device_clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.device_clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear the buffers of the device</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.exist">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">exist</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument_class</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#type" title="(in Python v3.7)"><span class="pre">type</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.exist" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.exist">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">exist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument_class</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#type" title="(in Python v3.7)"><span class="pre">type</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.exist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if an instrument with a given names exists (i.e. is already
 instantiated).</p>
 <dl class="field-list simple">
@@ -1136,8 +1139,8 @@ instantiated).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.find_instrument">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">find_instrument</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument_class</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#type" title="(in Python v3.7)"><span class="pre">type</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.find_instrument" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.find_instrument">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">find_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument_class</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#type" title="(in Python v3.7)"><span class="pre">type</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.find_instrument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find an existing instrument by name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1160,14 +1163,14 @@ instantiated).</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.full_name">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">full_name</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.full_name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.full_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">full_name</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.full_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.get">
-<code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.get" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shortcut for getting a parameter from its name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1180,8 +1183,8 @@ instantiated).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.instances">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">instances</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.instances" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.instances">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">instances</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.instances" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all currently defined instances of this instrument class.</p>
 <p>You can use this to get the objects back if you lose track of them,
 and it’s also used by the test system to find objects to test against.</p>
@@ -1193,8 +1196,8 @@ and it’s also used by the test system to find objects to test against.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.is_valid">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">is_valid</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instr_instance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.is_valid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.is_valid">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instr_instance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.is_valid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if a given instance of an instrument is valid: if an instrument
 has been closed, its instance is not longer a “valid” instrument.</p>
 <dl class="field-list simple">
@@ -1205,8 +1208,8 @@ has been closed, its instance is not longer a “valid” instrument.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.load_metadata">
-<code class="sig-name descname"><span class="pre">load_metadata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.load_metadata" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.load_metadata">
+<span class="sig-name descname"><span class="pre">load_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.load_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load metadata into this classes metadata dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1215,34 +1218,34 @@ has been closed, its instance is not longer a “valid” instrument.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.name">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of the instrument</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.name_parts">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name_parts</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.name_parts" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.name_parts">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name_parts</span></span><em class="property"><span class="pre">:</span> <span class="pre">List[str]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.name_parts" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.omit_delegate_attrs">
-<code class="sig-name descname"><span class="pre">omit_delegate_attrs</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.omit_delegate_attrs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.omit_delegate_attrs">
+<span class="sig-name descname"><span class="pre">omit_delegate_attrs</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.omit_delegate_attrs" title="Permalink to this definition">¶</a></dt>
 <dd><p>A list of attribute names (strings)
 to <em>not</em> delegate to any other dictionary or object.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.parent">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">parent</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.parent" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.parent">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">parent</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional[qcodes.instrument.base.InstrumentBase]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.parent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the parent instrument. By default this is <code class="docutils literal notranslate"><span class="pre">None</span></code>.
 Any SubInstrument should subclass this to return the parent instrument.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.print_readable_snapshot">
-<code class="sig-name descname"><span class="pre">print_readable_snapshot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_chars</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">80</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.print_readable_snapshot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.print_readable_snapshot">
+<span class="sig-name descname"><span class="pre">print_readable_snapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_chars</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">80</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.print_readable_snapshot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints a readable version of the snapshot.
 The readable snapshot includes the name, value and unit of each
 parameter.
@@ -1263,8 +1266,8 @@ Defaults to 80 to be consistent with default terminal width.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.record_instance">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">record_instance</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.record_instance" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.record_instance">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">record_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.record_instance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Record (a weak ref to) an instance in a class’s instance list.</p>
 <p>Also records the instance in list of <em>all</em> instruments, and verifies
 that there are no other instruments with the same name.</p>
@@ -1279,8 +1282,8 @@ that there are no other instruments with the same name.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.remove_instance">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">remove_instance</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.remove_instance" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.remove_instance">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">remove_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../instrument/base.html#qcodes.instrument.base.Instrument" title="qcodes.instrument.base.Instrument"><span class="pre">qcodes.instrument.base.Instrument</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.remove_instance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a particular instance from the record.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1289,14 +1292,14 @@ that there are no other instruments with the same name.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.root_instrument">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">root_instrument</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.root_instrument" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.root_instrument">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">root_instrument</span></span><em class="property"><span class="pre">:</span> <span class="pre">qcodes.instrument.base.InstrumentBase</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.root_instrument" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.set">
-<code class="sig-name descname"><span class="pre">set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.set" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shortcut for setting a parameter from its name and new value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1309,8 +1312,8 @@ that there are no other instruments with the same name.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.set_address">
-<code class="sig-name descname"><span class="pre">set_address</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.set_address" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.set_address">
+<span class="sig-name descname"><span class="pre">set_address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.set_address" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the address for this instrument.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1323,8 +1326,8 @@ change the backend for VISA, use the self.visalib attribute
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.set_terminator">
-<code class="sig-name descname"><span class="pre">set_terminator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminator</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.set_terminator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.set_terminator">
+<span class="sig-name descname"><span class="pre">set_terminator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminator</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.set_terminator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the read terminator to use.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1335,19 +1338,19 @@ eg. <code class="docutils literal notranslate"><span class="pre">\r\n</span></co
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.shared_kwargs">
-<code class="sig-name descname"><span class="pre">shared_kwargs</span></code><em class="property"> <span class="pre">=</span> <span class="pre">()</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.shared_kwargs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.shared_kwargs">
+<span class="sig-name descname"><span class="pre">shared_kwargs</span></span><em class="property"> <span class="pre">=</span> <span class="pre">()</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.shared_kwargs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.short_name">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">short_name</span></code><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.short_name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.short_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">short_name</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.short_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Short name of the instrument</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.snapshot">
-<code class="sig-name descname"><span class="pre">snapshot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.snapshot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.snapshot">
+<span class="sig-name descname"><span class="pre">snapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.snapshot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decorate a snapshot dictionary with metadata.
 DO NOT override this method if you want metadata in the snapshot
 instead, override <a class="reference internal" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.snapshot_base" title="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.snapshot_base"><code class="xref py py-meth docutils literal notranslate"><span class="pre">snapshot_base()</span></code></a>.</p>
@@ -1362,8 +1365,8 @@ instead, override <a class="reference internal" href="#qcodes.instrument_drivers
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.snapshot_base">
-<code class="sig-name descname"><span class="pre">snapshot_base</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_to_skip_update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.snapshot_base" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.snapshot_base">
+<span class="sig-name descname"><span class="pre">snapshot_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_to_skip_update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.snapshot_base" title="Permalink to this definition">¶</a></dt>
 <dd><p>State of the instrument as a JSON-compatible dict (everything that
 the custom JSON encoder class <a class="reference internal" href="../utils/helpers.html#qcodes.utils.helpers.NumpyJSONEncoder" title="qcodes.utils.helpers.NumpyJSONEncoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">qcodes.utils.helpers.NumpyJSONEncoder</span></code></a>
 supports).</p>
@@ -1392,8 +1395,8 @@ update of certain parameters in all snapshots, use the
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.validate_status">
-<code class="sig-name descname"><span class="pre">validate_status</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.validate_status" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.validate_status">
+<span class="sig-name descname"><span class="pre">validate_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.validate_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validate the values of all gettable parameters</p>
 <p>The validation is done for all parameters that have both a get and
 set method.</p>
@@ -1406,8 +1409,8 @@ parameters that are being check is printed.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.write">
-<code class="sig-name descname"><span class="pre">write</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.write" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a command string with NO response to the hardware.</p>
 <p>Subclasses that transform <code class="docutils literal notranslate"><span class="pre">cmd</span></code> should override this method, and in
 it call <code class="docutils literal notranslate"><span class="pre">super().write(new_cmd)</span></code>. Subclasses that define a new
@@ -1424,8 +1427,8 @@ hardware communication should instead override <code class="docutils literal not
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.write_raw">
-<code class="sig-name descname"><span class="pre">write_raw</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.write_raw" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.write_raw">
+<span class="sig-name descname"><span class="pre">write_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.write_raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Low-level interface to <code class="docutils literal notranslate"><span class="pre">visa_handle.write</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1435,30 +1438,30 @@ hardware communication should instead override <code class="docutils literal not
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.parameters">
-<code class="sig-name descname"><span class="pre">parameters</span></code><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">_BaseParameter</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.parameters" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">_BaseParameter</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>All the parameters supported by this instrument.
 Usually populated via <a class="reference internal" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_parameter" title="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_parameter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_parameter()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.functions">
-<code class="sig-name descname"><span class="pre">functions</span></code><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Function</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.functions" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.functions">
+<span class="sig-name descname"><span class="pre">functions</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Function</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.functions" title="Permalink to this definition">¶</a></dt>
 <dd><p>All the functions supported by this
 instrument. Usually populated via <a class="reference internal" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_function" title="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_function"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_function()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.submodules">
-<code class="sig-name descname"><span class="pre">submodules</span></code><em class="property"><span class="pre">:</span> <span class="pre">Dict[str,</span> <span class="pre">Union[‘InstrumentBase’,</span> <span class="pre">‘ChannelList’]]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.submodules" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.submodules">
+<span class="sig-name descname"><span class="pre">submodules</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict[str,</span> <span class="pre">Union[‘InstrumentBase’,</span> <span class="pre">‘ChannelList’]]</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.submodules" title="Permalink to this definition">¶</a></dt>
 <dd><p>All the submodules of this instrument
 such as channel lists or logical groupings of parameters.
 Usually populated via <a class="reference internal" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_submodule" title="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.add_submodule"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_submodule()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.log">
-<code class="sig-name descname"><span class="pre">log</span></code><em class="property"><span class="pre">:</span> <span class="pre">InstrumentLoggerAdapter</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.log" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.instrument_drivers.basel.sp983c_remote.SP983A.log">
+<span class="sig-name descname"><span class="pre">log</span></span><em class="property"><span class="pre">:</span> <span class="pre">InstrumentLoggerAdapter</span></em><a class="headerlink" href="#qcodes.instrument_drivers.basel.sp983c_remote.SP983A.log" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

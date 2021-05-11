@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -67,7 +70,7 @@
             
             
               <div class="version">
-                0.25.0+136.g14e99d45e7
+                0.25.0+140.ga0e665ec61
               </div>
             
           
@@ -225,8 +228,8 @@ stream output over websocket</p>
 list of parameters to monitor:</p>
 <p><code class="docutils literal notranslate"><span class="pre">monitor</span> <span class="pre">=</span> <span class="pre">qcodes.Monitor(param1,</span> <span class="pre">param2,</span> <span class="pre">param3,</span> <span class="pre">...)</span></code></p>
 <dl class="py class">
-<dt id="qcodes.monitor.monitor.Monitor">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">qcodes.monitor.monitor.</span></code><code class="sig-name descname"><span class="pre">Monitor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../parameters/parameter.html#qcodes.instrument.parameter.Parameter" title="qcodes.instrument.parameter.Parameter"><span class="pre">qcodes.instrument.parameter.Parameter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(in Python v3.7)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/monitor/monitor.html#Monitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.monitor.monitor.Monitor" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcodes.monitor.monitor.</span></span><span class="sig-name descname"><span class="pre">Monitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../parameters/parameter.html#qcodes.instrument.parameter.Parameter" title="qcodes.instrument.parameter.Parameter"><span class="pre">qcodes.instrument.parameter.Parameter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(in Python v3.7)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/monitor/monitor.html#Monitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.monitor.monitor.Monitor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.7/library/threading.html#threading.Thread" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></a></p>
 <p>QCodes Monitor - WebSockets server to monitor qcodes parameters.</p>
 <p>Monitor qcodes parameters.</p>
@@ -239,39 +242,39 @@ list of parameters to monitor:</p>
 </dd>
 </dl>
 <dl class="py attribute">
-<dt id="qcodes.monitor.monitor.Monitor.running">
-<code class="sig-name descname"><span class="pre">running</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.running" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.running">
+<span class="sig-name descname"><span class="pre">running</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.running" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.run">
-<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/monitor/monitor.html#Monitor.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.run" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/monitor/monitor.html#Monitor.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the event loop and run forever.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.update_all">
-<code class="sig-name descname"><span class="pre">update_all</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/monitor/monitor.html#Monitor.update_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.update_all" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.update_all">
+<span class="sig-name descname"><span class="pre">update_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/monitor/monitor.html#Monitor.update_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.update_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update all parameters in the monitor.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.stop">
-<code class="sig-name descname"><span class="pre">stop</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/monitor/monitor.html#Monitor.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.stop" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/monitor/monitor.html#Monitor.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shutdown the server, close the event loop and join the thread.
 Setting active Monitor to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.join">
-<code class="sig-name descname"><span class="pre">join</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(in Python v3.7)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/monitor/monitor.html#Monitor.join"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.join" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.join">
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(in Python v3.7)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/monitor/monitor.html#Monitor.join"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.join" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite <code class="docutils literal notranslate"><span class="pre">Thread.join</span></code> to make sure server is stopped before
 joining avoiding a potential deadlock.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.show">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">show</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/monitor/monitor.html#Monitor.show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.show" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.show">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/monitor/monitor.html#Monitor.show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.show" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite this method to show/raise your monitor GUI
 F.ex.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">webbrowser</span>
@@ -282,9 +285,9 @@ F.ex.</p>
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.daemon">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">daemon</span></code><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.daemon" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.daemon">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">daemon</span></span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.daemon" title="Permalink to this definition">¶</a></dt>
 <dd><p>A boolean value indicating whether this thread is a daemon thread.</p>
 <p>This must be set before start() is called, otherwise RuntimeError is
 raised. Its initial value is inherited from the creating thread; the
@@ -294,13 +297,13 @@ the main thread default to daemon = False.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.getName">
-<code class="sig-name descname"><span class="pre">getName</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.getName" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.getName">
+<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.getName" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.ident">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ident</span></code><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.ident" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.ident">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ident</span></span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.ident" title="Permalink to this definition">¶</a></dt>
 <dd><p>Thread identifier of this thread or None if it has not been started.</p>
 <p>This is a nonzero integer. See the get_ident() function. Thread
 identifiers may be recycled when a thread exits and another thread is
@@ -308,47 +311,47 @@ created. The identifier is available even after the thread has exited.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.isAlive">
-<code class="sig-name descname"><span class="pre">isAlive</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.isAlive" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.isAlive">
+<span class="sig-name descname"><span class="pre">isAlive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.isAlive" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return whether the thread is alive.</p>
 <p>This method is deprecated, use is_alive() instead.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.isDaemon">
-<code class="sig-name descname"><span class="pre">isDaemon</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.isDaemon" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.isDaemon">
+<span class="sig-name descname"><span class="pre">isDaemon</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.isDaemon" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.is_alive">
-<code class="sig-name descname"><span class="pre">is_alive</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.is_alive" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.is_alive">
+<span class="sig-name descname"><span class="pre">is_alive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.is_alive" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return whether the thread is alive.</p>
 <p>This method returns True just before the run() method starts until just
 after the run() method terminates. The module function enumerate()
 returns a list of all alive threads.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.name">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string used for identification purposes only.</p>
 <p>It has no semantics. Multiple threads may be given the same name. The
 initial name is set by the constructor.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.setDaemon">
-<code class="sig-name descname"><span class="pre">setDaemon</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">daemonic</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.setDaemon" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.setDaemon">
+<span class="sig-name descname"><span class="pre">setDaemon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">daemonic</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.setDaemon" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.setName">
-<code class="sig-name descname"><span class="pre">setName</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.setName" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.setName">
+<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.setName" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.monitor.monitor.Monitor.start">
-<code class="sig-name descname"><span class="pre">start</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.start" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.monitor.monitor.Monitor.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.monitor.monitor.Monitor.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the thread’s activity.</p>
 <p>It must be called at most once per thread object. It arranges for the
 object’s run() method to be invoked in a separate thread of control.</p>

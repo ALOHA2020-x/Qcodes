@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -67,7 +70,7 @@
             
             
               <div class="version">
-                0.25.0+136.g14e99d45e7
+                0.25.0+140.ga0e665ec61
               </div>
             
           
@@ -218,46 +221,46 @@
 <span id="qcodes-plots-pyqtgraph"></span><h1>qcodes.plots.pyqtgraph<a class="headerlink" href="#module-qcodes.plots.pyqtgraph" title="Permalink to this headline">¶</a></h1>
 <p>Live plotting using pyqtgraph</p>
 <dl class="py class">
-<dt id="qcodes.plots.pyqtgraph.TransformState">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">qcodes.plots.pyqtgraph.</span></code><code class="sig-name descname"><span class="pre">TransformState</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">translate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">revisit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.TransformState" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.TransformState">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcodes.plots.pyqtgraph.</span></span><span class="sig-name descname"><span class="pre">TransformState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">translate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">revisit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.TransformState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#tuple" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
 <p>Create new instance of TransformState(translate, scale, revisit)</p>
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.TransformState.count">
-<code class="sig-name descname"><span class="pre">count</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.TransformState.count" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.TransformState.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.TransformState.count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return number of occurrences of value.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.TransformState.index">
-<code class="sig-name descname"><span class="pre">index</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">start=0</span></em>, <em class="sig-param"><span class="pre">stop=9223372036854775807</span></em>, <em class="sig-param"><span class="pre">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.TransformState.index" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.TransformState.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">start=0</span></em>, <em class="sig-param"><span class="pre">stop=9223372036854775807</span></em>, <em class="sig-param"><span class="pre">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.TransformState.index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return first index of value.</p>
 <p>Raises ValueError if the value is not present.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.TransformState.revisit">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">revisit</span></code><a class="headerlink" href="#qcodes.plots.pyqtgraph.TransformState.revisit" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.TransformState.revisit">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">revisit</span></span><a class="headerlink" href="#qcodes.plots.pyqtgraph.TransformState.revisit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 2</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.TransformState.scale">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">scale</span></code><a class="headerlink" href="#qcodes.plots.pyqtgraph.TransformState.scale" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.TransformState.scale">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#qcodes.plots.pyqtgraph.TransformState.scale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 1</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.TransformState.translate">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">translate</span></code><a class="headerlink" href="#qcodes.plots.pyqtgraph.TransformState.translate" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.TransformState.translate">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">translate</span></span><a class="headerlink" href="#qcodes.plots.pyqtgraph.TransformState.translate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 0</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="qcodes.plots.pyqtgraph.QtPlot">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">qcodes.plots.pyqtgraph.</span></code><code class="sig-name descname"><span class="pre">QtPlot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1000,</span> <span class="pre">600)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">((60,</span> <span class="pre">60,</span> <span class="pre">60),</span> <span class="pre">'w')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_x_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_y_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcodes.plots.pyqtgraph.</span></span><span class="sig-name descname"><span class="pre">QtPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1000,</span> <span class="pre">600)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theme</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">((60,</span> <span class="pre">60,</span> <span class="pre">60),</span> <span class="pre">'w')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_x_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_y_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="base.html#qcodes.plots.base.BasePlot" title="qcodes.plots.base.BasePlot"><code class="xref py py-class docutils literal notranslate"><span class="pre">qcodes.plots.base.BasePlot</span></code></a></p>
 <p>Plot x/y lines or x/y/z heatmap data. The first trace may be included
 in the constructor, other traces can be added with QtPlot.add().</p>
@@ -289,45 +292,45 @@ default None let qt decide.</p></li>
 </dd>
 </dl>
 <dl class="py attribute">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.proc">
-<code class="sig-name descname"><span class="pre">proc</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.proc" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.proc">
+<span class="sig-name descname"><span class="pre">proc</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.proc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.max_len">
-<code class="sig-name descname"><span class="pre">max_len</span></code><em class="property"> <span class="pre">=</span> <span class="pre">100</span></em><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.max_len" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.max_len">
+<span class="sig-name descname"><span class="pre">max_len</span></span><em class="property"> <span class="pre">=</span> <span class="pre">100</span></em><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.max_len" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.plots">
-<code class="sig-name descname"><span class="pre">plots</span></code><em class="property"><span class="pre">:</span> <span class="pre">Deque</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#qcodes.plots.pyqtgraph.QtPlot" title="qcodes.plots.pyqtgraph.QtPlot"><span class="pre">qcodes.plots.pyqtgraph.QtPlot</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">deque([],</span> <span class="pre">maxlen=100)</span></em><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.plots" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.plots">
+<span class="sig-name descname"><span class="pre">plots</span></span><em class="property"><span class="pre">:</span> <span class="pre">Deque</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#qcodes.plots.pyqtgraph.QtPlot" title="qcodes.plots.pyqtgraph.QtPlot"><span class="pre">qcodes.plots.pyqtgraph.QtPlot</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">deque([],</span> <span class="pre">maxlen=100)</span></em><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.plots" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.rpg">
-<code class="sig-name descname"><span class="pre">rpg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.rpg" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.rpg">
+<span class="sig-name descname"><span class="pre">rpg</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.rpg" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.set_relative_window_position">
-<code class="sig-name descname"><span class="pre">set_relative_window_position</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig_x_position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_y_position</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.set_relative_window_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.set_relative_window_position" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.set_relative_window_position">
+<span class="sig-name descname"><span class="pre">set_relative_window_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig_x_position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_y_position</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.set_relative_window_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.set_relative_window_position" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.clear">
-<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.clear" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears the plot window and removes all subplots and traces
 so that the window can be reused.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.add_subplot">
-<code class="sig-name descname"><span class="pre">add_subplot</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.add_subplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.add_subplot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.add_subplot">
+<span class="sig-name descname"><span class="pre">add_subplot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.add_subplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.add_subplot" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.add_to_plot">
-<code class="sig-name descname"><span class="pre">add_to_plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subplot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.add_to_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.add_to_plot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.add_to_plot">
+<span class="sig-name descname"><span class="pre">add_to_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subplot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.add_to_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.add_to_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a trace the plot itself (typically called by self.add,
 which incorporates args into kwargs, so the subclass doesn’t
 need to worry about this). Data will be in <cite>x</cite>, <cite>y</cite>, and optionally
@@ -337,20 +340,20 @@ a dictionary to self.traces, containing at least {‘config’: kwargs}</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.set_cmap">
-<code class="sig-name descname"><span class="pre">set_cmap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.set_cmap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.set_cmap" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.set_cmap">
+<span class="sig-name descname"><span class="pre">set_cmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">traces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.set_cmap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.set_cmap" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.update_plot">
-<code class="sig-name descname"><span class="pre">update_plot</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.update_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.update_plot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.update_plot">
+<span class="sig-name descname"><span class="pre">update_plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.update_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.update_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the plot itself (typically called by self.update).
 Should be implemented by a subclass</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.save">
-<code class="sig-name descname"><span class="pre">save</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.save" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save current plot to filename, by default
 to the location corresponding to the default
 title.</p>
@@ -362,14 +365,14 @@ title.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.setGeometry">
-<code class="sig-name descname"><span class="pre">setGeometry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.setGeometry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.setGeometry" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.setGeometry">
+<span class="sig-name descname"><span class="pre">setGeometry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.setGeometry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.setGeometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set geometry of the plotting window</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.add">
-<code class="sig-name descname"><span class="pre">add</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.add" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add one trace to this plot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -405,8 +408,8 @@ self.add_to_plot.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.add_updater">
-<code class="sig-name descname"><span class="pre">add_updater</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">updater</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.add_updater" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.add_updater">
+<span class="sig-name descname"><span class="pre">add_updater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">updater</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.add_updater" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an updater to the plot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -424,8 +427,8 @@ to use it as an updater.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.autorange">
-<code class="sig-name descname"><span class="pre">autorange</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reset_colorbar</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.autorange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.autorange" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.autorange">
+<span class="sig-name descname"><span class="pre">autorange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reset_colorbar</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.autorange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.autorange" title="Permalink to this definition">¶</a></dt>
 <dd><p>Auto range all limits in case they were changed during interactive
 plot. Reset colormap if changed and resize window to original size.</p>
 <dl class="field-list simple">
@@ -437,8 +440,8 @@ be reset. Off by default</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.expand_trace">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">expand_trace</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.expand_trace" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.expand_trace">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">expand_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.expand_trace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Complete the x, y (and possibly z) data definition for a trace.</p>
 <p>Also modifies kwargs in place so that all the data needed to fully
 specify the trace is present (ie either x and y or x and y and z)</p>
@@ -482,8 +485,8 @@ keys other than x, y, and z.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.get_default_title">
-<code class="sig-name descname"><span class="pre">get_default_title</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.get_default_title" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.get_default_title">
+<span class="sig-name descname"><span class="pre">get_default_title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.get_default_title" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the default title, which for a plot is just a list of DataSet locations.
 A custom title can be set when adding any trace (via either __init__ or add.
 these kwargs all eventually end up in self.traces[i][‘config’]) and it looks
@@ -502,8 +505,8 @@ implementation, feel free to change it 👼</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.get_label">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.get_label" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.get_label">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">get_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.get_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Look for a label in data_array falling back on name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -519,14 +522,14 @@ implementation, feel free to change it 👼</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.halt">
-<code class="sig-name descname"><span class="pre">halt</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.halt" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.halt">
+<span class="sig-name descname"><span class="pre">halt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.halt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop automatic updates to this plot, by canceling its update widget</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.latest_plot">
-<code class="sig-name descname"><span class="pre">latest_plot</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.latest_plot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.latest_plot">
+<span class="sig-name descname"><span class="pre">latest_plot</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.latest_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Auto-updating plot connected to a Jupyter notebook</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -543,8 +546,8 @@ for example marker size or color can contain data</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.replace">
-<code class="sig-name descname"><span class="pre">replace</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.replace" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.replace">
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.replace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear all content and add new trace.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -562,8 +565,8 @@ call their sync methods.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.update">
-<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.update" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the data in this plot, using the updaters given with
 MatPlot.add() or in the included DataSets, then include this in
 the plot.</p>
@@ -572,8 +575,8 @@ inside this we call self.update() which should be subclassed</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.pyqtgraph.QtPlot.fixUnitScaling">
-<code class="sig-name descname"><span class="pre">fixUnitScaling</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">startranges</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(in Python v3.7)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.fixUnitScaling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.fixUnitScaling" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.pyqtgraph.QtPlot.fixUnitScaling">
+<span class="sig-name descname"><span class="pre">fixUnitScaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">startranges</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#float" title="(in Python v3.7)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/pyqtgraph.html#QtPlot.fixUnitScaling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.pyqtgraph.QtPlot.fixUnitScaling" title="Permalink to this definition">¶</a></dt>
 <dd><p>Disable SI rescaling if units are not standard units and limit
 ranges to data if known.</p>
 <dl class="field-list simple">

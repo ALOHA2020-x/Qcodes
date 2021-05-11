@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -67,7 +70,7 @@
             
             
               <div class="version">
-                0.25.0+136.g14e99d45e7
+                0.25.0+140.ga0e665ec61
               </div>
             
           
@@ -218,12 +221,12 @@
 <span id="qcodes-plots-base"></span><h1>qcodes.plots.base<a class="headerlink" href="#module-qcodes.plots.base" title="Permalink to this headline">¶</a></h1>
 <p>Live plotting in Jupyter notebooks</p>
 <dl class="py class">
-<dt id="qcodes.plots.base.BasePlot">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">qcodes.plots.base.</span></code><code class="sig-name descname"><span class="pre">BasePlot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xyz'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcodes.plots.base.</span></span><span class="sig-name descname"><span class="pre">BasePlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xyz'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py attribute">
-<dt id="qcodes.plots.base.BasePlot.latest_plot">
-<code class="sig-name descname"><span class="pre">latest_plot</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#qcodes.plots.base.BasePlot.latest_plot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.latest_plot">
+<span class="sig-name descname"><span class="pre">latest_plot</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#qcodes.plots.base.BasePlot.latest_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Auto-updating plot connected to a Jupyter notebook</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -240,15 +243,15 @@ for example marker size or color can contain data</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.base.BasePlot.clear">
-<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.clear" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears the plot window and removes all subplots and traces
 so that the window can be reused.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.base.BasePlot.replace">
-<code class="sig-name descname"><span class="pre">replace</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.replace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.replace" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.replace">
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.replace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.replace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear all content and add new trace.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -266,8 +269,8 @@ call their sync methods.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.base.BasePlot.add">
-<code class="sig-name descname"><span class="pre">add</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.add" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add one trace to this plot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -303,8 +306,8 @@ self.add_to_plot.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.base.BasePlot.add_to_plot">
-<code class="sig-name descname"><span class="pre">add_to_plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.add_to_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.add_to_plot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.add_to_plot">
+<span class="sig-name descname"><span class="pre">add_to_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.add_to_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.add_to_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a trace the plot itself (typically called by self.add,
 which incorporates args into kwargs, so the subclass doesn’t
 need to worry about this). Data will be in <cite>x</cite>, <cite>y</cite>, and optionally
@@ -314,8 +317,8 @@ a dictionary to self.traces, containing at least {‘config’: kwargs}</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.base.BasePlot.add_updater">
-<code class="sig-name descname"><span class="pre">add_updater</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">updater</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.add_updater"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.add_updater" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.add_updater">
+<span class="sig-name descname"><span class="pre">add_updater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">updater</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.add_updater"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.add_updater" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an updater to the plot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -333,8 +336,8 @@ to use it as an updater.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.base.BasePlot.get_default_title">
-<code class="sig-name descname"><span class="pre">get_default_title</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.get_default_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.get_default_title" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.get_default_title">
+<span class="sig-name descname"><span class="pre">get_default_title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.get_default_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.get_default_title" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the default title, which for a plot is just a list of DataSet locations.
 A custom title can be set when adding any trace (via either __init__ or add.
 these kwargs all eventually end up in self.traces[i][‘config’]) and it looks
@@ -353,8 +356,8 @@ implementation, feel free to change it 👼</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.base.BasePlot.get_label">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_array</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.get_label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.get_label" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.get_label">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">get_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_array</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.get_label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.get_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Look for a label in data_array falling back on name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -370,8 +373,8 @@ implementation, feel free to change it 👼</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.base.BasePlot.expand_trace">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">expand_trace</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.expand_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.expand_trace" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.expand_trace">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">expand_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.expand_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.expand_trace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Complete the x, y (and possibly z) data definition for a trace.</p>
 <p>Also modifies kwargs in place so that all the data needed to fully
 specify the trace is present (ie either x and y or x and y and z)</p>
@@ -415,8 +418,8 @@ keys other than x, y, and z.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.base.BasePlot.update">
-<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.update" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the data in this plot, using the updaters given with
 MatPlot.add() or in the included DataSets, then include this in
 the plot.</p>
@@ -425,21 +428,21 @@ inside this we call self.update() which should be subclassed</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.base.BasePlot.update_plot">
-<code class="sig-name descname"><span class="pre">update_plot</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.update_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.update_plot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.update_plot">
+<span class="sig-name descname"><span class="pre">update_plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.update_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.update_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the plot itself (typically called by self.update).
 Should be implemented by a subclass</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.base.BasePlot.halt">
-<code class="sig-name descname"><span class="pre">halt</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.halt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.halt" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.halt">
+<span class="sig-name descname"><span class="pre">halt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.halt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.halt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop automatic updates to this plot, by canceling its update widget</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.base.BasePlot.save">
-<code class="sig-name descname"><span class="pre">save</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.save" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.base.BasePlot.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/base.html#BasePlot.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.base.BasePlot.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save current plot to filename</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

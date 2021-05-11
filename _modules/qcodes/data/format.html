@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
@@ -65,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+136.g14e99d45e7
+                0.25.0+140.ga0e665ec61
               </div>
             
           
@@ -166,10 +169,10 @@
            <div itemprop="articleBody">
             
   <h1>Source code for qcodes.data.format</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
-<span class="kn">from</span> <span class="nn">traceback</span> <span class="kn">import</span> <span class="n">format_exc</span>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 <span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
-<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">traceback</span> <span class="kn">import</span> <span class="n">format_exc</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Set</span>
 
 <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
@@ -177,6 +180,8 @@
 
 
 <span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">ArrayGroup</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;ArrayGroup&quot;</span><span class="p">,</span> <span class="s2">&quot;shape set_arrays data name&quot;</span><span class="p">)</span>
+
 
 <div class="viewcode-block" id="Formatter"><a class="viewcode-back" href="../../../api/data/format.html#qcodes.data.format.Formatter">[docs]</a><span class="k">class</span> <span class="nc">Formatter</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -219,7 +224,8 @@
 <span class="sd">      last_saved_index and modified_range, as well as whether or not</span>
 <span class="sd">      it found the specified file, to determine how much to write.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">ArrayGroup</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;ArrayGroup&#39;</span><span class="p">,</span> <span class="s1">&#39;shape set_arrays data name&#39;</span><span class="p">)</span>
+
+    <span class="n">ArrayGroup</span> <span class="o">=</span> <span class="n">ArrayGroup</span>
 
 <div class="viewcode-block" id="Formatter.write"><a class="viewcode-back" href="../../../api/data/format.html#qcodes.data.format.Formatter.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_set</span><span class="p">:</span> <span class="s1">&#39;DataSet&#39;</span><span class="p">,</span> <span class="n">io_manager</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">write_metadata</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
               <span class="n">force_write</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">only_complete</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>

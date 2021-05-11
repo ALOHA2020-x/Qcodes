@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -67,7 +70,7 @@
             
             
               <div class="version">
-                0.25.0+136.g14e99d45e7
+                0.25.0+140.ga0e665ec61
               </div>
             
           
@@ -222,8 +225,8 @@
 <div class="section" id="module-qcodes.dataset.database_extract_runs">
 <span id="qcodes-dataset-database-extract-runs"></span><h1>qcodes.dataset.database_extract_runs<a class="headerlink" href="#module-qcodes.dataset.database_extract_runs" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="qcodes.dataset.database_extract_runs.extract_runs_into_db">
-<code class="sig-prename descclassname"><span class="pre">qcodes.dataset.database_extract_runs.</span></code><code class="sig-name descname"><span class="pre">extract_runs_into_db</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_db_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_db_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">run_ids</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">upgrade_source_db</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upgrade_target_db</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/dataset/database_extract_runs.html#extract_runs_into_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.dataset.database_extract_runs.extract_runs_into_db" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.dataset.database_extract_runs.extract_runs_into_db">
+<span class="sig-prename descclassname"><span class="pre">qcodes.dataset.database_extract_runs.</span></span><span class="sig-name descname"><span class="pre">extract_runs_into_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_db_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_db_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#str" title="(in Python v3.7)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">run_ids</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#int" title="(in Python v3.7)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">upgrade_source_db</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upgrade_target_db</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/dataset/database_extract_runs.html#extract_runs_into_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.dataset.database_extract_runs.extract_runs_into_db" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract a selection of runs into another DB file. All runs must come from
 the same experiment. They will be added to an experiment with the same name
 and <code class="docutils literal notranslate"><span class="pre">sample_name</span></code> in the target db. If such an experiment does not exist, it

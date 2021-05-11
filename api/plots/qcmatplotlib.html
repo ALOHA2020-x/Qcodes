@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -67,7 +70,7 @@
             
             
               <div class="version">
-                0.25.0+136.g14e99d45e7
+                0.25.0+140.ga0e665ec61
               </div>
             
           
@@ -219,8 +222,8 @@
 <p>Live plotting in Jupyter notebooks
 using the nbagg backend and matplotlib</p>
 <dl class="py class">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">qcodes.plots.qcmatplotlib.</span></code><code class="sig-name descname"><span class="pre">MatPlot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subplots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcodes.plots.qcmatplotlib.</span></span><span class="sig-name descname"><span class="pre">MatPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subplots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="base.html#qcodes.plots.base.BasePlot" title="qcodes.plots.base.BasePlot"><code class="xref py py-class docutils literal notranslate"><span class="pre">qcodes.plots.base.BasePlot</span></code></a></p>
 <p>Plot x/y lines or x/y/z heatmap data. The first trace may be included
 in the constructor, other traces can be added with MatPlot.add()</p>
@@ -245,13 +248,13 @@ then open a new window</p></li>
 </dd>
 </dl>
 <dl class="py attribute">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.max_subplot_columns">
-<code class="sig-name descname"><span class="pre">max_subplot_columns</span></code><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.max_subplot_columns" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.max_subplot_columns">
+<span class="sig-name descname"><span class="pre">max_subplot_columns</span></span><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.max_subplot_columns" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.__getitem__">
-<code class="sig-name descname"><span class="pre">__getitem__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.__getitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.__getitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.__getitem__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subplots can be accessed via indices.
 :param key: subplot idx</p>
 <dl class="field-list simple">
@@ -262,15 +265,15 @@ then open a new window</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.clear">
-<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subplots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.clear" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subplots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears the plot window and removes all subplots and traces
 so that the window can be reused.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.add_to_plot">
-<code class="sig-name descname"><span class="pre">add_to_plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_offset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.add_to_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.add_to_plot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.add_to_plot">
+<span class="sig-name descname"><span class="pre">add_to_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_offset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3.7/library/functions.html#bool" title="(in Python v3.7)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.add_to_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.add_to_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>adds one trace to this MatPlot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -299,8 +302,8 @@ args</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.default_figsize">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">default_figsize</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subplots</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.default_figsize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.default_figsize" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.default_figsize">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">default_figsize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subplots</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.default_figsize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.default_figsize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides default figsize for given subplots.
 :param subplots: shape (nrows, ncols) of subplots
 :type subplots: Tuple[Int, Int]</p>
@@ -319,15 +322,15 @@ args</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.update_plot">
-<code class="sig-name descname"><span class="pre">update_plot</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.update_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.update_plot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.update_plot">
+<span class="sig-name descname"><span class="pre">update_plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.update_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.update_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>update the plot. The DataSets themselves have already been updated
 in update, here we just push the changes to the plot.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.save">
-<code class="sig-name descname"><span class="pre">save</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.save" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save current plot to filename, by default
 to the location corresponding to the default
 title.</p>
@@ -339,15 +342,15 @@ title.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.tight_layout">
-<code class="sig-name descname"><span class="pre">tight_layout</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.tight_layout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.tight_layout" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.tight_layout">
+<span class="sig-name descname"><span class="pre">tight_layout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.tight_layout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.tight_layout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform a tight layout on the figure. A bit of additional spacing at
 the top is also added for the title.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.rescale_axis">
-<code class="sig-name descname"><span class="pre">rescale_axis</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.rescale_axis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.rescale_axis" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.rescale_axis">
+<span class="sig-name descname"><span class="pre">rescale_axis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/plots/qcmatplotlib.html#MatPlot.rescale_axis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.rescale_axis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rescale axis and units for axis that are in standard units
 i.e. V, s J … to m μ, m
 This scales units defined in BasePlot.standardunits only
@@ -355,8 +358,8 @@ to avoid prefixes on combined or non standard units</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.add">
-<code class="sig-name descname"><span class="pre">add</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.add" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add one trace to this plot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -392,8 +395,8 @@ self.add_to_plot.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.add_updater">
-<code class="sig-name descname"><span class="pre">add_updater</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">updater</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.add_updater" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.add_updater">
+<span class="sig-name descname"><span class="pre">add_updater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">updater</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.add_updater" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an updater to the plot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -411,8 +414,8 @@ to use it as an updater.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.expand_trace">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">expand_trace</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.expand_trace" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.expand_trace">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">expand_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.expand_trace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Complete the x, y (and possibly z) data definition for a trace.</p>
 <p>Also modifies kwargs in place so that all the data needed to fully
 specify the trace is present (ie either x and y or x and y and z)</p>
@@ -456,8 +459,8 @@ keys other than x, y, and z.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.get_default_title">
-<code class="sig-name descname"><span class="pre">get_default_title</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.get_default_title" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.get_default_title">
+<span class="sig-name descname"><span class="pre">get_default_title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.get_default_title" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the default title, which for a plot is just a list of DataSet locations.
 A custom title can be set when adding any trace (via either __init__ or add.
 these kwargs all eventually end up in self.traces[i][‘config’]) and it looks
@@ -476,8 +479,8 @@ implementation, feel free to change it 👼</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.get_label">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.get_label" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.get_label">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">get_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.get_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Look for a label in data_array falling back on name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -493,14 +496,14 @@ implementation, feel free to change it 👼</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.halt">
-<code class="sig-name descname"><span class="pre">halt</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.halt" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.halt">
+<span class="sig-name descname"><span class="pre">halt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.halt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop automatic updates to this plot, by canceling its update widget</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.latest_plot">
-<code class="sig-name descname"><span class="pre">latest_plot</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.latest_plot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.latest_plot">
+<span class="sig-name descname"><span class="pre">latest_plot</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.latest_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Auto-updating plot connected to a Jupyter notebook</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -517,8 +520,8 @@ for example marker size or color can contain data</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.replace">
-<code class="sig-name descname"><span class="pre">replace</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.replace" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.replace">
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.replace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear all content and add new trace.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -536,8 +539,8 @@ call their sync methods.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.plots.qcmatplotlib.MatPlot.update">
-<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.update" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.plots.qcmatplotlib.MatPlot.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.plots.qcmatplotlib.MatPlot.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the data in this plot, using the updaters given with
 MatPlot.add() or in the included DataSets, then include this in
 the plot.</p>

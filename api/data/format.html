@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
@@ -67,7 +70,7 @@
             
             
               <div class="version">
-                0.25.0+136.g14e99d45e7
+                0.25.0+140.ga0e665ec61
               </div>
             
           
@@ -221,8 +224,52 @@
 <div class="section" id="module-qcodes.data.format">
 <span id="qcodes-data-format"></span><h1>qcodes.data.format<a class="headerlink" href="#module-qcodes.data.format" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="qcodes.data.format.Formatter">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">qcodes.data.format.</span></code><code class="sig-name descname"><span class="pre">Formatter</span></code><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.format.ArrayGroup">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcodes.data.format.</span></span><span class="sig-name descname"><span class="pre">ArrayGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_arrays</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.data.format.ArrayGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#tuple" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
+<p>Create new instance of ArrayGroup(shape, set_arrays, data, name)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="qcodes.data.format.ArrayGroup.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.data.format.ArrayGroup.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of occurrences of value.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.data.format.ArrayGroup.data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#qcodes.data.format.ArrayGroup.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qcodes.data.format.ArrayGroup.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">start=0</span></em>, <em class="sig-param"><span class="pre">stop=9223372036854775807</span></em>, <em class="sig-param"><span class="pre">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.data.format.ArrayGroup.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first index of value.</p>
+<p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.data.format.ArrayGroup.name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#qcodes.data.format.ArrayGroup.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.data.format.ArrayGroup.set_arrays">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">set_arrays</span></span><a class="headerlink" href="#qcodes.data.format.ArrayGroup.set_arrays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.data.format.ArrayGroup.shape">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#qcodes.data.format.ArrayGroup.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qcodes.data.format.</span></span><span class="sig-name descname"><span class="pre">Formatter</span></span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Data file formatters</p>
 <p>Formatters translate between DataSets and data files.</p>
@@ -264,52 +311,52 @@ last_saved_index and modified_range, as well as whether or not
 it found the specified file, to determine how much to write.</p></li>
 </ul>
 <dl class="py class">
-<dt id="qcodes.data.format.Formatter.ArrayGroup">
-<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">ArrayGroup</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_arrays</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.ArrayGroup">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ArrayGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_arrays</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#tuple" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
 <p>Create new instance of ArrayGroup(shape, set_arrays, data, name)</p>
 <dl class="py method">
-<dt id="qcodes.data.format.Formatter.ArrayGroup.count">
-<code class="sig-name descname"><span class="pre">count</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup.count" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.ArrayGroup.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup.count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return number of occurrences of value.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.data.format.Formatter.ArrayGroup.data">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">data</span></code><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup.data" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.ArrayGroup.data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup.data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 2</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.format.Formatter.ArrayGroup.index">
-<code class="sig-name descname"><span class="pre">index</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">start=0</span></em>, <em class="sig-param"><span class="pre">stop=9223372036854775807</span></em>, <em class="sig-param"><span class="pre">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup.index" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.ArrayGroup.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">start=0</span></em>, <em class="sig-param"><span class="pre">stop=9223372036854775807</span></em>, <em class="sig-param"><span class="pre">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup.index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return first index of value.</p>
 <p>Raises ValueError if the value is not present.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.data.format.Formatter.ArrayGroup.name">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup.name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.ArrayGroup.name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 3</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.data.format.Formatter.ArrayGroup.set_arrays">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">set_arrays</span></code><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup.set_arrays" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.ArrayGroup.set_arrays">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">set_arrays</span></span><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup.set_arrays" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 1</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qcodes.data.format.Formatter.ArrayGroup.shape">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">shape</span></code><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup.shape" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.ArrayGroup.shape">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#qcodes.data.format.Formatter.ArrayGroup.shape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 0</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.format.Formatter.write">
-<code class="sig-name descname"><span class="pre">write</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DataSet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">io_manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_write</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_complete</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.write" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DataSet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">io_manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_write</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_complete</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the DataSet to storage.</p>
 <p>Subclasses must override this method.</p>
 <p>It is up to the Formatter to decide when to overwrite completely,
@@ -330,8 +377,8 @@ overridden version of this method</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.format.Formatter.read">
-<code class="sig-name descname"><span class="pre">read</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DataSet</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.read" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DataSet</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3.7/library/constants.html#None" title="(in Python v3.7)"><span class="pre">None</span></a><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.read" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read the entire <code class="docutils literal notranslate"><span class="pre">DataSet</span></code>.</p>
 <p>Find all files matching <code class="docutils literal notranslate"><span class="pre">data_set.location</span></code> (using io_manager.list)
 and call <code class="docutils literal notranslate"><span class="pre">read_one_file</span></code> on each. Subclasses may either override
@@ -350,8 +397,8 @@ expect to be overwritten)</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.format.Formatter.write_metadata">
-<code class="sig-name descname"><span class="pre">write_metadata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DataSet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">io_manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_first</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.write_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.write_metadata" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.write_metadata">
+<span class="sig-name descname"><span class="pre">write_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DataSet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">io_manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_first</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.write_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.write_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the metadata for this DataSet to storage.</p>
 <p>Subclasses must override this method.</p>
 <dl class="field-list simple">
@@ -369,8 +416,8 @@ copy.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.format.Formatter.read_metadata">
-<code class="sig-name descname"><span class="pre">read_metadata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DataSet</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.read_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.read_metadata" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.read_metadata">
+<span class="sig-name descname"><span class="pre">read_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DataSet</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.read_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.read_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read the metadata from this DataSet from storage.</p>
 <p>Subclasses must override this method.</p>
 <dl class="field-list simple">
@@ -381,8 +428,8 @@ copy.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.format.Formatter.read_one_file">
-<code class="sig-name descname"><span class="pre">read_one_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DataSet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids_read</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.read_one_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.read_one_file" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.read_one_file">
+<span class="sig-name descname"><span class="pre">read_one_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DataSet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids_read</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.read_one_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.read_one_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read data from a single file into a <code class="docutils literal notranslate"><span class="pre">DataSet</span></code>.</p>
 <p>Formatter subclasses that break a DataSet into multiple data files may
 choose to override either this method, which handles one file at a
@@ -407,8 +454,8 @@ be read again.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.format.Formatter.match_save_range">
-<code class="sig-name descname"><span class="pre">match_save_range</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_exists</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_complete</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.match_save_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.match_save_range" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.match_save_range">
+<span class="sig-name descname"><span class="pre">match_save_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_exists</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_complete</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.match_save_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.match_save_range" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the save range that will joins all changes in an array group.</p>
 <p>Matches all full-sized arrays: the data arrays plus the inner loop
 setpoint array.</p>
@@ -455,8 +502,8 @@ Default True.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="qcodes.data.format.Formatter.group_arrays">
-<code class="sig-name descname"><span class="pre">group_arrays</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arrays</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.group_arrays"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.group_arrays" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="qcodes.data.format.Formatter.group_arrays">
+<span class="sig-name descname"><span class="pre">group_arrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arrays</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/qcodes/data/format.html#Formatter.group_arrays"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.data.format.Formatter.group_arrays" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the sets of arrays which share all the same setpoint arrays.</p>
 <p>Some Formatters use this grouping to determine which arrays to save
 together in one file.</p>
