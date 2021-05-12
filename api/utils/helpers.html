@@ -70,7 +70,7 @@
             
             
               <div class="version">
-                0.25.0+155.geb51b7d9a0
+                0.25.0+161.g7c19493363
               </div>
             
           
@@ -267,27 +267,29 @@ version of the object or raise a <code class="docutils literal notranslate"><spa
 <dl class="py method">
 <dt class="sig sig-object py" id="qcodes.utils.helpers.NumpyJSONEncoder.default">
 <span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="reference internal" href="../../_modules/qcodes/utils/helpers.html#NumpyJSONEncoder.default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#qcodes.utils.helpers.NumpyJSONEncoder.default" title="Permalink to this definition">¶</a></dt>
-<dd><p>List of conversions that this encoder performs:
-* <code class="docutils literal notranslate"><span class="pre">numpy.generic</span></code> (all integer, floating, and other types) gets
+<dd><p>List of conversions that this encoder performs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy.generic</span></code> (all integer, floating, and other types) gets
 converted to its python equivalent using its <code class="docutils literal notranslate"><span class="pre">item</span></code> method (see
 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> docs for more information,
-<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.scalars.html">https://docs.scipy.org/doc/numpy/reference/arrays.scalars.html</a>).
-* <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> gets converted to python list using its <code class="docutils literal notranslate"><span class="pre">tolist</span></code>
-method.
-* Complex number (a number that conforms to <code class="docutils literal notranslate"><span class="pre">numbers.Complex</span></code> ABC) gets
+<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.scalars.html">https://docs.scipy.org/doc/numpy/reference/arrays.scalars.html</a>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> gets converted to python list using its <code class="docutils literal notranslate"><span class="pre">tolist</span></code>
+method.</p></li>
+<li><p>Complex number (a number that conforms to <code class="docutils literal notranslate"><span class="pre">numbers.Complex</span></code> ABC) gets
 converted to a dictionary with fields <code class="docutils literal notranslate"><span class="pre">re</span></code> and <code class="docutils literal notranslate"><span class="pre">im</span></code> containing floating
 numbers for the real and imaginary parts respectively, and a field
-<code class="docutils literal notranslate"><span class="pre">__dtype__</span></code> containing value <code class="docutils literal notranslate"><span class="pre">complex</span></code>.
-* Numbers with uncertainties  (numbers that conforms to <code class="docutils literal notranslate"><span class="pre">uncertainties.UFloat</span></code>) get
+<code class="docutils literal notranslate"><span class="pre">__dtype__</span></code> containing value <code class="docutils literal notranslate"><span class="pre">complex</span></code>.</p></li>
+<li><p>Numbers with uncertainties  (numbers that conforms to <code class="docutils literal notranslate"><span class="pre">uncertainties.UFloat</span></code>) get
 converted to a dictionary with fields <code class="docutils literal notranslate"><span class="pre">nominal_value</span></code> and <code class="docutils literal notranslate"><span class="pre">std_dev</span></code> containing floating
 numbers for the nominal and uncertainty parts respectively, and a field
-<code class="docutils literal notranslate"><span class="pre">__dtype__</span></code> containing value <code class="docutils literal notranslate"><span class="pre">UFloat</span></code>.
-* Object with a <code class="docutils literal notranslate"><span class="pre">_JSONEncoder</span></code> method get converted the return value of
-that method.
-* Objects which support the pickle protocol get converted using the
-data provided by that protocol.
-* Other objects which cannot be serialized get converted to their
-string representation (suing the <code class="docutils literal notranslate"><span class="pre">str</span></code> function).</p>
+<code class="docutils literal notranslate"><span class="pre">__dtype__</span></code> containing value <code class="docutils literal notranslate"><span class="pre">UFloat</span></code>.</p></li>
+<li><p>Object with a <code class="docutils literal notranslate"><span class="pre">_JSONEncoder</span></code> method get converted the return value of
+that method.</p></li>
+<li><p>Objects which support the pickle protocol get converted using the
+data provided by that protocol.</p></li>
+<li><p>Other objects which cannot be serialized get converted to their
+string representation (using the <code class="docutils literal notranslate"><span class="pre">str</span></code> function).</p></li>
+</ul>
 </dd></dl>
 
 <dl class="py method">
