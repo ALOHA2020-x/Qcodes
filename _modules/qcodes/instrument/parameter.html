@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+207.g50c6706edf
+                0.25.0+225.g042c5e25ab
               </div>
             
           
@@ -674,7 +674,7 @@
                                   <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">raw_value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">))</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="c1"># Use single scale for all values</span>
-                <span class="n">raw_value</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span>
+                <span class="n">raw_value</span> <span class="o">=</span> <span class="n">raw_value</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span>
 
         <span class="c1"># apply offset next</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -684,7 +684,7 @@
                                   <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">raw_value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">))</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="c1"># Use single offset for all values</span>
-                <span class="n">raw_value</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span>
+                <span class="n">raw_value</span> <span class="o">=</span> <span class="n">raw_value</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span>
 
         <span class="c1"># parser last</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_parser</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -704,28 +704,34 @@
         <span class="c1"># apply offset first (native scale)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># offset values</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
-                <span class="c1"># offset contains multiple elements, one for each value</span>
-                <span class="n">value</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">val</span> <span class="o">-</span> <span class="n">offset</span> <span class="k">for</span> <span class="n">val</span><span class="p">,</span> <span class="n">offset</span>
-                              <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">))</span>
-            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
-                <span class="c1"># Use single offset for all values</span>
-                <span class="n">value</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">val</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">value</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
+                    <span class="c1"># offset contains multiple elements, one for each value</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">val</span> <span class="o">-</span> <span class="n">offset</span> <span class="k">for</span> <span class="n">val</span><span class="p">,</span> <span class="n">offset</span>
+                                  <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
+                    <span class="c1"># Use single offset for all values</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">val</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span>
 
         <span class="c1"># scale second</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># Scale values</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
-                <span class="c1"># Scale contains multiple elements, one for each value</span>
-                <span class="n">value</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">val</span> <span class="o">/</span> <span class="n">scale</span> <span class="k">for</span> <span class="n">val</span><span class="p">,</span> <span class="n">scale</span>
-                              <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">))</span>
-            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
-                <span class="c1"># Use single scale for all values</span>
-                <span class="n">value</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">val</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">value</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
+                    <span class="c1"># Scale contains multiple elements, one for each value</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">val</span> <span class="o">/</span> <span class="n">scale</span> <span class="k">for</span> <span class="n">val</span><span class="p">,</span> <span class="n">scale</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">value</span><span class="p">,</span>
+                                                                    <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
+                    <span class="c1"># Use single scale for all values</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">val</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">value</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">inverse_val_mapping</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inverse_val_mapping</span><span class="p">:</span>
