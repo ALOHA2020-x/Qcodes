@@ -72,7 +72,7 @@
             
             
               <div class="version">
-                0.25.0+229.gf91c7f3504
+                0.25.0+259.ga67e078cd9
               </div>
             
           
@@ -119,7 +119,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#Default-Station">Default Station</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Example-of-YAML-Station-configuration">Example of YAML Station configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#QCoDeS-configuration-entries-related-to-Station">QCoDeS configuration entries related to Station</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Using-Station-with-a-YAML-configuration-file">Using Station with a YAML configuration file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Using-Station-with-YAML-configuration-files">Using Station with YAML configuration files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Setting-up-Visual-Studio-Code-to-work-with-station-files">Setting up Visual Studio Code to work with station files</a></li>
 </ul>
 </li>
@@ -535,7 +535,7 @@ Output logging : True
 Raw input log  : False
 Timestamping   : True
 State          : active
-Qcodes Logfile : /home/runner/.qcodes/logs/210520-8095-qcodes.log
+Qcodes Logfile : /home/runner/.qcodes/logs/210520-7975-qcodes.log
 </pre></div></div>
 </div>
 <div class="section" id="What-is-a-Station?">
@@ -613,7 +613,7 @@ Qcodes Logfile : /home/runner/.qcodes/logs/210520-8095-qcodes.log
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&#39;p&#39;: &lt;qcodes.instrument.parameter.Parameter: p at 140183887346832&gt;,
+{&#39;p&#39;: &lt;qcodes.instrument.parameter.Parameter: p at 139634414567696&gt;,
  &#39;instr&#39;: &lt;DummyInstrument: instr&gt;}
 </pre></div></div>
 </div>
@@ -661,7 +661,7 @@ Qcodes Logfile : /home/runner/.qcodes/logs/210520-8095-qcodes.log
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;qcodes.instrument.parameter.Parameter: p at 140183887346832&gt;
+&lt;qcodes.instrument.parameter.Parameter: p at 139634414567696&gt;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -893,16 +893,29 @@ initialization script. The latter may easily cause a bloaded code with possible 
 <h2>QCoDeS configuration entries related to Station<a class="headerlink" href="#QCoDeS-configuration-entries-related-to-Station" title="Permalink to this headline">¶</a></h2>
 <p>QCoDeS configuration contains entries that are related to the <code class="docutils literal notranslate"><span class="pre">Station</span></code> and its YAML configuration file. Refer to <a class="reference external" href="http://qcodes.github.io/Qcodes/user/configuration.html?highlight=station#default-config">the description of the ‘station’ section in QCoDeS config</a> for more specific information.</p>
 </div>
-<div class="section" id="Using-Station-with-a-YAML-configuration-file">
-<h2>Using Station with a YAML configuration file<a class="headerlink" href="#Using-Station-with-a-YAML-configuration-file" title="Permalink to this headline">¶</a></h2>
-<p>In this section, we shall briefly describe the usage of <code class="docutils literal notranslate"><span class="pre">Station</span></code> with a YAML configuration file. For more details, we refer to the docstrings of the methods of the <code class="docutils literal notranslate"><span class="pre">Station</span></code> class.</p>
-<p>A <code class="docutils literal notranslate"><span class="pre">Station</span></code> with a YAML configuration file can be created by passing the file name (or file name with absolute path) to <code class="docutils literal notranslate"><span class="pre">Station</span></code>s constructor. File name and location resolution also takes into account related entries in the <code class="docutils literal notranslate"><span class="pre">'station'</span></code> section of the QCoDeS configuration. We refer to corresponding documentation for more information.</p>
+<div class="section" id="Using-Station-with-YAML-configuration-files">
+<h2>Using Station with YAML configuration files<a class="headerlink" href="#Using-Station-with-YAML-configuration-files" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we shall briefly describe the usage of <code class="docutils literal notranslate"><span class="pre">Station</span></code> with YAML configuration files. For more details, we refer to the docstrings of the methods of the <code class="docutils literal notranslate"><span class="pre">Station</span></code> class.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">Station</span></code> can be created with or without one or more YAML configuration files. With YAML configuration files, <code class="docutils literal notranslate"><span class="pre">Station</span></code> can be created by passing the file names (or file names with absolute path) to <code class="docutils literal notranslate"><span class="pre">Station</span></code>’s constructor. File names and location resolution also takes into account related entries in the <code class="docutils literal notranslate"><span class="pre">'station'</span></code> section of the QCoDeS configuration. We refer to corresponding documentation for more information.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">station</span> <span class="o">=</span> <span class="n">Station</span><span class="p">(</span><span class="n">config_file</span><span class="o">=</span><span class="s1">&#39;qutech_station_25.yaml&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Alternatively, <code class="docutils literal notranslate"><span class="pre">load_config_file</span></code> method can be called on an already instantiated station to load the configuration file.</p>
+<p>or</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">station</span> <span class="o">=</span> <span class="n">Station</span><span class="p">(</span><span class="n">config_file</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;example_1.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;example_2.yaml&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Alternatively, <code class="docutils literal notranslate"><span class="pre">load_config_file</span></code> or <code class="docutils literal notranslate"><span class="pre">load_config_files</span></code> methods can be called on an already instantiated Station to load the configuration files.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">load_config_file</span></code> method can be used for loading 1 configuration file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">load_config_files</span></code> method can be used for loading 1 or more configuration files. If multiple configuration files are provided, this method first merges them into one temporary file and then loads that into the station. Please note that, the merged file is temporary and not saved on the disk.</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">station</span> <span class="o">=</span> <span class="n">Station</span><span class="p">()</span>
-<span class="n">stataion</span><span class="o">.</span><span class="n">load_config_file</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Q:</span><span class="se">\\</span><span class="s1">station_data</span><span class="se">\\</span><span class="s1">qutech_station_25.yaml&#39;</span><span class="p">)</span>
+<span class="n">station</span><span class="o">.</span><span class="n">load_config_file</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Q:</span><span class="se">\\</span><span class="s1">station_data</span><span class="se">\\</span><span class="s1">qutech_station_25.yaml&#39;</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">station</span> <span class="o">=</span> <span class="n">Station</span><span class="p">()</span>
+<span class="n">station</span><span class="o">.</span><span class="n">load_config_files</span><span class="p">(</span><span class="s1">&#39;example_1.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;example_2.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;example_3.yaml&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In case the configuration is already available as a YAML string, then that configuration can be loaded using <code class="docutils literal notranslate"><span class="pre">Station</span></code>’s <code class="docutils literal notranslate"><span class="pre">load_config</span></code> method. We refer to it’s docstring and signature for more information.</p>
