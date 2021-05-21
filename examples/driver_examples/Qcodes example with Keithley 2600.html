@@ -72,7 +72,7 @@
             
             
               <div class="version">
-                0.25.0+286.gf77f3aba58
+                0.25.0+294.gb38e37a959
               </div>
             
           
@@ -131,7 +131,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Qcodes%20example%20with%20Ithaco.html">QCoDeS Example with Itacho</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">QCoDeS Example with with Keithley 2600</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#Basic-operation">Basic operation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Fast-IV-curves">Fast IV curves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Fast-IV-or-VI-curves">Fast IV or VI curves</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Time-Trace">Time Trace</a></li>
 </ul>
 </li>
@@ -542,7 +542,7 @@ alt="Binder badge"
 </div><div class="section" id="QCoDeS-Example-with-with-Keithley-2600">
 <h1>QCoDeS Example with with Keithley 2600<a class="headerlink" href="#QCoDeS-Example-with-with-Keithley-2600" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -552,8 +552,7 @@ alt="Binder badge"
 <span class="kn">from</span> <span class="nn">qcodes.dataset.plotting</span> <span class="kn">import</span> <span class="n">plot_dataset</span>
 <span class="kn">from</span> <span class="nn">qcodes.dataset.sqlite.database</span> <span class="kn">import</span> <span class="n">initialise_database</span>
 <span class="kn">from</span> <span class="nn">qcodes.dataset.experiment_container</span> <span class="kn">import</span> <span class="n">new_experiment</span>
-
-<span class="kn">from</span> <span class="nn">qcodes.plots.qcmatplotlib</span> <span class="kn">import</span> <span class="n">MatPlot</span>
+<span class="kn">from</span> <span class="nn">qcodes.utils.dataset.doNd</span> <span class="kn">import</span> <span class="n">do0d</span>
 </pre></div>
 </div>
 </div>
@@ -578,7 +577,7 @@ alt="Binder badge"
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Connected to: Keithley Instruments Inc. 2614B (serial:4305420, firmware:3.2.2) in 0.10s
+Connected to: Keithley Instruments Inc. 2614B (serial:4305420, firmware:3.2.2) in 0.77s
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -620,55 +619,55 @@ timeout         :       5 (s)
 keithley_smua:
         parameter                  value
 --------------------------------------------------------------------------------
-curr                        :   7.1526e-08 (A)
+curr                        :   8.7023e-07 (A)
 fastsweep                   :   Not available
 limiti                      :   0.1 (A)
 limitv                      :   20 (V)
 linefreq                    :   50 (Hz)
-measure_autorange_i_enabled :   0
-measure_autorange_v_enabled :   1
+measure_autorange_i_enabled :   False
+measure_autorange_v_enabled :   True
 measurerange_i              :   0.1 (A)
-measurerange_v              :   20 (V)
-mode                        :   voltage
+measurerange_v              :   200 (V)
+mode                        :   current
 nplc                        :   0.05
-output                      :   1
-res                         :   5.4138e+06 (Ohm)
-source_autorange_i_enabled  :   1
-source_autorange_v_enabled  :   0
-sourcerange_i               :   1e-07 (A)
+output                      :   True
+res                         :   2.2985e+07 (Ohm)
+source_autorange_i_enabled  :   True
+source_autorange_v_enabled  :   False
+sourcerange_i               :   0.1 (A)
 sourcerange_v               :   20 (V)
-time_axis                   :   [0.    0.001 0.002 0.003 0.004 0.005 0.006 0.00...
+time_axis                   :   Not available (s)
 timetrace                   :   Not available (A)
 timetrace_dt                :   0.001 (s)
 timetrace_mode              :   current
 timetrace_npts              :   500
-volt                        :   2.0003 (V)
+volt                        :   20.002 (V)
 keithley_smub:
         parameter                  value
 --------------------------------------------------------------------------------
-curr                        :   -1.6928e-12 (A)
+curr                        :   -1.8239e-12 (A)
 fastsweep                   :   Not available
 limiti                      :   0.1 (A)
 limitv                      :   20 (V)
 linefreq                    :   50 (Hz)
-measure_autorange_i_enabled :   1
-measure_autorange_v_enabled :   1
+measure_autorange_i_enabled :   True
+measure_autorange_v_enabled :   True
 measurerange_i              :   1e-07 (A)
 measurerange_v              :   0.2 (V)
 mode                        :   voltage
 nplc                        :   1
-output                      :   0
-res                         :   1.925e+07 (Ohm)
-source_autorange_i_enabled  :   1
-source_autorange_v_enabled  :   1
+output                      :   False
+res                         :   3.5934e+07 (Ohm)
+source_autorange_i_enabled  :   True
+source_autorange_v_enabled  :   True
 sourcerange_i               :   1e-07 (A)
 sourcerange_v               :   0.2 (V)
-time_axis                   :   [0.    0.001 0.002 0.003 0.004 0.005 0.006 0.00...
+time_axis                   :   Not available (s)
 timetrace                   :   Not available (A)
 timetrace_dt                :   0.001 (s)
 timetrace_mode              :   current
 timetrace_npts              :   500
-volt                        :   2.7418e-05 (V)
+volt                        :   -6.3276e-05 (V)
 </pre></div></div>
 </div>
 <div class="section" id="Basic-operation">
@@ -701,55 +700,81 @@ volt                        :   2.7418e-05 (V)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Measured one current value: 6.55651e-07 A
+Measured one current value: -3.40939e-06 A
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Fast-IV-curves">
-<h2>Fast IV curves<a class="headerlink" href="#Fast-IV-curves" title="Permalink to this headline">¶</a></h2>
-<p>Onboard the Keithley 2600 sits a small computer that can interpret <code class="docutils literal notranslate"><span class="pre">Lua</span></code> scripts. This can be used to make fast IV-curves and is supported by the QCoDeS driver.</p>
+<div class="section" id="Fast-IV-or-VI-curves">
+<h2>Fast IV or VI curves<a class="headerlink" href="#Fast-IV-or-VI-curves" title="Permalink to this headline">¶</a></h2>
+<p>Onboard the Keithley 2600 sits a small computer that can interpret <code class="docutils literal notranslate"><span class="pre">Lua</span></code> scripts. This can be used to make fast IV- or VI-curves and is supported by the QCoDeS driver. To make IV- or VI-curves the driver has the ArrayParameter fastsweep, which have 3 modes: ‘IV’,‘VI’ and ‘VIfourprobe’. The Modes ‘IV’ and ‘VI’are two probe measurements, while the mode ’VIfourprobe’ makes a four probe measuremnt.</p>
+<p>Let’s make a fast IV curve by sweeping the voltage from 1 V to 2 V in 500 steps (when making this notebook, nothing was connected to the instrument, so we just measure noise)</p>
+<p>First we need to prepare the sweep by spesifyring the start, stop, number of points and the mode</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Let&#39;s make a fast IV curve by sweeping the voltage from 1 V to 2 V in 500 steps</span>
-<span class="c1"># (when making this notebook, nothing was connected to the instrument, so we just measure noise)</span>
+<span></span><span class="n">keith</span><span class="o">.</span><span class="n">smua</span><span class="o">.</span><span class="n">fastsweep</span><span class="o">.</span><span class="n">prepareSweep</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;IV&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<p>When the sweep parameters are set, we can use a “do0d” to preform the sweep</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># This function performs the fast sweep and returns a QCoDeS DataSet</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">keith</span><span class="o">.</span><span class="n">smua</span><span class="o">.</span><span class="n">doFastSweep</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;IV&#39;</span><span class="p">)</span>
+<span></span><span class="n">do0d</span><span class="p">(</span><span class="n">keith</span><span class="o">.</span><span class="n">smua</span><span class="o">.</span><span class="n">fastsweep</span><span class="p">,</span> <span class="n">do_plot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Starting experimental run with id: 154.
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(results #154@C:\Users\Farzad\experiments.db
+ -------------------------------------------
+ keithley_smua_Voltage - array
+ keithley_smua_iv_sweep - array,
+ [&lt;AxesSubplot:title={&#39;center&#39;:&#39;Run #154, Experiment tutorial_exp (no sample)&#39;}, xlabel=&#39;keithley_smua_Voltage (V)&#39;, ylabel=&#39;current (μA)&#39;&gt;],
+ [None])
+</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div class="highlight"><pre>
-DataSet:
-   location = &#39;data/2019-09-16/#001_{name}_14-48-19&#39;
-   &lt;Type&gt;   | &lt;array_id&gt;              | &lt;array.name&gt; | &lt;array.shape&gt;
-   Measured | keithley_smua_fastsweep | iv_sweep     | (500,)
-acquired at 2019-09-16 14:48:20
-</pre></div></div>
+<img alt="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_12_2.png" src="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_12_2.png" />
 </div>
+</div>
+<p>We can likewise do a VI two- or four-probe measurement</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># The DataSet may be plotted</span>
-<span class="n">plot</span> <span class="o">=</span> <span class="n">MatPlot</span><span class="p">()</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="s1">&#39;keithley_smua_fastsweep&#39;</span><span class="p">])</span>
+<span></span><span class="n">keith</span><span class="o">.</span><span class="n">smua</span><span class="o">.</span><span class="n">fastsweep</span><span class="o">.</span><span class="n">prepareSweep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;VI&#39;</span><span class="p">)</span>
+<span class="n">do0d</span><span class="p">(</span><span class="n">keith</span><span class="o">.</span><span class="n">smua</span><span class="o">.</span><span class="n">fastsweep</span><span class="p">,</span> <span class="n">do_plot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Starting experimental run with id: 155.
+</pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -757,18 +782,72 @@ acquired at 2019-09-16 14:48:20
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.lines.Line2D at 0x23c97019cc0&gt;
+(results #155@C:\Users\Farzad\experiments.db
+ -------------------------------------------
+ keithley_smua_Current - array
+ keithley_smua_vi_sweep - array,
+ [&lt;AxesSubplot:title={&#39;center&#39;:&#39;Run #155, Experiment tutorial_exp (no sample)&#39;}, xlabel=&#39;keithley_smua_Current (mA)&#39;, ylabel=&#39;voltage (V)&#39;&gt;],
+ [None])
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_10_1.png" src="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_10_1.png" />
+<img alt="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_14_2.png" src="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_14_2.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">keith</span><span class="o">.</span><span class="n">smua</span><span class="o">.</span><span class="n">fastsweep</span><span class="o">.</span><span class="n">prepareSweep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;VIfourprobe&#39;</span><span class="p">)</span>
+<span class="n">do0d</span><span class="p">(</span><span class="n">keith</span><span class="o">.</span><span class="n">smua</span><span class="o">.</span><span class="n">fastsweep</span><span class="p">,</span> <span class="n">do_plot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Starting experimental run with id: 156.
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(results #156@C:\Users\Farzad\experiments.db
+ -------------------------------------------
+ keithley_smua_Current - array
+ keithley_smua_vi_sweep_four_probe - array,
+ [&lt;AxesSubplot:title={&#39;center&#39;:&#39;Run #156, Experiment tutorial_exp (no sample)&#39;}, xlabel=&#39;keithley_smua_Current (mA)&#39;, ylabel=&#39;voltage (V)&#39;&gt;],
+ [None])
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_15_2.png" src="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_15_2.png" />
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">do0d</span><span class="p">(</span><span class="n">keith</span><span class="o">.</span><span class="n">smua</span><span class="o">.</span><span class="n">fastsweep</span><span class="p">,</span> <span class="n">do_plot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -782,7 +861,7 @@ acquired at 2019-09-16 14:48:20
 <h2>Time Trace<a class="headerlink" href="#Time-Trace" title="Permalink to this headline">¶</a></h2>
 <p>We can measure current or voltage as a function of time, as well. Let us consider the case in which we would like to have the time trace of current. We, then, first set our trace mode accordingly</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -791,19 +870,28 @@ acquired at 2019-09-16 14:48:20
 </div>
 </div>
 <p>The latter should not be confused with the channel mode. Next, we register our parameter</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="n">timemeas</span> <span class="o">=</span> <span class="n">qc</span><span class="o">.</span><span class="n">Measurement</span><span class="p">()</span>
+<span class="n">timemeas</span><span class="o">.</span><span class="n">register_parameter</span><span class="p">(</span><span class="n">keith</span><span class="o">.</span><span class="n">smua</span><span class="o">.</span><span class="n">timetrace</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>timemeas = qc.Measurement() timemeas.register_parameter(keith.smua.timetrace)</p>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;qcodes.dataset.measurements.Measurement at 0x1cb25ae9eb0&gt;
+</pre></div></div>
+</div>
 <p>The total time interval is returned by <code class="docutils literal notranslate"><span class="pre">time_axis</span></code> method in accordance with the integration time <code class="docutils literal notranslate"><span class="pre">dt</span></code> and the total number of points <code class="docutils literal notranslate"><span class="pre">npts</span></code> with default values of 1 ms and 500, respectively. Specifically, the time trace will be obtained for an interval of <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">dt*npts]</span></code>. Thus, for the default values, we shall have a time trace of current for <code class="docutils literal notranslate"><span class="pre">500</span> <span class="pre">ms</span></code> calculated at 500 steps.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -812,16 +900,16 @@ acquired at 2019-09-16 14:48:20
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.002
+0.001
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -830,16 +918,16 @@ acquired at 2019-09-16 14:48:20
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-600
+500
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -862,28 +950,29 @@ acquired at 2019-09-16 14:48:20
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Starting experimental run with id: 3
+Starting experimental run with id: 157.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-([&lt;matplotlib.axes._subplots.AxesSubplot at 0x290f56be320&gt;], [None])
+([&lt;AxesSubplot:title={&#39;center&#39;:&#39;Run #157, Experiment tutorial_exp (no sample)&#39;}, xlabel=&#39;Time (ms)&#39;, ylabel=&#39;Current (μA)&#39;&gt;],
+ [None])
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_21_2.png" src="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_21_2.png" />
+<img alt="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_26_2.png" src="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_26_2.png" />
 </div>
 </div>
 <p>Let us get another trace for 2ms integration time with 600 steps</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -892,7 +981,7 @@ Starting experimental run with id: 3
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -901,7 +990,7 @@ Starting experimental run with id: 3
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -921,28 +1010,29 @@ Starting experimental run with id: 3
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Starting experimental run with id: 4
+Starting experimental run with id: 158.
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-([&lt;matplotlib.axes._subplots.AxesSubplot at 0x290f672ab00&gt;], [None])
+([&lt;AxesSubplot:title={&#39;center&#39;:&#39;Run #158, Experiment tutorial_exp (no sample)&#39;}, xlabel=&#39;Time (s)&#39;, ylabel=&#39;Current (μA)&#39;&gt;],
+ [None])
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_25_2.png" src="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_25_2.png" />
+<img alt="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_30_2.png" src="../../_images/examples_driver_examples_Qcodes_example_with_Keithley_2600_30_2.png" />
 </div>
 </div>
 <p>Similarly, we can get the time trace for voltage via changing the mode</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>

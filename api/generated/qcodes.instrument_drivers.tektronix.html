@@ -70,7 +70,7 @@
             
             
               <div class="version">
-                0.25.0+286.gf77f3aba58
+                0.25.0+294.gb38e37a959
               </div>
             
           
@@ -12282,8 +12282,9 @@ deployed Lua script sweep.</p>
 <li><p><strong>start</strong> – Starting point of the sweep</p></li>
 <li><p><strong>stop</strong> – Endpoint of the sweep</p></li>
 <li><p><strong>steps</strong> – No. of sweep steps</p></li>
-<li><p><strong>mode</strong> – Type of sweep, either ‘IV’ (voltage sweep)
-or ‘VI’ (current sweep)</p></li>
+<li><p><strong>mode</strong> – Type of sweep, either ‘IV’ (voltage sweep),
+‘VI’ (current sweep two probe setup) or
+‘VIfourprobe’ (current sweep four probe setup)</p></li>
 </ul>
 </dd>
 </dl>
@@ -13453,8 +13454,9 @@ return a QCoDeS DataSet with the sweep.</p>
 <li><p><strong>start</strong> – starting sweep value (V or A)</p></li>
 <li><p><strong>stop</strong> – end sweep value (V or A)</p></li>
 <li><p><strong>steps</strong> – number of steps</p></li>
-<li><p><strong>mode</strong> – What kind of sweep to make.
-‘IV’ (I versus V) or ‘VI’ (V versus I)</p></li>
+<li><p><strong>mode</strong> – Type of sweep, either ‘IV’ (voltage sweep),
+‘VI’ (current sweep two probe setup) or
+‘VIfourprobe’ (current sweep four probe setup)</p></li>
 </ul>
 </dd>
 </dl>

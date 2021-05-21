@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+286.gf77f3aba58
+                0.25.0+294.gb38e37a959
               </div>
             
           
@@ -211,12 +211,13 @@
 <span class="sd">            start: Starting point of the sweep</span>
 <span class="sd">            stop: Endpoint of the sweep</span>
 <span class="sd">            steps: No. of sweep steps</span>
-<span class="sd">            mode: Type of sweep, either &#39;IV&#39; (voltage sweep)</span>
-<span class="sd">                or &#39;VI&#39; (current sweep)</span>
+<span class="sd">            mode: Type of sweep, either &#39;IV&#39; (voltage sweep),</span>
+<span class="sd">                &#39;VI&#39; (current sweep two probe setup) or</span>
+<span class="sd">                &#39;VIfourprobe&#39; (current sweep four probe setup)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">if</span> <span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;IV&#39;</span><span class="p">,</span> <span class="s1">&#39;VI&#39;</span><span class="p">]:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;mode must be either &quot;VI&quot; or &quot;IV&quot;&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;IV&#39;</span><span class="p">,</span> <span class="s1">&#39;VI&#39;</span><span class="p">,</span> <span class="s1">&#39;VIfourprobe&#39;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;mode must be either &quot;VI&quot;, &quot;IV&quot; or &quot;VIfourprobe&quot;&#39;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">steps</span><span class="p">,)</span>
 
@@ -233,6 +234,13 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">setpoint_units</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;voltage&#39;</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_short_name</span> <span class="o">=</span> <span class="s1">&#39;vi_sweep&#39;</span>
+
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;VIfourprobe&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;V&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setpoint_names</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Current&#39;</span><span class="p">,)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setpoint_units</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;voltage&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_short_name</span> <span class="o">=</span> <span class="s1">&#39;vi_sweep_four_probe&#39;</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">setpoints</span> <span class="o">=</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">steps</span><span class="p">)),)</span>
 
@@ -601,8 +609,9 @@
 <span class="sd">            start: starting sweep value (V or A)</span>
 <span class="sd">            stop: end sweep value (V or A)</span>
 <span class="sd">            steps: number of steps</span>
-<span class="sd">            mode: What kind of sweep to make.</span>
-<span class="sd">                &#39;IV&#39; (I versus V) or &#39;VI&#39; (V versus I)</span>
+<span class="sd">            mode: Type of sweep, either &#39;IV&#39; (voltage sweep),</span>
+<span class="sd">                &#39;VI&#39; (current sweep two probe setup) or</span>
+<span class="sd">                &#39;VIfourprobe&#39; (current sweep four probe setup)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># prepare setpoints, units, name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fastsweep</span><span class="o">.</span><span class="n">prepareSweep</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">steps</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
@@ -622,8 +631,9 @@
 <span class="sd">            start: starting voltage</span>
 <span class="sd">            stop: end voltage</span>
 <span class="sd">            steps: number of steps</span>
-<span class="sd">            mode: What kind of sweep to make.</span>
-<span class="sd">                &#39;IV&#39; (I versus V) or &#39;VI&#39; (V versus I)</span>
+<span class="sd">            mode: Type of sweep, either &#39;IV&#39; (voltage sweep),</span>
+<span class="sd">                &#39;VI&#39; (current sweep two probe setup) or</span>
+<span class="sd">                &#39;VIfourprobe&#39; (current sweep four probe setup)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">channel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span>
@@ -639,16 +649,25 @@
             <span class="n">meas</span> <span class="o">=</span> <span class="s1">&#39;i&#39;</span>
             <span class="n">sour</span> <span class="o">=</span> <span class="s1">&#39;v&#39;</span>
             <span class="n">func</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
+            <span class="n">sense_mode</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
 
         <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;VI&#39;</span><span class="p">:</span>
             <span class="n">meas</span> <span class="o">=</span> <span class="s1">&#39;v&#39;</span>
             <span class="n">sour</span> <span class="o">=</span> <span class="s1">&#39;i&#39;</span>
             <span class="n">func</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+            <span class="n">sense_mode</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;VIfourprobe&#39;</span><span class="p">:</span>
+            <span class="n">meas</span> <span class="o">=</span> <span class="s1">&#39;v&#39;</span>
+            <span class="n">sour</span> <span class="o">=</span> <span class="s1">&#39;i&#39;</span>
+            <span class="n">func</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+            <span class="n">sense_mode</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
 
         <span class="n">script</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.measure.nplc = </span><span class="si">{</span><span class="n">nplc</span><span class="si">:</span><span class="s1">.12f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
                   <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.source.output = 1&#39;</span><span class="p">,</span>
                   <span class="sa">f</span><span class="s1">&#39;startX = </span><span class="si">{</span><span class="n">start</span><span class="si">:</span><span class="s1">.12f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
                   <span class="sa">f</span><span class="s1">&#39;dX = </span><span class="si">{</span><span class="n">dV</span><span class="si">:</span><span class="s1">.12f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+                  <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.sense = </span><span class="si">{</span><span class="n">sense_mode</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
                   <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.source.output = 1&#39;</span><span class="p">,</span>
                   <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.source.func = </span><span class="si">{</span><span class="n">func</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
                   <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.measure.count = 1&#39;</span><span class="p">,</span>
