@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+279.g0ab8a58cde
+                0.25.0+284.g83a65e37e0
               </div>
             
           
@@ -174,16 +174,19 @@
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span> <span class="nn">pyvisa</span> <span class="k">as</span> <span class="nn">visa</span>
 <span class="kn">from</span> <span class="nn">pyvisa.resources.serial</span> <span class="kn">import</span> <span class="n">SerialInstrument</span>
 
-<span class="kn">from</span> <span class="nn">qcodes.instrument.channel</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ChannelList</span><span class="p">,</span> <span class="n">InstrumentChannel</span><span class="p">,</span>
-                                       <span class="n">MultiChannelInstrumentParameter</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">qcodes.instrument.visa</span> <span class="kn">import</span> <span class="n">VisaInstrument</span>
 <span class="kn">from</span> <span class="nn">qcodes.instrument.base</span> <span class="kn">import</span> <span class="n">Instrument</span>
+<span class="kn">from</span> <span class="nn">qcodes.instrument.channel</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ChannelList</span><span class="p">,</span>
+    <span class="n">InstrumentChannel</span><span class="p">,</span>
+    <span class="n">MultiChannelInstrumentParameter</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">qcodes.instrument.parameter</span> <span class="kn">import</span> <span class="n">ParamRawDataType</span>
+<span class="kn">from</span> <span class="nn">qcodes.instrument.visa</span> <span class="kn">import</span> <span class="n">VisaInstrument</span>
 <span class="kn">from</span> <span class="nn">qcodes.utils</span> <span class="kn">import</span> <span class="n">validators</span> <span class="k">as</span> <span class="n">vals</span>
 
 <span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
@@ -763,7 +766,7 @@
 <span class="sd">        Print the finite slopes assigned to channels</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">sl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_slopes</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Channel </span><span class="si">{}</span><span class="s1">, slope: </span><span class="si">{}</span><span class="s1"> (V/s)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sl</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sl</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span></div>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Channel </span><span class="si">{</span><span class="n">sl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, slope: </span><span class="si">{</span><span class="n">sl</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> (V/s)&quot;</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">_rampvoltage</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
@@ -891,8 +894,8 @@
 
         <span class="c1"># Print the channels</span>
         <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_chans</span><span class="p">):</span>
-            <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;Channel </span><span class="si">{}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ii</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">line</span> <span class="o">+=</span> <span class="s1">&#39;    &#39;</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Channel </span><span class="si">{</span><span class="n">ii</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="n">line</span> <span class="o">+=</span> <span class="s2">&quot;    &quot;</span>
             <span class="k">for</span> <span class="n">pp</span> <span class="ow">in</span> <span class="n">paramstoget</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
                 <span class="n">param</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="n">ii</span><span class="p">],</span> <span class="n">pp</span><span class="p">)</span>
                 <span class="n">line</span> <span class="o">+=</span> <span class="n">printdict</span><span class="p">[</span><span class="n">pp</span><span class="p">]</span>
@@ -904,8 +907,8 @@
                 <span class="n">param</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="n">ii</span><span class="p">],</span> <span class="n">pp</span><span class="p">)</span>
                 <span class="n">line</span> <span class="o">+=</span> <span class="n">printdict</span><span class="p">[</span><span class="n">pp</span><span class="p">]</span>
                 <span class="n">value</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">get_latest</span><span class="p">()</span>
-                <span class="n">line</span> <span class="o">+=</span> <span class="s1">&#39;: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">returnmap</span><span class="p">[</span><span class="n">pp</span><span class="p">][</span><span class="n">value</span><span class="p">])</span>
-                <span class="n">line</span> <span class="o">+=</span> <span class="s1">&#39;. &#39;</span>
+                <span class="n">line</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;: </span><span class="si">{</span><span class="n">returnmap</span><span class="p">[</span><span class="n">pp</span><span class="p">][</span><span class="n">value</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="n">line</span> <span class="o">+=</span> <span class="s2">&quot;. &quot;</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span></div></div>
 </pre></div>
 

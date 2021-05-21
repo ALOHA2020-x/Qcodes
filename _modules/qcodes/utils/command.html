@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+279.g0ab8a58cde
+                0.25.0+284.g83a65e37e0
               </div>
             
           
@@ -262,8 +262,10 @@
                 <span class="p">}[(</span><span class="n">parse_input</span><span class="p">,</span> <span class="n">parse_output</span><span class="p">)]</span>
 
             <span class="k">elif</span> <span class="n">exec_str</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;exec_str must be a function with one arg,&#39;</span> <span class="o">+</span>
-                                <span class="s1">&#39; not </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">exec_str</span><span class="p">)))</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;exec_str must be a function with one arg,&quot;</span>
+                    <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot; not </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">exec_str</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
 
         <span class="k">elif</span> <span class="n">is_function</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">arg_count</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_cmd</span> <span class="o">=</span> <span class="n">cmd</span>

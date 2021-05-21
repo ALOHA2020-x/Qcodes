@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+279.g0ab8a58cde
+                0.25.0+284.g83a65e37e0
               </div>
             
           
@@ -174,25 +174,29 @@
 <span class="sd">using QCoDeS.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span><span class="n">Optional</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span>
-                    <span class="n">Any</span><span class="p">,</span> <span class="n">cast</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">inspect</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">cast</span>
+
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">FuncFormatter</span>
-<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
 
 <span class="kn">import</span> <span class="nn">qcodes</span> <span class="k">as</span> <span class="nn">qc</span>
-<span class="kn">from</span> <span class="nn">qcodes.dataset.data_set</span> <span class="kn">import</span> <span class="n">load_by_run_spec</span><span class="p">,</span> <span class="n">DataSet</span>
-<span class="kn">from</span> <span class="nn">qcodes.utils.plotting</span> <span class="kn">import</span> <span class="p">(</span><span class="n">auto_color_scale_from_config</span><span class="p">,</span>
-                                   <span class="n">find_scale_and_prefix</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">qcodes.dataset.data_set</span> <span class="kn">import</span> <span class="n">DataSet</span><span class="p">,</span> <span class="n">load_by_run_spec</span>
+<span class="kn">from</span> <span class="nn">qcodes.utils.plotting</span> <span class="kn">import</span> <span class="n">auto_color_scale_from_config</span><span class="p">,</span> <span class="n">find_scale_and_prefix</span>
 
-<span class="kn">from</span> <span class="nn">.data_export</span> <span class="kn">import</span> <span class="p">(</span><span class="n">_get_data_from_ds</span><span class="p">,</span> <span class="n">flatten_1D_data_for_plot</span><span class="p">,</span>
-                          <span class="n">get_1D_plottype</span><span class="p">,</span> <span class="n">get_2D_plottype</span><span class="p">,</span> <span class="n">reshape_2D_data</span><span class="p">,</span>
-                          <span class="n">_strings_as_ints</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.data_export</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">_get_data_from_ds</span><span class="p">,</span>
+    <span class="n">_strings_as_ints</span><span class="p">,</span>
+    <span class="n">flatten_1D_data_for_plot</span><span class="p">,</span>
+    <span class="n">get_1D_plottype</span><span class="p">,</span>
+    <span class="n">get_2D_plottype</span><span class="p">,</span>
+    <span class="n">reshape_2D_data</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="n">DB</span> <span class="o">=</span> <span class="n">qc</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;core&quot;</span><span class="p">][</span><span class="s2">&quot;db_location&quot;</span><span class="p">]</span>
@@ -803,7 +807,7 @@
 <span class="sd">    Function for matplotlib.ticker.FuncFormatter that scales the tick values</span>
 <span class="sd">    according to the given `scale` value.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{:g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tick_value</span><span class="o">*</span><span class="n">factor</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tick_value</span><span class="o">*</span><span class="n">factor</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">&quot;</span>
 
 
 <span class="k">def</span> <span class="nf">_make_rescaled_ticks_and_units</span><span class="p">(</span><span class="n">data_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> \

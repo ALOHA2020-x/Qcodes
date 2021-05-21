@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+279.g0ab8a58cde
+                0.25.0+284.g83a65e37e0
               </div>
             
           
@@ -171,19 +171,20 @@
   <h1>Source code for qcodes.instrument_drivers.tektronix.Keithley_2600_channels</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">struct</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Any</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">import</span> <span class="nn">qcodes</span> <span class="k">as</span> <span class="nn">qc</span>
+<span class="kn">import</span> <span class="nn">qcodes.utils.validators</span> <span class="k">as</span> <span class="nn">vals</span>
 <span class="kn">from</span> <span class="nn">qcodes</span> <span class="kn">import</span> <span class="n">VisaInstrument</span>
 <span class="kn">from</span> <span class="nn">qcodes.data.data_set</span> <span class="kn">import</span> <span class="n">DataSet</span>
-<span class="kn">from</span> <span class="nn">qcodes.instrument.channel</span> <span class="kn">import</span> <span class="n">InstrumentChannel</span>
 <span class="kn">from</span> <span class="nn">qcodes.instrument.base</span> <span class="kn">import</span> <span class="n">Instrument</span><span class="p">,</span> <span class="n">Parameter</span>
+<span class="kn">from</span> <span class="nn">qcodes.instrument.channel</span> <span class="kn">import</span> <span class="n">InstrumentChannel</span>
 <span class="kn">from</span> <span class="nn">qcodes.instrument.parameter</span> <span class="kn">import</span> <span class="n">ArrayParameter</span><span class="p">,</span> <span class="n">ParameterWithSetpoints</span>
-<span class="kn">import</span> <span class="nn">qcodes.utils.validators</span> <span class="k">as</span> <span class="nn">vals</span>
-<span class="kn">from</span> <span class="nn">qcodes.utils.helpers</span> <span class="kn">import</span> <span class="n">create_on_off_val_mapping</span>
 <span class="kn">from</span> <span class="nn">qcodes.measure</span> <span class="kn">import</span> <span class="n">Measure</span>
+<span class="kn">from</span> <span class="nn">qcodes.utils.helpers</span> <span class="kn">import</span> <span class="n">create_on_off_val_mapping</span>
 
 <span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -312,16 +313,18 @@
 
         <span class="n">mode_map</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;current&quot;</span><span class="p">:</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;voltage&quot;</span><span class="p">:</span> <span class="s2">&quot;v&quot;</span><span class="p">}</span>
 
-        <span class="n">script</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.measure.count=</span><span class="si">{</span><span class="n">npts</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-                  <span class="sa">f</span><span class="s1">&#39;oldint=</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.measure.interval&#39;</span><span class="p">,</span>
-                  <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.measure.interval=</span><span class="si">{</span><span class="n">dt</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-                  <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.nvbuffer1.clear()&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.measure.</span><span class="si">{}</span><span class="s1">(</span><span class="si">{}</span><span class="s1">.nvbuffer1)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">mode_map</span><span class="p">[</span><span class="n">mode</span><span class="p">],</span> <span class="n">channel</span><span class="p">),</span>
-                  <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.measure.interval=oldint&#39;</span><span class="p">,</span>
-                  <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.measure.count=1&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;format.data = format.REAL32&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;format.byteorder = format.LITTLEENDIAN&#39;</span><span class="p">,</span>
-                  <span class="sa">f</span><span class="s1">&#39;printbuffer(1, </span><span class="si">{</span><span class="n">npts</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">.nvbuffer1.readings)&#39;</span><span class="p">]</span>
+        <span class="n">script</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s2">.measure.count=</span><span class="si">{</span><span class="n">npts</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;oldint=</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s2">.measure.interval&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s2">.measure.interval=</span><span class="si">{</span><span class="n">dt</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s2">.nvbuffer1.clear()&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s2">.measure.</span><span class="si">{</span><span class="n">mode_map</span><span class="p">[</span><span class="n">mode</span><span class="p">]</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s2">.nvbuffer1)&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s2">.measure.interval=oldint&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s2">.measure.count=1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;format.data = format.REAL32&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;format.byteorder = format.LITTLEENDIAN&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;printbuffer(1, </span><span class="si">{</span><span class="n">npts</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s2">.nvbuffer1.readings)&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instrument</span><span class="o">.</span><span class="n">_execute_lua</span><span class="p">(</span><span class="n">script</span><span class="p">,</span> <span class="n">npts</span><span class="p">)</span>
 
@@ -743,10 +746,9 @@
         <span class="n">knownmodels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;2601B&#39;</span><span class="p">,</span> <span class="s1">&#39;2602A&#39;</span><span class="p">,</span> <span class="s1">&#39;2602B&#39;</span><span class="p">,</span> <span class="s1">&#39;2604B&#39;</span><span class="p">,</span> <span class="s1">&#39;2611B&#39;</span><span class="p">,</span> <span class="s1">&#39;2612B&#39;</span><span class="p">,</span>
                        <span class="s1">&#39;2614B&#39;</span><span class="p">,</span> <span class="s1">&#39;2635B&#39;</span><span class="p">,</span> <span class="s1">&#39;2636B&#39;</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">model</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">knownmodels</span><span class="p">:</span>
-            <span class="n">kmstring</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, &#39;</span><span class="o">*</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">knownmodels</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">knownmodels</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-            <span class="n">kmstring</span> <span class="o">+=</span> <span class="s1">&#39;and </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">knownmodels</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unknown model. Known model are: &#39;</span> <span class="o">+</span>
-                             <span class="n">kmstring</span><span class="p">)</span>
+            <span class="n">kmstring</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">, &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">knownmodels</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">knownmodels</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">kmstring</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;and </span><span class="si">{</span><span class="n">knownmodels</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown model. Known model are: &quot;</span> <span class="o">+</span> <span class="n">kmstring</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
 
