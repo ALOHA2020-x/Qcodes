@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+284.g83a65e37e0
+                0.25.0+286.gf77f3aba58
               </div>
             
           
@@ -169,9 +169,10 @@
            <div itemprop="articleBody">
             
   <h1>Source code for qcodes.instrument.delegate.delegate_channel_instrument</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Optional</span>
-<span class="kn">from</span> <span class="nn">qcodes.station</span> <span class="kn">import</span> <span class="n">Station</span>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span>
+
 <span class="kn">from</span> <span class="nn">qcodes.instrument.delegate.delegate_instrument</span> <span class="kn">import</span> <span class="n">DelegateInstrument</span>
+<span class="kn">from</span> <span class="nn">qcodes.station</span> <span class="kn">import</span> <span class="n">Station</span>
 
 
 <div class="viewcode-block" id="DelegateChannelInstrument"><a class="viewcode-back" href="../../../../api/instrument/delegate.html#qcodes.instrument.delegate.delegate_channel_instrument.DelegateChannelInstrument">[docs]</a><span class="k">class</span> <span class="nc">DelegateChannelInstrument</span><span class="p">(</span><span class="n">DelegateInstrument</span><span class="p">):</span>
@@ -234,8 +235,8 @@
         <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">station</span><span class="p">:</span> <span class="n">Station</span><span class="p">,</span>
         <span class="n">channels</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-        <span class="n">parameters</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
-        <span class="n">initial_values</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">parameters</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+        <span class="n">initial_values</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">set_initial_values_on_load</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
         <span class="n">_channels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_instrument_path</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="n">station</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">channels</span><span class="p">)</span>
