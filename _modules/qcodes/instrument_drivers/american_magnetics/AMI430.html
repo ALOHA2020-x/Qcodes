@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+294.gb38e37a959
+                0.25.0+302.g3d8f148316
               </div>
             
           
@@ -409,6 +409,11 @@
                                <span class="s1">&#39;heating switch&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
                                <span class="s1">&#39;cooling switch&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
                            <span class="p">})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s1">&#39;ramping_state_check_interval&#39;</span><span class="p">,</span>
+                           <span class="n">initial_value</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+                           <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span>
+                           <span class="n">vals</span><span class="o">=</span><span class="n">Numbers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+                           <span class="n">set_cmd</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
         <span class="c1"># Add persistent switch</span>
         <span class="n">switch_heater</span> <span class="o">=</span> <span class="n">AMI430SwitchHeater</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -511,15 +516,19 @@
 
         <span class="c1"># Otherwise, wait until no longer ramping</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Starting blocking ramp of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">ramping_state</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;ramping&#39;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_sleep</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_sleep</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-        <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ramping_state</span><span class="p">()</span>
+        <span class="n">exit_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait_while_ramping</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Finished blocking ramp&#39;</span><span class="p">)</span>
         <span class="c1"># If we are now holding, it was successful</span>
-        <span class="k">if</span> <span class="n">state</span> <span class="o">!=</span> <span class="s1">&#39;holding&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">exit_state</span> <span class="o">!=</span> <span class="s1">&#39;holding&#39;</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;_set_field(</span><span class="si">{}</span><span class="s1">) failed with state: </span><span class="si">{}</span><span class="s1">&#39;</span>
-            <span class="k">raise</span> <span class="n">AMI430Exception</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="p">))</span></div>
+            <span class="k">raise</span> <span class="n">AMI430Exception</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">exit_state</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="AMI430.wait_while_ramping"><a class="viewcode-back" href="../../../../api/generated/qcodes.instrument_drivers.american_magnetics.html#qcodes.instrument_drivers.american_magnetics.AMI430.AMI430.wait_while_ramping">[docs]</a>    <span class="k">def</span> <span class="nf">wait_while_ramping</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">ramping_state</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;ramping&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ramping_state_check_interval</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ramping_state</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">_get_ramp_rate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot; Return the ramp rate of the first segment in Tesla per second &quot;&quot;&quot;</span>
