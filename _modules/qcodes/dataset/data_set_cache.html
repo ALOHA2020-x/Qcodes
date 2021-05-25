@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+354.g3c4199032f
+                0.25.0+357.gdde8440b92
               </div>
             
           
@@ -169,31 +169,30 @@
            <div itemprop="articleBody">
             
   <h1>Source code for qcodes.dataset.data_set_cache</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Tuple</span>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
-<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">qcodes.dataset.descriptions.rundescriber</span> <span class="kn">import</span> <span class="n">RunDescriber</span>
-<span class="kn">from</span> <span class="nn">qcodes.dataset.sqlite.queries</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">load_new_data_for_rundescriber</span><span class="p">,</span> <span class="n">completed</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">qcodes.dataset.sqlite.connection</span> <span class="kn">import</span> <span class="n">ConnectionPlus</span>
+<span class="kn">from</span> <span class="nn">qcodes.dataset.sqlite.queries</span> <span class="kn">import</span> <span class="n">completed</span><span class="p">,</span> <span class="n">load_new_data_for_rundescriber</span>
 <span class="kn">from</span> <span class="nn">qcodes.utils.deprecate</span> <span class="kn">import</span> <span class="n">deprecate</span>
 
 <span class="kn">from</span> <span class="nn">.exporters.export_to_pandas</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">load_to_dataframe_dict</span><span class="p">,</span>
     <span class="n">load_to_concatenated_dataframe</span><span class="p">,</span>
+    <span class="n">load_to_dataframe_dict</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">.exporters.export_to_xarray</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">load_to_xarray_dataarray_dict</span><span class="p">,</span>
-    <span class="n">load_to_xarray_dataset</span>
+    <span class="n">load_to_xarray_dataset</span><span class="p">,</span>
 <span class="p">)</span>
-
 
 <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
     <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
     <span class="kn">from</span> <span class="nn">.data_set</span> <span class="kn">import</span> <span class="n">DataSet</span><span class="p">,</span> <span class="n">ParameterData</span>
 
 
@@ -561,8 +560,10 @@
         <span class="n">n_values</span> <span class="o">=</span> <span class="n">new_values</span><span class="o">.</span><span class="n">size</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">new_values</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">new_values</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;f&quot;</span> <span class="ow">or</span> <span class="n">new_values</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">new_values</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;f&quot;</span><span class="p">:</span>
             <span class="n">data</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="k">elif</span> <span class="n">new_values</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
         <span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="n">n_values</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_values</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">data</span><span class="p">,</span> <span class="n">n_values</span>
