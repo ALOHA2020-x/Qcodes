@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+351.g0945421828
+                0.25.0+354.g3c4199032f
               </div>
             
           
@@ -397,8 +397,7 @@
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;GroupedParameter(name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_parameters</span><span class="p">:</span>
-            <span class="n">source_parameters</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-                <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_parameters</span><span class="p">])</span>
+            <span class="n">source_parameters</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_parameters</span><span class="p">)</span>
             <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;, source_parameters=(</span><span class="si">{</span><span class="n">source_parameters</span><span class="si">}</span><span class="s2">)&quot;</span>
         <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;)&quot;</span>
         <span class="k">return</span> <span class="n">output</span></div>

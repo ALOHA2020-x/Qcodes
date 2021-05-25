@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+351.g0945421828
+                0.25.0+354.g3c4199032f
               </div>
             
           
@@ -743,10 +743,12 @@
             <span class="k">return</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_slopes</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">8</span><span class="p">:</span>
-            <span class="n">rampchans</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_slopes</span><span class="p">])</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Can not assign finite slope to more than &#39;</span> <span class="o">+</span>
-                             <span class="s2">&quot;8 channels. Assign &#39;Inf&#39; to at least one of &quot;</span> <span class="o">+</span>
-                             <span class="sa">f</span><span class="s1">&#39;the following channels: </span><span class="si">{</span><span class="n">rampchans</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">rampchans</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_slopes</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Can not assign finite slope to more than &quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;8 channels. Assign &#39;Inf&#39; to at least one of &quot;</span>
+                <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;the following channels: </span><span class="si">{</span><span class="n">rampchans</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_slopes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">chan</span><span class="p">,</span> <span class="n">slope</span><span class="p">))</span>
         <span class="k">return</span>
