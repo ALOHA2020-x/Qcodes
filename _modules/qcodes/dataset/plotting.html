@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.25.0+307.g8a65e59e3f
+                0.25.0+341.g6dba3db872
               </div>
             
           
@@ -178,7 +178,7 @@
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">cast</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">cast</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -190,9 +190,9 @@
 <span class="kn">from</span> <span class="nn">qcodes.utils.plotting</span> <span class="kn">import</span> <span class="n">auto_color_scale_from_config</span><span class="p">,</span> <span class="n">find_scale_and_prefix</span>
 
 <span class="kn">from</span> <span class="nn">.data_export</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DSPlotData</span><span class="p">,</span>
     <span class="n">_get_data_from_ds</span><span class="p">,</span>
     <span class="n">_strings_as_ints</span><span class="p">,</span>
-    <span class="n">flatten_1D_data_for_plot</span><span class="p">,</span>
     <span class="n">get_1D_plottype</span><span class="p">,</span>
     <span class="n">get_2D_plottype</span><span class="p">,</span>
     <span class="n">reshape_2D_data</span><span class="p">,</span>
@@ -204,10 +204,9 @@
 <span class="n">AxesTuple</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span><span class="p">]</span>
 <span class="n">AxesTupleList</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">],</span>
                       <span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span><span class="p">]]]</span>
-<span class="n">Number</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
 <span class="c1"># NamedData is the structure _get_data_from_ds returns and that plot_by_id</span>
 <span class="c1"># uses internally</span>
-<span class="n">NamedData</span> <span class="o">=</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]]]]</span>
+<span class="n">NamedData</span> <span class="o">=</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">DSPlotData</span><span class="p">]]</span>
 
 <span class="c1"># list of kwargs for plotting function, so that kwargs can be passed to</span>
 <span class="c1"># :func:`plot_dataset` and will be distributed to the respective plotting func.</span>
@@ -261,19 +260,19 @@
     <span class="k">yield</span> <span class="n">plot_handler_mapping</span><span class="p">[</span><span class="n">plottype</span><span class="p">](</span><span class="o">**</span><span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
 
 
-<div class="viewcode-block" id="plot_dataset"><a class="viewcode-back" href="../../../api/dataset/plotting.html#qcodes.dataset.plotting.plot_dataset">[docs]</a><span class="k">def</span> <span class="nf">plot_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">:</span> <span class="n">DataSet</span><span class="p">,</span>
-                 <span class="n">axes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span>
-                                      <span class="n">Sequence</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">colorbars</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span><span class="p">,</span>
-                                           <span class="n">Sequence</span><span class="p">[</span>
-                                        <span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">rescale_axes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-                 <span class="n">auto_color_scale</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">cutoff_percentile</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Number</span><span class="p">,</span> <span class="n">Number</span><span class="p">],</span>
-                                                   <span class="n">Number</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">complex_plot_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;real_and_imag&#39;</span><span class="p">,</span>
-                 <span class="n">complex_plot_phase</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;radians&#39;</span><span class="p">,</span>
-                 <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AxesTupleList</span><span class="p">:</span>
+<div class="viewcode-block" id="plot_dataset"><a class="viewcode-back" href="../../../api/dataset/plotting.html#qcodes.dataset.plotting.plot_dataset">[docs]</a><span class="k">def</span> <span class="nf">plot_dataset</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="p">:</span> <span class="n">DataSet</span><span class="p">,</span>
+    <span class="n">axes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">colorbars</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span>
+        <span class="n">Union</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span><span class="p">]]</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">rescale_axes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">auto_color_scale</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">cutoff_percentile</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">complex_plot_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;real_and_imag&quot;</span><span class="p">,</span>
+    <span class="n">complex_plot_phase</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;radians&quot;</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AxesTupleList</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Construct all plots for a given dataset</span>
 
@@ -389,8 +388,8 @@
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>  <span class="c1"># 1D PLOTTING</span>
             <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Doing a 1D plot with kwargs: </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-            <span class="n">xpoints</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
-            <span class="n">ypoints</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+            <span class="n">xpoints</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+            <span class="n">ypoints</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
 
             <span class="n">plottype</span> <span class="o">=</span> <span class="n">get_1D_plottype</span><span class="p">(</span><span class="n">xpoints</span><span class="p">,</span> <span class="n">ypoints</span><span class="p">)</span>
             <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Determined plottype: </span><span class="si">{</span><span class="n">plottype</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -427,17 +426,17 @@
         <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1"># 2D PLOTTING</span>
             <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Doing a 2D plot with kwargs: </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-            <span class="c1"># From the setpoints, figure out which 2D plotter to use</span>
-            <span class="c1"># TODO: The &quot;decision tree&quot; for what gets plotted how and how</span>
-            <span class="c1"># we check for that is still unfinished/not optimised</span>
-
-            <span class="n">xpoints</span> <span class="o">=</span> <span class="n">flatten_1D_data_for_plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
-            <span class="n">ypoints</span> <span class="o">=</span> <span class="n">flatten_1D_data_for_plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
-            <span class="n">zpoints</span> <span class="o">=</span> <span class="n">flatten_1D_data_for_plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
-
-            <span class="n">plottype</span> <span class="o">=</span> <span class="n">get_2D_plottype</span><span class="p">(</span><span class="n">xpoints</span><span class="p">,</span> <span class="n">ypoints</span><span class="p">,</span> <span class="n">zpoints</span><span class="p">)</span>
-
-            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Determined plottype: </span><span class="si">{</span><span class="n">plottype</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s2">&quot;shape&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">xpoints</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+                <span class="n">ypoints</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+                <span class="n">zpoints</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+                <span class="n">plottype</span> <span class="o">=</span> <span class="n">get_2D_plottype</span><span class="p">(</span><span class="n">xpoints</span><span class="p">,</span> <span class="n">ypoints</span><span class="p">,</span> <span class="n">zpoints</span><span class="p">)</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Determined plottype: </span><span class="si">{</span><span class="n">plottype</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">xpoints</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+                <span class="n">ypoints</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+                <span class="n">zpoints</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+                <span class="n">plottype</span> <span class="o">=</span> <span class="s2">&quot;2D_grid&quot;</span>
 
             <span class="n">how_to_plot</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;2D_grid&#39;</span><span class="p">:</span> <span class="n">plot_on_a_plain_grid</span><span class="p">,</span>
                            <span class="s1">&#39;2D_equidistant&#39;</span><span class="p">:</span> <span class="n">plot_on_a_plain_grid</span><span class="p">,</span>
@@ -476,19 +475,19 @@
     <span class="k">return</span> <span class="n">axeslist</span><span class="p">,</span> <span class="n">new_colorbars</span></div>
 
 
-<div class="viewcode-block" id="plot_by_id"><a class="viewcode-back" href="../../../api/dataset/plotting.html#qcodes.dataset.plotting.plot_by_id">[docs]</a><span class="k">def</span> <span class="nf">plot_by_id</span><span class="p">(</span><span class="n">run_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
-               <span class="n">axes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span>
-                              <span class="n">Sequence</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-               <span class="n">colorbars</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span><span class="p">,</span>
-                                   <span class="n">Sequence</span><span class="p">[</span>
-                                       <span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-               <span class="n">rescale_axes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-               <span class="n">auto_color_scale</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-               <span class="n">cutoff_percentile</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Number</span><span class="p">,</span> <span class="n">Number</span><span class="p">],</span>
-                                                 <span class="n">Number</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-               <span class="n">complex_plot_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;real_and_imag&#39;</span><span class="p">,</span>
-               <span class="n">complex_plot_phase</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;radians&#39;</span><span class="p">,</span>
-               <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AxesTupleList</span><span class="p">:</span>
+<div class="viewcode-block" id="plot_by_id"><a class="viewcode-back" href="../../../api/dataset/plotting.html#qcodes.dataset.plotting.plot_by_id">[docs]</a><span class="k">def</span> <span class="nf">plot_by_id</span><span class="p">(</span>
+    <span class="n">run_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">axes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">colorbars</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span>
+        <span class="n">Union</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span><span class="p">]]</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">rescale_axes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">auto_color_scale</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">cutoff_percentile</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">complex_plot_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;real_and_imag&quot;</span><span class="p">,</span>
+    <span class="n">complex_plot_phase</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;radians&quot;</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AxesTupleList</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Construct all plots for a given `run_id`. Here `run_id` is an</span>
 <span class="sd">    alias for `captured_run_id` for historical reasons. See the docs</span>
@@ -509,9 +508,9 @@
                         <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">_complex_to_real_preparser</span><span class="p">(</span><span class="n">alldata</span><span class="p">:</span> <span class="n">NamedData</span><span class="p">,</span>
-                               <span class="n">conversion</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-                               <span class="n">degrees</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NamedData</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">_complex_to_real_preparser</span><span class="p">(</span>
+    <span class="n">alldata</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">DSPlotData</span><span class="p">]],</span> <span class="n">conversion</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">degrees</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NamedData</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert complex-valued parameters to two real-valued parameters, either</span>
 <span class="sd">    real and imaginary part or phase and magnitude part</span>
@@ -529,7 +528,7 @@
                          <span class="s1">&#39;but can only accept &quot;real_and_imag&quot; or &#39;</span>
                          <span class="s1">&#39;&quot;mag_and_phase&quot;.&#39;</span><span class="p">)</span>
 
-    <span class="n">newdata</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">newdata</span><span class="p">:</span> <span class="n">NamedData</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="c1"># we build a new NamedData object from the given `alldata` input.</span>
     <span class="c1"># Note that the length of `newdata` will be larger than that of `alldata`</span>
@@ -542,11 +541,11 @@
         <span class="n">new_group</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">new_groups</span><span class="p">:</span> <span class="n">NamedData</span> <span class="o">=</span> <span class="p">[[],</span> <span class="p">[]]</span>
         <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">parameter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">group</span><span class="p">):</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">parameter</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
-            <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span>
-                <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">_convert_complex_to_real</span><span class="p">(</span><span class="n">parameter</span><span class="p">,</span>
-                                                  <span class="n">conversion</span><span class="o">=</span><span class="n">conversion</span><span class="p">,</span>
-                                                  <span class="n">degrees</span><span class="o">=</span><span class="n">degrees</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">parameter</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+                <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">_convert_complex_to_real</span><span class="p">(</span>
+                    <span class="n">parameter</span><span class="p">,</span> <span class="n">conversion</span><span class="o">=</span><span class="n">conversion</span><span class="p">,</span> <span class="n">degrees</span><span class="o">=</span><span class="n">degrees</span>
+                <span class="p">)</span>
                 <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">group</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
                     <span class="c1"># if the above condition is met, we are dealing with</span>
                     <span class="c1"># complex setpoints</span>
@@ -576,11 +575,8 @@
 
 
 <span class="k">def</span> <span class="nf">_convert_complex_to_real</span><span class="p">(</span>
-        <span class="n">parameter</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]],</span>
-        <span class="n">conversion</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-        <span class="n">degrees</span><span class="p">:</span> <span class="nb">bool</span>
-        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]],</span>
-                   <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]]]:</span>
+    <span class="n">parameter</span><span class="p">:</span> <span class="n">DSPlotData</span><span class="p">,</span> <span class="n">conversion</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">degrees</span><span class="p">:</span> <span class="nb">bool</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">DSPlotData</span><span class="p">,</span> <span class="n">DSPlotData</span><span class="p">]:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Do the actual conversion and turn one parameter into two.</span>
 <span class="sd">    Should only be called from within _complex_to_real_preparser.</span>
@@ -604,20 +600,26 @@
     <span class="n">new_units</span> <span class="o">=</span> <span class="n">converters</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">][</span><span class="n">conversion</span><span class="p">](</span><span class="n">parameter</span><span class="p">[</span><span class="s1">&#39;unit&#39;</span><span class="p">])</span>
     <span class="n">new_names</span> <span class="o">=</span> <span class="n">converters</span><span class="p">[</span><span class="s1">&#39;names&#39;</span><span class="p">][</span><span class="n">conversion</span><span class="p">](</span><span class="n">parameter</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
 
-    <span class="n">new_parameters</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
-        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">label</span><span class="p">,</span>
-         <span class="s1">&#39;unit&#39;</span><span class="p">:</span> <span class="n">unit</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">}</span>
-        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
-            <span class="n">new_names</span><span class="p">,</span> <span class="n">new_labels</span><span class="p">,</span> <span class="n">new_units</span><span class="p">,</span> <span class="n">new_data</span><span class="p">))</span>
+    <span class="n">parameter1</span><span class="p">:</span> <span class="n">DSPlotData</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">new_names</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">new_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="n">new_units</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">new_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="n">parameter</span><span class="p">[</span><span class="s2">&quot;shape&quot;</span><span class="p">],</span>
+    <span class="p">}</span>
 
-    <span class="c1"># The reason we ignore the type in the return is that I cannot figure</span>
-    <span class="c1"># out how to get mypy to correctly infer the type of iterated values</span>
-    <span class="c1"># (the name, label, unit, and data above)</span>
+    <span class="n">parameter2</span><span class="p">:</span> <span class="n">DSPlotData</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">new_names</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">new_labels</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="n">new_units</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">new_data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="n">parameter</span><span class="p">[</span><span class="s2">&quot;shape&quot;</span><span class="p">],</span>
+    <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">new_parameters</span>  <span class="c1"># type: ignore[return-value]</span>
+    <span class="k">return</span> <span class="n">parameter1</span><span class="p">,</span> <span class="n">parameter2</span>
 
 
-<span class="k">def</span> <span class="nf">_get_label_of_data</span><span class="p">(</span><span class="n">data_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">_get_label_of_data</span><span class="p">(</span><span class="n">data_dict</span><span class="p">:</span> <span class="n">DSPlotData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">data_dict</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">data_dict</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span> \
         <span class="k">else</span> <span class="n">data_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
 
@@ -629,17 +631,17 @@
     <span class="k">return</span> <span class="n">label</span>
 
 
-<span class="k">def</span> <span class="nf">_make_label_for_data_axis</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="n">axis_index</span><span class="p">:</span> <span class="nb">int</span>
-                              <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">_make_label_for_data_axis</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DSPlotData</span><span class="p">],</span> <span class="n">axis_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">label</span> <span class="o">=</span> <span class="n">_get_label_of_data</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">axis_index</span><span class="p">])</span>
     <span class="n">unit</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">axis_index</span><span class="p">][</span><span class="s1">&#39;unit&#39;</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">_make_axis_label</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_set_data_axes_labels</span><span class="p">(</span><span class="n">ax</span><span class="p">:</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span>
-                          <span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
-                          <span class="n">cax</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-                          <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">_set_data_axes_labels</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">:</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DSPlotData</span><span class="p">],</span>
+    <span class="n">cax</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">_make_label_for_data_axis</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">_make_label_for_data_axis</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
@@ -749,24 +751,24 @@
         <span class="n">z_strings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
         <span class="n">z</span> <span class="o">=</span> <span class="n">_strings_as_ints</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
-    <span class="n">xrow</span><span class="p">,</span> <span class="n">yrow</span><span class="p">,</span> <span class="n">z_to_plot</span> <span class="o">=</span> <span class="n">reshape_2D_data</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">y</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">z</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y</span><span class="p">))):</span>
+            <span class="c1"># data is on a grid that may or may not be</span>
+            <span class="c1"># rectilinear. Rely on matplotlib to plot</span>
+            <span class="c1"># this directly</span>
+            <span class="n">x_to_plot</span><span class="p">,</span> <span class="n">y_to_plot</span><span class="p">,</span> <span class="n">z_to_plot</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+            <span class="n">num_points</span> <span class="o">=</span> <span class="n">x_to_plot</span><span class="o">.</span><span class="n">size</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x_to_plot</span><span class="p">,</span> <span class="n">y_to_plot</span><span class="p">,</span> <span class="n">z_to_plot</span> <span class="o">=</span> <span class="n">_clip_nan_from_shaped_data</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+            <span class="n">num_points</span> <span class="o">=</span> <span class="n">x_to_plot</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="n">y_to_plot</span><span class="o">.</span><span class="n">size</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x_to_plot</span><span class="p">,</span> <span class="n">y_to_plot</span><span class="p">,</span> <span class="n">z_to_plot</span> <span class="o">=</span> <span class="n">reshape_2D_data</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+        <span class="n">num_points</span> <span class="o">=</span> <span class="n">x_to_plot</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="n">y_to_plot</span><span class="o">.</span><span class="n">size</span>
 
-    <span class="c1"># we use a general edge calculator,</span>
-    <span class="c1"># in the case of non-equidistantly spaced data</span>
-    <span class="c1"># TODO: is this appropriate for a log ax?</span>
-    <span class="n">dxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xrow</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
-    <span class="n">dys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">yrow</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
-    <span class="n">x_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xrow</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">dxs</span><span class="p">[</span><span class="mi">0</span><span class="p">]]),</span>
-                              <span class="n">xrow</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dxs</span><span class="p">,</span>
-                              <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">xrow</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dxs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])))</span>
-    <span class="n">y_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">yrow</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">dys</span><span class="p">[</span><span class="mi">0</span><span class="p">]]),</span>
-                              <span class="n">yrow</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dys</span><span class="p">,</span>
-                              <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">yrow</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dys</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])))</span>
     <span class="k">if</span> <span class="s1">&#39;rasterized&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="n">rasterized</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;rasterized&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">rasterized</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_edges</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_edges</span><span class="p">)</span> \
-                      <span class="o">&gt;</span> <span class="n">qc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">rasterize_threshold</span>
+        <span class="n">rasterized</span> <span class="o">=</span> <span class="n">num_points</span> <span class="o">&gt;</span> <span class="n">qc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">rasterize_threshold</span>
 
     <span class="n">cmap</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;cmap&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="s1">&#39;cmap&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="k">else</span> <span class="kc">None</span>
 
@@ -774,11 +776,15 @@
         <span class="n">name</span> <span class="o">=</span> <span class="n">cmap</span><span class="o">.</span><span class="n">name</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cmap</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;viridis&#39;</span>
         <span class="n">cmap</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">z_strings</span><span class="p">))</span>
 
-    <span class="n">colormesh</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">x_edges</span><span class="p">,</span> <span class="n">y_edges</span><span class="p">,</span>
-                              <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_invalid</span><span class="p">(</span><span class="n">z_to_plot</span><span class="p">),</span>
-                              <span class="n">rasterized</span><span class="o">=</span><span class="n">rasterized</span><span class="p">,</span>
-                              <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
-                              <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">colormesh</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span>
+        <span class="n">x_to_plot</span><span class="p">,</span>
+        <span class="n">y_to_plot</span><span class="p">,</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_invalid</span><span class="p">(</span><span class="n">z_to_plot</span><span class="p">),</span>
+        <span class="n">rasterized</span><span class="o">=</span><span class="n">rasterized</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+        <span class="n">shading</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">x_is_stringy</span><span class="p">:</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">x_strings</span><span class="p">))))</span>
@@ -802,6 +808,50 @@
     <span class="k">return</span> <span class="n">ax</span><span class="p">,</span> <span class="n">colorbar</span></div>
 
 
+<span class="k">def</span> <span class="nf">_clip_nan_from_shaped_data</span><span class="p">(</span>
+    <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+    <span class="k">def</span> <span class="nf">_on_rectilinear_grid_except_nan</span><span class="p">(</span><span class="n">x_data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">y_data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        check that data is on a rectilinear grid. e.g. all points are the same as the  first</span>
+<span class="sd">        row and column with the exception of nans. Those represent points not yet measured.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x_row</span> <span class="o">=</span> <span class="n">x_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">y_row</span> <span class="o">=</span> <span class="n">y_data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x_data</span> <span class="o">-</span> <span class="n">x_row</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span>
+            <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_data</span> <span class="o">-</span> <span class="n">y_row</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">_on_rectilinear_grid_except_nan</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="c1"># clip any row or column where there are nans in the first row</span>
+        <span class="c1"># or column. Since we fill from here we assume that means that no data</span>
+        <span class="c1"># has been measured for this row</span>
+        <span class="n">x_to_plot</span><span class="p">,</span> <span class="n">y_to_plot</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
+
+        <span class="n">filter_x</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x_to_plot</span><span class="p">)</span>
+        <span class="n">filter_y</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y_to_plot</span><span class="p">)</span>
+
+        <span class="n">x_to_plot</span> <span class="o">=</span> <span class="n">x_to_plot</span><span class="p">[</span><span class="n">filter_x</span><span class="p">]</span>
+        <span class="n">y_to_plot</span> <span class="o">=</span> <span class="n">y_to_plot</span><span class="p">[</span><span class="n">filter_y</span><span class="p">]</span>
+        <span class="n">z_to_plot</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">filter_x</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">z_to_plot</span> <span class="o">=</span> <span class="n">z_to_plot</span><span class="p">[:,</span> <span class="n">filter_y</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># fallback to flattening the data and use the same path as</span>
+        <span class="c1"># non shaped data after filtering the nans.</span>
+        <span class="c1"># this is not ideal as we loose the shape data but</span>
+        <span class="c1"># not clear how to do this better. Either return a ragged</span>
+        <span class="c1"># array or clip all inner dims that have nans completely</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">filter_nans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+        <span class="n">x_to_plot</span><span class="p">,</span> <span class="n">y_to_plot</span><span class="p">,</span> <span class="n">z_to_plot</span> <span class="o">=</span> <span class="n">reshape_2D_data</span><span class="p">(</span>
+            <span class="n">x</span><span class="p">[</span><span class="n">filter_nans</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">filter_nans</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="n">filter_nans</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">x_to_plot</span><span class="p">,</span> <span class="n">y_to_plot</span><span class="p">,</span> <span class="n">z_to_plot</span>
+
+
 <span class="k">def</span> <span class="nf">_scale_formatter</span><span class="p">(</span><span class="n">tick_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">factor</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Function for matplotlib.ticker.FuncFormatter that scales the tick values</span>
@@ -810,8 +860,9 @@
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tick_value</span><span class="o">*</span><span class="n">factor</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">&quot;</span>
 
 
-<span class="k">def</span> <span class="nf">_make_rescaled_ticks_and_units</span><span class="p">(</span><span class="n">data_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> \
-        <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">ticker</span><span class="o">.</span><span class="n">FuncFormatter</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="k">def</span> <span class="nf">_make_rescaled_ticks_and_units</span><span class="p">(</span>
+    <span class="n">data_dict</span><span class="p">:</span> <span class="n">DSPlotData</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">ticker</span><span class="o">.</span><span class="n">FuncFormatter</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Create a ticks formatter and a new label for the data that is to be used</span>
 <span class="sd">    on the axes where the data is plotted.</span>
@@ -855,10 +906,11 @@
     <span class="k">return</span> <span class="n">ticks_formatter</span><span class="p">,</span> <span class="n">new_label</span>
 
 
-<span class="k">def</span> <span class="nf">_rescale_ticks_and_units</span><span class="p">(</span><span class="n">ax</span><span class="p">:</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span>
-                             <span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
-                             <span class="n">cax</span><span class="p">:</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span> <span class="o">=</span> <span class="kc">None</span>
-                             <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">_rescale_ticks_and_units</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">:</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="p">,</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DSPlotData</span><span class="p">],</span>
+    <span class="n">cax</span><span class="p">:</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Rescale ticks and units for the provided axes as described in</span>
 <span class="sd">    :func:`~_make_rescaled_ticks_and_units`</span>
