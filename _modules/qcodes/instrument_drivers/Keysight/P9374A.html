@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>qcodes.instrument_drivers.Keysight.Keysight_34411A_submodules &mdash; QCoDeS 0.25.0 documentation</title>
+  <title>qcodes.instrument_drivers.Keysight.P9374A &mdash; QCoDeS 0.25.0 documentation</title>
   
 
   
@@ -153,7 +153,7 @@
         
           <li><a href="../../../index.html">Module code</a> &raquo;</li>
         
-      <li>qcodes.instrument_drivers.Keysight.Keysight_34411A_submodules</li>
+      <li>qcodes.instrument_drivers.Keysight.P9374A</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,18 +168,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for qcodes.instrument_drivers.Keysight.Keysight_34411A_submodules</h1><div class="highlight"><pre>
+  <h1>Source code for qcodes.instrument_drivers.Keysight.P9374A</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
-<span class="kn">from</span> <span class="nn">.private.Keysight_344xxA_submodules</span> <span class="kn">import</span> <span class="n">_Keysight_344xxA</span>
 
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">N52xx</span>
 
-<div class="viewcode-block" id="Keysight_34411A"><a class="viewcode-back" href="../../../../api/generated/qcodes.instrument_drivers.Keysight.html#qcodes.instrument_drivers.Keysight.Keysight_34411A_submodules.Keysight_34411A">[docs]</a><span class="k">class</span> <span class="nc">Keysight_34411A</span><span class="p">(</span><span class="n">_Keysight_344xxA</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This is the qcodes driver for the Keysight 34411A Multimeter</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">silent</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                 <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">silent</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+<span class="c1">#  This is not the same class of Keysight devices but seems to work well...</span>
+
+<div class="viewcode-block" id="P9374A"><a class="viewcode-back" href="../../../../api/generated/qcodes.instrument_drivers.Keysight.html#qcodes.instrument_drivers.Keysight.P9374A.P9374A">[docs]</a><span class="k">class</span> <span class="nc">P9374A</span><span class="p">(</span><span class="n">N52xx</span><span class="o">.</span><span class="n">PNAxBase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span>
+                         <span class="n">min_freq</span><span class="o">=</span><span class="mf">300e6</span><span class="p">,</span> <span class="n">max_freq</span><span class="o">=</span><span class="mf">20e9</span><span class="p">,</span>
+                         <span class="n">min_power</span><span class="o">=-</span><span class="mi">43</span><span class="p">,</span> <span class="n">max_power</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                         <span class="n">nports</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                         <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_options</span><span class="p">()</span></div>
 </pre></div>
 
            </div>

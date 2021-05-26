@@ -173,6 +173,14 @@ qcodes.instrument\_drivers.Keysight.N9030B module
    :undoc-members:
    :show-inheritance:
 
+qcodes.instrument\_drivers.Keysight.P9374A module
+-------------------------------------------------
+
+.. automodule:: qcodes.instrument_drivers.Keysight.P9374A
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 qcodes.instrument\_drivers.Keysight.keysight\_34934a module
 -----------------------------------------------------------
 
